@@ -1,0 +1,8 @@
+<Root>
+	<File Name="nes_message_data_static">
+		<Text Name="nes_message_data_static" CodeOffset="0xFDA5C"/>
+	</File>
+	<File Name="staff_message_data_static">
+		<Text Name="staff_message_data_static" CodeOffset="0x101C7C"/>
+	</File>
+</Root>

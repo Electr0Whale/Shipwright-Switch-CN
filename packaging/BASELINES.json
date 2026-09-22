@@ -1,0 +1,16 @@
+{
+  "Shipwright-Switch": "2976c182f56278f892c4b4ca031bd2635f5e9845",
+  "Shipwright-CN": "9749ffb8a31b5cd61f754f3aea564192e52565c6",
+  "Shipwright": "2bc50f6056338e4398a894ec8bee6d24f8c8dca1",
+  "submodules": {
+    "OTRExporter": "467434c5666e11a3a7b756ff04401cd54da5c3f2",
+    "ZAPDTR": "9f9d0be3c914354ecabab3695581f1123c13ac20",
+    "libultraship": "cb52fcfefb73b3140f46b03195d1c10b757d49ad"
+  },
+  "rom": {
+    "sha1": "41b3bdc48d98c48529219919015a1af22f5057c2",
+    "crc_header": "693BA2AE",
+    "region": "USA Rev 2",
+    "dma_table_offset": "0x7960"
+  }
+}

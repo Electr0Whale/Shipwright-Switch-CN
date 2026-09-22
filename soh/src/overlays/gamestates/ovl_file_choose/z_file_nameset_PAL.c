@@ -1,5 +1,7 @@
 #include "file_choose.h"
 #include "textures/title_static/title_static.h"
+// SOH [Chinese] - CHI label/button textures for the file select menus
+#include "textures/chinese_textures.h"
 #include "assets/overlays/ovl_File_Choose/ovl_file_choose.h"
 #include "assets/soh_assets.h"
 #include "soh/Enhancements/game-interactor/GameInteractor_Hooks.h"
@@ -87,12 +89,16 @@ void FileChoose_SetKeyboardVtx(GameState* thisx) {
     }
 }
 
-static void* sNameLabelTextures[] = { gFileSelNameENGTex, gFileSelNameENGTex, gFileSelNameFRATex };
+static void* sNameLabelTextures[] = {
+    gFileSelNameENGTex, gFileSelNameENGTex, gFileSelNameFRATex,
+    gFileSelNameCHITex, // SOH [Chinese]
+};
 
 static void* sBackspaceEndTextures[][2] = {
     { gFileSelBackspaceButtonTex, gFileSelENDButtonENGTex },
     { gFileSelBackspaceButtonTex, gFileSelENDButtonGERTex },
     { gFileSelBackspaceButtonTex, gFileSelENDButtonFRATex },
+    { gFileSelBackspaceButtonTex, gFileSelENDButtonCHITex }, // SOH [Chinese]
 };
 
 static u16 sBackspaceEndWidths[] = { 28, 44 };
@@ -812,83 +818,89 @@ void FileChoose_UpdateOptionsMenu(GameState* thisx) {
 }
 
 typedef struct {
-    /* 0x00 */ void* texture[3];
-    /* 0x0C */ u16 width[3];
-    /* 0x12 */ u16 height;
-} OptionsMenuTextureInfo; // size = 0x14
+    /* 0x00 */ void* texture[4];
+    /* 0x10 */ u16 width[4];
+    /* 0x18 */ u16 height;
+} OptionsMenuTextureInfo;
 
 static OptionsMenuTextureInfo gOptionsMenuHeaders[] = {
     {
-        { gFileSelOptionsENGTex, gFileSelOptionsGERTex, gFileSelOptionsENGTex },
-        { 128, 128, 128 },
+        { gFileSelOptionsENGTex, gFileSelOptionsGERTex, gFileSelOptionsENGTex, gFileSelOptionsCHITex },
+        { 128, 128, 128, 128 },
         16,
     },
     {
-        { gFileSelSOUNDENGTex, gFileSelSOUNDENGTex, gFileSelSOUNDFRATex },
-        { 64, 64, 64 },
+        { gFileSelSOUNDENGTex, gFileSelSOUNDENGTex, gFileSelSOUNDFRATex, gFileSelSOUNDCHITex },
+        { 64, 64, 64, 64 },
         16,
     },
     {
-        { gFileSelLTargetingENGTex, gFileSelLTargetingGERTex, gFileSelLTargetingFRATex },
-        { 64, 144, 64 },
+        { gFileSelLTargetingENGTex, gFileSelLTargetingGERTex, gFileSelLTargetingFRATex, gFileSelLTargetingCHITex },
+        { 64, 144, 64, 64 },
         16,
     },
     {
-        { gFileSelCheckBrightnessENGTex, gFileSelCheckBrightnessGERTex, gFileSelCheckBrightnessFRATex },
-        { 128, 128, 128 },
+        { gFileSelCheckBrightnessENGTex, gFileSelCheckBrightnessGERTex, gFileSelCheckBrightnessFRATex,
+          gFileSelCheckBrightnessCHITex },
+        // SOH [Chinese] - the CHI label is shorter than the ENG one
+        { 128, 128, 128, 96 },
         16,
     },
     {
-        { gFileSelLanguageENGTex, gFileSelLanguageGERTex, gFileSelLanguageFRATex },
-        { 64, 64, 64 },
+        // SOH [Chinese] - no CHI header texture, fall back to the ENG one
+        { gFileSelLanguageENGTex, gFileSelLanguageGERTex, gFileSelLanguageFRATex, gFileSelLanguageENGTex },
+        { 64, 64, 64, 64 },
         16,
     },
 };
 
 static OptionsMenuTextureInfo gOptionsMenuSettings[] = {
     {
-        { gFileSelStereoENGTex, gFileSelStereoENGTex, gFileSelStereoFRATex },
-        { 48, 48, 48 },
+        { gFileSelStereoENGTex, gFileSelStereoENGTex, gFileSelStereoFRATex, gFileSelStereoCHITex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelMonoENGTex, gFileSelMonoENGTex, gFileSelMonoENGTex },
-        { 48, 48, 48 },
+        { gFileSelMonoENGTex, gFileSelMonoENGTex, gFileSelMonoENGTex, gFileSelMonoCHITex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelHeadsetENGTex, gFileSelHeadsetGERTex, gFileSelHeadsetFRATex },
-        { 48, 48, 48 },
+        { gFileSelHeadsetENGTex, gFileSelHeadsetGERTex, gFileSelHeadsetFRATex, gFileSelHeadsetCHITex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelSurroundENGTex, gFileSelSurroundENGTex, gFileSelSurroundENGTex },
-        { 48, 48, 48 },
+        { gFileSelSurroundENGTex, gFileSelSurroundENGTex, gFileSelSurroundENGTex, gFileSelSurroundCHITex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelSwitchENGTex, gFileSelSwitchGERTex, gFileSelSwitchFRATex },
-        { 48, 80, 48 },
+        { gFileSelSwitchENGTex, gFileSelSwitchGERTex, gFileSelSwitchFRATex, gFileSelSwitchCHITex },
+        { 48, 80, 48, 48 },
         16,
     },
     {
-        { gFileSelHoldENGTex, gFileSelHoldGERTex, gFileSelHoldFRATex },
-        { 48, 80, 48 },
+        { gFileSelHoldENGTex, gFileSelHoldGERTex, gFileSelHoldFRATex, gFileSelHoldCHITex },
+        { 48, 80, 48, 48 },
         16,
     },
     {
-        { gFileSelLangEnglishENGTex, gFileSelLangEnglishENGTex, gFileSelLangEnglishENGTex },
-        { 48, 48, 48 },
+        // SOH [Chinese] - these rows always render their own language name, so
+        // the extra LANGUAGE_CHI slot simply repeats the same texture.
+        { gFileSelLangEnglishENGTex, gFileSelLangEnglishENGTex, gFileSelLangEnglishENGTex, gFileSelLangEnglishENGTex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelLangDeutschGERTex, gFileSelLangDeutschGERTex, gFileSelLangDeutschGERTex },
-        { 48, 48, 48 },
+        { gFileSelLangDeutschGERTex, gFileSelLangDeutschGERTex, gFileSelLangDeutschGERTex, gFileSelLangDeutschGERTex },
+        { 48, 48, 48, 48 },
         16,
     },
     {
-        { gFileSelLangFrancaisFRATex, gFileSelLangFrancaisFRATex, gFileSelLangFrancaisFRATex },
-        { 48, 48, 48 },
+        { gFileSelLangFrancaisFRATex, gFileSelLangFrancaisFRATex, gFileSelLangFrancaisFRATex,
+          gFileSelLangFrancaisFRATex },
+        { 48, 48, 48, 48 },
         16,
     },
 };
@@ -1011,7 +1023,7 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
 
     for (i = 0, vtx = 0; i < 4; i++, vtx += 4) {
         gDPLoadTextureBlock(POLY_OPA_DISP++, gOptionsMenuHeaders[i].texture[gSaveContext.language], G_IM_FMT_IA,
-                            G_IM_SIZ_8b, gOptionsMenuHeaders[i].width[gSaveContext.language],
+                            G_IM_SIZ_8b, (isPalN64 || isPalGC) ? gOptionsMenuHeaders[i].width[gSaveContext.language] : (i == 3 ? 96 : gOptionsMenuHeaders[i].width[LANGUAGE_ENG]),
                             gOptionsMenuHeaders[i].height, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
                             G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
 
@@ -1026,7 +1038,7 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
     // Draw the change language header
     if (isPalN64) {
         gDPLoadTextureBlock(POLY_OPA_DISP++, gOptionsMenuHeaders[i].texture[gSaveContext.language], G_IM_FMT_IA,
-                            G_IM_SIZ_8b, gOptionsMenuHeaders[i].width[gSaveContext.language],
+                            G_IM_SIZ_8b, (isPalN64 || isPalGC) ? gOptionsMenuHeaders[i].width[gSaveContext.language] : (i == 3 ? 96 : gOptionsMenuHeaders[i].width[LANGUAGE_ENG]),
                             gOptionsMenuHeaders[i].height, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
                             G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
 
@@ -1061,7 +1073,7 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
         }
 
         gDPLoadTextureBlock(POLY_OPA_DISP++, gOptionsMenuSettings[i].texture[gSaveContext.language], G_IM_FMT_IA,
-                            G_IM_SIZ_8b, gOptionsMenuSettings[i].width[gSaveContext.language],
+                            G_IM_SIZ_8b, (isPalN64 || isPalGC) ? gOptionsMenuSettings[i].width[gSaveContext.language] : 48,
                             gOptionsMenuSettings[i].height, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
                             G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
         gSP1Quadrangle(POLY_OPA_DISP++, vtx, vtx + 2, vtx + 3, vtx + 1, 0);
@@ -1085,7 +1097,7 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
         }
 
         gDPLoadTextureBlock(POLY_OPA_DISP++, gOptionsMenuSettings[i].texture[gSaveContext.language], G_IM_FMT_IA,
-                            G_IM_SIZ_8b, gOptionsMenuSettings[i].width[gSaveContext.language],
+                            G_IM_SIZ_8b, (isPalN64 || isPalGC) ? gOptionsMenuSettings[i].width[gSaveContext.language] : 48,
                             gOptionsMenuSettings[i].height, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
                             G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
         // Pal N64 German vertices for z target options are offset by 8
@@ -1122,10 +1134,13 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
 
     // Draw the language options
     if (isPalN64) {
+        // SOH [Chinese] - the in-game options menu keeps the three vanilla
+        // language rows, so Chinese highlights the English row instead.
+        u8 langRow = (gSaveContext.language == LANGUAGE_CHI) ? LANGUAGE_ENG : gSaveContext.language;
         for (; i < 9; i++, vtx += 4) {
             gDPPipeSync(POLY_OPA_DISP++);
 
-            if (i == (gSaveContext.language + 6)) {
+            if (i == (langRow + 6)) {
                 if (sSelectedSetting == FS_SETTING_LANGUAGE) {
                     gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, cursorPrimRed, cursorPrimGreen, cursorPrimBlue,
                                     this->titleAlpha[0]);
@@ -1140,7 +1155,7 @@ void FileChoose_DrawOptionsImpl(GameState* thisx) {
             }
 
             gDPLoadTextureBlock(POLY_OPA_DISP++, gOptionsMenuSettings[i].texture[gSaveContext.language], G_IM_FMT_IA,
-                                G_IM_SIZ_8b, gOptionsMenuSettings[i].width[gSaveContext.language],
+                                G_IM_SIZ_8b, (isPalN64 || isPalGC) ? gOptionsMenuSettings[i].width[gSaveContext.language] : 48,
                                 gOptionsMenuSettings[i].height, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
                                 G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
             gSP1Quadrangle(POLY_OPA_DISP++, vtx, vtx + 2, vtx + 3, vtx + 1, 0);

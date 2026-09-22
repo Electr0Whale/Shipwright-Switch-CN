@@ -112,12 +112,22 @@ BossRushSetting BossRushOptions[BOSSRUSH_OPTIONS_AMOUNT] = {
     }
 };
 
+// SOH [Chinese] - the Boss Rush option tables are only localised for ENG/GER/FRA, so a
+// non-empty English string is used as the fallback for any other language (Chinese).
+static uint8_t BossRush_LanguageIndex(uint8_t language) {
+    return language >= LANGUAGE_MAX ? LANGUAGE_ENG : language;
+}
+
 const char* BossRush_GetSettingName(uint8_t optionIndex, uint8_t language) {
-    return BossRushOptions[optionIndex].name[language].c_str();
+    language = BossRush_LanguageIndex(language);
+    const auto& names = BossRushOptions[optionIndex].name;
+    return names[language].empty() ? names[LANGUAGE_ENG].c_str() : names[language].c_str();
 }
 
 const char* BossRush_GetSettingChoiceName(uint8_t optionIndex, uint8_t choiceIndex, uint8_t language) {
-    return BossRushOptions[optionIndex].choices[choiceIndex][language].c_str();
+    language = BossRush_LanguageIndex(language);
+    const auto& names = BossRushOptions[optionIndex].choices[choiceIndex];
+    return names[language].empty() ? names[LANGUAGE_ENG].c_str() : names[language].c_str();
 }
 
 uint8_t BossRush_GetSettingOptionsAmount(uint8_t optionIndex) {

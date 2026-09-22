@@ -3,6 +3,7 @@
 #include "textures/parameter_static/parameter_static.h"
 #include "textures/do_action_static/do_action_static.h"
 #include "textures/icon_item_static/icon_item_static.h"
+#include "textures/chinese_textures.h" // SOH [Chinese]
 #include "soh_assets.h"
 #include "soh/Enhancements/randomizer/adult_trade_shuffle.h"
 #include "soh/Enhancements/randomizer/randomizer_entrance.h"
@@ -2987,6 +2988,11 @@ void Interface_LoadActionLabel(InterfaceContext* interfaceCtx, u16 action, s16 l
             newName[loadOffset][length - 6] = 'G';
             newName[loadOffset][length - 5] = 'E';
             newName[loadOffset][length - 4] = 'R';
+        // SOH [Chinese] - swap the ...ENGTex suffix for ...CHITex
+        } else if (gSaveContext.language == LANGUAGE_CHI) {
+            newName[loadOffset][length - 6] = 'C';
+            newName[loadOffset][length - 5] = 'H';
+            newName[loadOffset][length - 4] = 'I';
         }
         doAction = newName[loadOffset];
     }
@@ -3052,6 +3058,11 @@ void Interface_LoadActionLabelB(PlayState* play, u16 action) {
             newName[length - 6] = 'G';
             newName[length - 5] = 'E';
             newName[length - 4] = 'R';
+        // SOH [Chinese] - swap the ...ENGTex suffix for ...CHITex
+        } else if (gSaveContext.language == LANGUAGE_CHI) {
+            newName[length - 6] = 'C';
+            newName[length - 5] = 'H';
+            newName[length - 4] = 'I';
         }
         doAction = newName;
     }
@@ -3960,8 +3971,9 @@ void Interface_DrawActionLabel(GraphicsContext* gfxCtx, void* texture) {
 }
 
 void Interface_DrawItemButtons(PlayState* play) {
-    static void* cUpLabelTextures[] = { gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex };
-    static s16 startButtonLeftPos[] = { 132, 130, 130 };
+    // SOH [Chinese] - LANGUAGE_CHI uses the Chinese C-Up label, laid out like English
+    static void* cUpLabelTextures[] = { gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpCHITex };
+    static s16 startButtonLeftPos[] = { 132, 130, 130, 132 };
     InterfaceContext* interfaceCtx = &play->interfaceCtx;
     Player* player = GET_PLAYER(play);
     PauseContext* pauseCtx = &play->pauseCtx;

@@ -42,7 +42,7 @@ private:
     void DisplayCustomMessage() const;
 
     static constexpr uint16_t MAX_STRING_SIZE = 1024;
-    static constexpr std::array<const char*, LANGUAGE_MAX> mLanguages = {"English", "German", "French"};
+    static constexpr std::array<const char*, LANGUAGE_MAX> mLanguages = { "English", "German", "French", "Chinese" };
     static constexpr int HEXADECIMAL = 0;
     static constexpr int DECIMAL = 1;
     char* mTableIdBuf;

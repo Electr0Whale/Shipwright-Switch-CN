@@ -1,0 +1,352 @@
+Ship	主菜单
+Settings	设置
+Enhancements	增强功能
+Randomizer	随机模式
+Developer Tools	开发工具
+Cheats	作弊
+Hide Menu Bar	隐藏菜单栏
+Toggle Fullscreen	切换全屏
+Reset	重置
+Open App Files Folder	打开程序文件夹
+Quit	退出
+Audio	声音
+Controller	控制器
+Graphics	图形
+Languages	语言
+Accessibility	无障碍
+Gameplay	游戏玩法
+Time Savers	节省时间
+Items	物品
+Difficulty Options	难度选项
+Potion Values	药水效果
+Shooting Gallery	射击场
+Bombchu Bowling	炸弹鼠保龄球
+Fishing	钓鱼
+Lost Woods Ocarina Game	迷失森林吹奏游戏
+Reduced Clutter	精简显示
+Mods	模组
+Animated Link in Pause Menu	暂停菜单中的林克动画
+Fixes	修正
+Restoration	原版还原
+Extra Modes	额外模式
+Trap Options	陷阱选项
+Infinite...	无限资源…
+Save States	即时状态
+Network	网络
+Rando Enhancements	随机模式增强
+English	英语
+German	德语
+French	法语
+Chinese (Simplified)	简体中文
+Translate Title Screen	汉化标题画面
+Master Volume: %.1f %%	总音量：%.1f %%
+Main Music Volume: %.1f %%	主音乐音量：%.1f %%
+Sub Music Volume: %.1f %%	辅助音乐音量：%.1f %%
+Sound Effects Volume: %.1f %%	音效音量：%.1f %%
+Fanfare Volume: %.1f %%	提示乐音量：%.1f %%
+Audio API (Needs reload)	音频接口（需重启）
+Renderer API (Needs reload)	渲染接口（需重启）
+Texture Filtering (Needs reload)	纹理过滤（需重启）
+Menubar Controller Navigation	用手柄操作菜单栏
+Simulated Input Lag: %d frames	模拟输入延迟：%d 帧
+Internal Resolution: %.1f %%	内部渲染分辨率：%.1f %%
+Internal Resolution: 100.0%%	内部渲染分辨率：100.0%%
+FPS: Original (20)	帧率：原版（20）
+FPS: %d	帧率：%d
+Match Frame Rate to Refresh Rate	帧率匹配屏幕刷新率
+ImGui Menu Scale	界面缩放
+Enable Vsync	启用垂直同步
+Windowed fullscreen	无边框全屏
+Allow multi-windows (Needs reload)	允许多窗口（需重启）
+Text to Speech	朗读对话
+Disable Idle Camera Re-Centering	禁用待机时镜头自动回正
+Speed-ups:	加速：
+Changes:	调整：
+Text Speed: %dx	文字速度：%d 倍
+Skip Text	跳过文字
+King Zora Speed: %dx	卓拉王移动速度：%d 倍
+Vine/Ladder Climb speed +%d	藤蔓／梯子攀爬速度 +%d
+Block pushing speed +%d	推方块速度 +%d
+Crawl speed %dx	爬行速度：%d 倍
+Faster Heavy Block Lift	加快举起重物
+Skip Pickup Messages	跳过拾取提示
+Fast Ocarina Playback	加快陶笛回放
+Skip Scarecrow Song	跳过稻草人之歌
+Skip Magic Arrow Equip Animation	跳过魔法箭装备动画
+Skip save confirmation	跳过保存确认
+Faster Farore's Wind	加快法罗雷之风
+Skip water take breath animation	跳过出水换气动画
+Biggoron Forge Time: %d days	大鼓隆铸剑时间：%d 天
+Remember Save Location	记住保存位置
+No Forced Navi	取消娜薇强制对话
+Navi Timer Resets	切换场景后重置娜薇提示计时
+No Skulltula Freeze	拾取金骷髅蜘蛛徽章时不停顿
+Nighttime GS Always Spawn	夜间金骷髅蜘蛛全天出现
+Dampe Appears All Night	丹培整夜出现
+Fast Chests	快速开宝箱
+Chest size & texture matches contents	宝箱外观与内容匹配
+Chests of Agony	获得震动石后显示宝箱内容
+Ask to Equip New Items	询问是否装备新物品
+Better Owl	优化猫头鹰对话选项
+Exit Market at Night	允许夜间离开城下町
+Shops and Games Always Open	商店与小游戏全天开放
+Link as default file name	默认存档名为林克
+Quit Fishing At Door	在门口结束钓鱼
+Time Travel with the Song of Time	用时之歌切换年龄
+Pause Warp	暂停菜单中传送
+Instant Putaway	立即收起物品
+Instant Boomerang Recall	立即召回回旋镖
+Prevent Dropped Ocarina Inputs	防止快速吹奏时漏音
+Bunny Hood Effect	兔子头套效果
+Bunny Hood Equippable as Adult	成年时可装备兔子头套
+Mask Select in Inventory	在道具栏切换面具
+Nuts explode bombs	德库果实可引爆炸弹
+Equip Multiple Arrows at Once	允许同时装备多种箭
+Bow as Child/Slingshot as Adult	孩童可用弓／成人可用弹弓
+Better Farore's Wind	改进法罗雷之风
+Remove Explosive Limit	取消同时放置炸弹数量限制
+Static Explosion Radius	固定爆炸范围
+Prevent Bombchus Forcing First-Person	放出炸弹鼠时不强制切换第一人称
+Aiming reticle for the bow/slingshot	显示弓与弹弓准星
+Allow strength equipment to be toggled	允许开关力量升级效果
+Fix falling from vine edges	修正藤蔓边缘脱落
+Fix Link's eyes open while sleeping	修正林克睡觉时睁眼
+Fix Darunia dancing too fast	修正达鲁尼亚跳舞过快
+Fix raised Floor Switches	修正凸起的地板开关
+Fix Zora hint dialogue	修正卓拉的提示对话
+Authentic Logo Screen	原版标志画面
+Red Ganon blood	加侬使用红色血液
+Fish while hovering	悬浮时可抛竿
+N64 Weird Frames	还原 N64 特殊帧行为
+Bombchus out of bounds	炸弹鼠可在边界外爆炸
+Quick Putaway	还原快速收起物品漏洞
+Restore old Gold Skulltula cutscene	还原金骷髅蜘蛛旧过场
+Quick Bongo Kill	还原快速击杀邦戈邦戈漏洞
+Original RBA Values	还原 RBA 漏洞数值
+Mirrored World	镜像世界
+Enemy Randomizer	敌人随机化
+Randomized Enemy Sizes	随机敌人体型
+Scale Health with Size	生命值随体型变化
+Ivan the Fairy (Coop Mode)	精灵伊万（合作模式）
+Rupee Dash Mode	卢比消耗模式
+Shadow Tag Mode	墙壁大师追逐模式
+Additional Traps	额外陷阱
+Tier 1 Traps:	一级陷阱：
+Tier 2 Traps:	二级陷阱：
+Tier 3 Traps:	三级陷阱：
+Freeze Traps	冰冻陷阱
+Burn Traps	燃烧陷阱
+Shock Traps	电击陷阱
+Knockback Traps	击退陷阱
+Speed Traps	速度陷阱
+Bomb Traps	炸弹陷阱
+Void Traps	坠落陷阱
+Ammo Traps	弹药陷阱
+Death Traps	死亡陷阱
+Teleport Traps	传送陷阱
+Hurt Container Mode	伤害容器模式
+Autosave	自动保存
+Switch performance mode	Switch 性能模式
+Inventory:	物品栏：
+Super Tunic	超级服装
+Easy ISG	轻松无限剑攻击
+Easy QPA	轻松快速收起攻击
+Timeless Equipment	装备不受年龄限制
+Unrestricted Items	物品不受场景限制
+Fireproof Deku Shield	德库盾防火
+Shield with Two-Handed Weapons	持双手武器时可举盾
+Deku Sticks:	德库木棒：
+Bomb Timer Multiplier: %.2fx	炸弹引爆时间：%.2f 倍
+Hookshot Everything	钩索可勾住所有表面
+Hookshot Reach Multiplier: %.2fx	钩索射程：%.2f 倍
+Change Age	切换年龄
+Clear Cutscene Pointer	清空过场指针
+Money	卢比
+Health	生命值
+Ammo	弹药
+Magic	魔力
+Nayru's Love	娜卢之爱
+Epona Boost	艾波娜冲刺
+These are NOT like emulator states.	这与模拟器的即时存档不同。
+They do not save your game progress, and	它们不保存游戏进度，
+they WILL break across transitions and	且在场景切换或经过加载区域
+load zones (like doors). Support for	（例如门口）时会失效。
+related issues will not be provided.	相关问题不在支持范围内。
+I promise I have read the warning	我已阅读上述提示
+I understand, enable save states	我已了解，启用即时状态
+Behavior:	行为：
+No Clip	穿墙
+Climb Everything	攀爬所有表面
+Moon Jump on L	按 L 键浮空
+Easy Frame Advancing	便捷逐帧推进
+Easy Input Buffering	便捷输入缓冲
+Drops Don't Despawn	掉落物不消失
+Fish Don't despawn	放出的鱼不消失
+Bugs Don't despawn	放出的虫子不消失
+Freeze Time	冻结时间
+Time Sync	同步现实时间
+No ReDead/Gibdo Freeze	僵尸尖叫不造成定身
+Keese/Guay don't target you	蝙蝠／乌鸦不主动攻击
+Enable Beta Quest	启用 Beta Quest
+Beta Quest World: %d	Beta Quest 世界：%d
+OoT Debug Mode	时之笛调试模式
+OoT Registry Editor	寄存器编辑器
+Debug Save File Mode:	调试存档模式：
+OoT Skulltula Debug	金骷髅蜘蛛调试
+Fast File Select	快速选择存档
+Loading:	加载：
+Better Debug Warp Screen	改进调试传送界面
+Debug Warp Screen Translation	翻译调试传送界面
+Resource logging	记录资源加载
+Frame Advance	逐帧推进
+Advance 1	推进一帧
+Advance (Hold)	推进（按住）
+Remote Interaction Scheme	远程交互协议
+Remote IP & Port	远程 IP 与端口
+Connected	已连接
+Connecting...	正在连接…
+Disconnected	未连接
+Rando-Relevant Navi Hints	娜薇提供随机模式相关提示
+Random Rupee Names	随机卢比名称
+Key Colors Match Dungeon	钥匙颜色与迷宫匹配
+Quest Item Fanfares	任务物品提示乐
+Input Editor	控制器设置
+Stats	性能统计
+Console	控制台
+Cosmetics Editor	外观编辑器
+Item Tracker	物品追踪器
+Check Tracker	检查点追踪器
+Entrance Tracker	入口追踪器
+Audio Editor	音频编辑器
+Save Editor	存档编辑器
+Actor Viewer	对象查看器
+Collision Viewer	碰撞查看器
+Message Viewer	消息查看器
+Display List Viewer	显示列表查看器
+Gfx Debugger	图形调试器
+Randomizer Settings	随机模式设置
+Resolution Editor	分辨率编辑器
+Disabled	禁用
+Enabled	启用
+Enable	启用
+Disable	禁用
+On	开启
+Off	关闭
+Yes	是
+No	否
+Cancel	取消
+Confirm	确认
+Apply	应用
+Close	关闭
+Save	保存
+Load	加载
+Delete	删除
+Copy	复制
+Paste	粘贴
+Clear	清除
+Default	默认
+Defaults	默认设置
+Reset to Default	恢复默认
+Reset to Defaults	恢复默认设置
+Reset All	全部重置
+All	全部
+None	无
+Both	两者
+Always	始终
+Never	从不
+Vanilla	原版
+Random	随机
+Custom	自定义
+Normal	普通
+Advanced	高级
+Basic	基本
+General	常规
+Options	选项
+Controls	控制
+Configuration	配置
+Presets	预设
+Preset	预设
+Search	搜索
+Search...	搜索…
+Filter	筛选
+Name	名称
+Type	类型
+Value	数值
+Description	说明
+Settings:	设置：
+Warning	注意
+Error	错误
+Success	成功
+Information	信息
+Help	帮助
+Open	打开
+Import	导入
+Export	导出
+Refresh	刷新
+Add	添加
+Remove	移除
+Edit	编辑
+Test	测试
+Start	开始
+Stop	停止
+Pause	暂停
+Resume	继续
+Small	小
+Medium	中
+Large	大
+Left	左
+Right	右
+Up	上
+Down	下
+Horizontal	水平
+Vertical	垂直
+Width	宽度
+Height	高度
+Scale	缩放
+Size	大小
+Position	位置
+Color	颜色
+Colors	颜色
+Background	背景
+Foreground	前景
+Opacity	不透明度
+Rainbow	彩虹
+Red	红色
+Green	绿色
+Blue	蓝色
+Yellow	黄色
+White	白色
+Black	黑色
+Purple	紫色
+Orange	橙色
+Pink	粉色
+Grey	灰色
+Gray	灰色
+Texture Only	仅纹理
+Size Only	仅大小
+Faster Run & Longer Jump	加快跑步并延长跳跃
+Faster Run	加快跑步
+Consistent Vanish	一致消失
+No Vanish	不消失
+New Location + Major Item	新地点或重要物品
+New Location + Any Item	新地点或任意物品
+New Location	新地点
+Major Item	重要物品
+Any Item	任意物品
+File N.1	存档 1
+File N.2	存档 2
+File N.3	存档 3
+File select	存档选择
+No Damage	无伤害
+0.25 Heart	四分之一颗心
+0.5 Heart	半颗心
+1 Heart	一颗心
+Vanilla (1x)	原版（1 倍）
+Double (2x)	双倍（2 倍）
+Quadruple (4x)	四倍（4 倍）
+Octuple (8x)	八倍（8 倍）
+Foolish (16x)	疯狂（16 倍）
+Ridiculous (32x)	荒诞（32 倍）
+Merciless (64x)	无情（64 倍）
+Pure Torture (128x)	折磨（128 倍）
+OHKO (256x)	一击毙命（256 倍）

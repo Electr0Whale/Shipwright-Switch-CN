@@ -4,6 +4,8 @@
 #include <stdio.h>
 
 #include "textures/title_static/title_static.h"
+// SOH [Chinese] - CHI label/button textures for the file select menus
+#include "textures/chinese_textures.h"
 #include "textures/parameter_static/parameter_static.h"
 #include <textures/icon_item_static/icon_item_static.h>
 #include <textures/icon_item_24_static/icon_item_24_static.h>
@@ -2080,7 +2082,7 @@ static void* sFileInfoBoxTextures[] = {
     gFileSelFileInfoBox4Tex, gFileSelFileInfoBox5Tex,
 };
 
-static void* sTitleLabels[3][9] = {
+static void* sTitleLabels[4][9] = {
     { gFileSelPleaseSelectAFileENGTex, gFileSelOpenThisFileENGTex, gFileSelCopyWhichFileENGTex,
       gFileSelCopyToWhichFileENGTex, gFileSelAreYouSureENGTex, gFileSelFileCopiedENGTex, gFileSelEraseWhichFileENGTex,
       gFileSelAreYouSure2ENGTex, gFileSelFileErasedENGTex },
@@ -2089,34 +2091,46 @@ static void* sTitleLabels[3][9] = {
       gFileSelAreYouSure2GERTex, gFileSelFileErasedGERTex },
     { gFileSelPleaseSelectAFileFRATex, gFileSelOpenThisFileFRATex, gFileSelCopyWhichFileFRATex,
       gFileSelCopyToWhichFileFRATex, gFileSelAreYouSureFRATex, gFileSelFileCopiedFRATex, gFileSelEraseWhichFileFRATex,
-      gFileSelAreYouSure2FRATex, gFileSelFileErasedFRATex }
+      gFileSelAreYouSure2FRATex, gFileSelFileErasedFRATex },
+    // SOH [Chinese]
+    { gFileSelPleaseSelectAFileCHITex, gFileSelOpenThisFileCHITex, gFileSelCopyWhichFileCHITex,
+      gFileSelCopyToWhichFileCHITex, gFileSelAreYouSureCHITex, gFileSelFileCopiedCHITex, gFileSelEraseWhichFileCHITex,
+      gFileSelAreYouSure2CHITex, gFileSelFileErasedCHITex }
 };
 
-static void* sWarningLabels[3][5] = {
+static void* sWarningLabels[4][5] = {
     { gFileSelNoFileToCopyENGTex, gFileSelNoFileToEraseENGTex, gFileSelNoEmptyFileENGTex, gFileSelFileEmptyENGTex,
       gFileSelFileInUseENGTex },
     { gFileSelNoFileToCopyGERTex, gFileSelNoFileToEraseGERTex, gFileSelNoEmptyFileGERTex, gFileSelFileEmptyGERTex,
       gFileSelFileInUseGERTex },
     { gFileSelNoFileToCopyFRATex, gFileSelNoFileToEraseFRATex, gFileSelNoEmptyFileFRATex, gFileSelFileEmptyFRATex,
       gFileSelFileInUseFRATex },
+    // SOH [Chinese]
+    { gFileSelNoFileToCopyCHITex, gFileSelNoFileToEraseCHITex, gFileSelNoEmptyFileCHITex, gFileSelFileEmptyCHITex,
+      gFileSelFileInUseCHITex },
 };
 
-static void* sFileButtonTextures[3][3] = {
+static void* sFileButtonTextures[4][3] = {
     { gFileSelFile1ButtonENGTex, gFileSelFile2ButtonENGTex, gFileSelFile3ButtonENGTex },
     { gFileSelFile1ButtonGERTex, gFileSelFile2ButtonGERTex, gFileSelFile3ButtonGERTex },
     { gFileSelFile1ButtonFRATex, gFileSelFile2ButtonFRATex, gFileSelFile3ButtonFRATex },
+    // SOH [Chinese]
+    { gFileSelFile1ButtonCHITex, gFileSelFile2ButtonCHITex, gFileSelFile3ButtonCHITex },
 };
 
-static void* sActionButtonTextures[3][4] = {
+static void* sActionButtonTextures[4][4] = {
     { gFileSelCopyButtonENGTex, gFileSelEraseButtonENGTex, gFileSelYesButtonENGTex, gFileSelQuitButtonENGTex },
     { gFileSelCopyButtonGERTex, gFileSelEraseButtonGERTex, gFileSelYesButtonGERTex, gFileSelQuitButtonGERTex },
     { gFileSelCopyButtonFRATex, gFileSelEraseButtonFRATex, gFileSelYesButtonFRATex, gFileSelQuitButtonFRATex },
+    // SOH [Chinese]
+    { gFileSelCopyButtonCHITex, gFileSelEraseButtonCHITex, gFileSelYesButtonCHITex, gFileSelQuitButtonCHITex },
 };
 
 static void* sOptionsButtonTextures[] = {
     gFileSelOptionsButtonENGTex,
     gFileSelOptionsButtonGERTex,
     gFileSelOptionsButtonENGTex,
+    gFileSelOptionsButtonCHITex, // SOH [Chinese]
 };
 
 const char* FileChoose_GetQuestChooseTitleTexName(Language lang) {
@@ -2128,6 +2142,8 @@ const char* FileChoose_GetQuestChooseTitleTexName(Language lang) {
             return gFileSelPleaseChooseAQuestFRATex;
         case LANGUAGE_GER:
             return gFileSelPleaseChooseAQuestGERTex;
+        case LANGUAGE_CHI:
+            return gFileSelPleaseChooseAQuestCHITex;
     }
 }
 
@@ -2140,6 +2156,8 @@ const char* FileChoose_GetBossRushOptionsTitleTexName(Language lang) {
             return gFileSelBossRushSettingsFRAText;
         case LANGUAGE_GER:
             return gFileSelBossRushSettingsGERText;
+        case LANGUAGE_CHI:
+            return gFileSelBossRushSettingsCHIText;
     }
 }
 
@@ -3127,7 +3145,9 @@ static const char* randoVersionWarningText[] = {
     // German
     "Dieser Spielstand wurde auf einer anderen Version\nvon SoH erstellt.\nEs könnten Fehler auftreten.",
     // French
-    "Cette sauvegarde a été créée sur une version\ndifférente de SoH.\nCertaines fonctionnalités peuvent être corrompues."
+    "Cette sauvegarde a été créée sur une version\ndifférente de SoH.\nCertaines fonctionnalités peuvent être corrompues.",
+    // SOH [Chinese] - drawn with the proportional ASCII font, so English is used
+    "This save was created on a different version of SoH.\nThings may be broken. Play at your own risk."
 };
 
 void FileChoose_DrawRandoSaveVersionWarning(GameState* thisx) {
@@ -3149,7 +3169,10 @@ void FileChoose_DrawRandoSaveVersionWarning(GameState* thisx) {
             }
 
             // Compute the height for a "squished" textbox texture
-            s16 height = gSaveContext.language == LANGUAGE_ENG ? 32 : 40; // English is only 2 lines
+            // SOH [Chinese] - Chinese reuses the English string, so it is 2 lines as well
+            s16 height = (gSaveContext.language == LANGUAGE_ENG || gSaveContext.language == LANGUAGE_CHI)
+                             ? 32
+                             : 40; // English is only 2 lines
             // float math to get a S5.10 number that will squish the texture
             f32 texCoordinateHeightF = 512 / ((f32)height / 64);
             s16 texCoordinateHeightScale = texCoordinateHeightF + 0.5f;
@@ -3196,6 +3219,14 @@ static const char* noRandoGeneratedText[] = {
     "."
 #else
     "\nou glissez un spoilerlog sur la fenêtre du jeu."
+#endif
+    // SOH [Chinese] - drawn with the proportional ASCII font, so English is used
+    ,
+    "No Randomizer seed currently available.\nGenerate one in the Randomizer Settings"
+#if defined(__WIIU__) || defined(__SWITCH__)
+    "."
+#else
+    ",\nor drop a spoiler log on the game window."
 #endif
 };
 
@@ -3251,6 +3282,7 @@ void FileChoose_Main(GameState* thisx) {
         gFileSelControlsENGTex,
         gFileSelControlsGERTex,
         gFileSelControlsFRATex,
+        gFileSelControlsCHITex, // SOH [Chinese]
     };
     FileChooseContext* this = (FileChooseContext*)thisx;
     Input* input = &this->state.input[0];

@@ -1,0 +1,1171 @@
+Allows controller navigation of the SOH menu bar (Settings, Enhancements,...)\nCAUTION: This will disable game inputs while the menubar is visible.\n\nD-pad to move between items, A to select, and X to grab focus on the menu bar	允许用手柄操作设置、增强等菜单。\n注意：菜单栏显示时，游戏操作会暂停接收输入。\n\n方向键移动，A 键选择，X 键聚焦菜单栏。
+Buffers your inputs to be executed a specified amount of frames later	将输入缓冲指定帧数后再执行。
+Resolution scale. Multiplies output resolution by this value, on each axis relative to window size.\nLower values may improve performance.\nValues above 100% can be used for super-sampling, as an intensive but highly effective form of anti-aliasing.\n\nDefault: 100%	相对于窗口大小，按比例调整两个方向的渲染分辨率。降低可改善性能，超过 100% 可进行超采样抗锯齿，但开销较大。\n默认：100%
+Activates MSAA (multi-sample anti-aliasing) from 2x up to 8x, to smooth the edges of rendered geometry.\nHigher sample count will result in smoother edges on models, but may reduce performance.\n\nRecommended: 2x or 4x	开启 2 至 8 倍多重采样抗锯齿，平滑模型边缘。采样越高，画面越平滑，但性能可能降低。\n建议：2 倍或 4 倍。
+Uses Matrix Interpolation to create extra frames, resulting in smoother graphics.\nThis is purely visual and does not impact game logic, execution of glitches etc.\nHigher frame rate settings may impact CPU performance.\n\n 	通过矩阵插值生成额外画面帧，使显示更流畅。仅影响画面，不改变游戏逻辑或漏洞操作。较高帧率可能增加 CPU 开销。\n\n 
+Uses Matrix Interpolation to create extra frames, resulting in smoother graphics.\nThis is purely visual and does not impact game logic, execution of glitches etc.\nHigher frame rate settings may impact CPU performance.	通过矩阵插值生成额外画面帧，使显示更流畅。仅影响画面，不改变游戏逻辑或漏洞操作。较高帧率可能增加 CPU 开销。
+Matches interpolation value to the game window's current refresh rate.	将插值帧率与游戏窗口所在屏幕的刷新率匹配。
+(For DirectX backend only)\n\nWhen Interpolation FPS (Frame Rate) setting is at least this threshold, add one frame of delay (e.g. 16.6 ms for 60 FPS) in order to avoid jitter.This setting allows the CPU to work on one frame while GPU works on the previous frame.\nThis setting should be used when your computer is too slow to do CPU + GPU work in time.	仅适用于 DirectX。插值帧率达到此阈值时，增加一帧延迟以减少抖动，例如 60 帧时增加 16.6 毫秒。这样 CPU 处理当前帧时，GPU 可处理上一帧，适用于两者无法在一帧内完成工作的情况。
+Changes the scaling of the ImGui menu elements.	调整菜单界面元素的显示比例。
+Activate vertical sync, to prevent screen tearing.	启用垂直同步，防止画面撕裂。
+Allows windows to be able to be dragged off of the main game window. Requires a reload to take effect.	允许将工具窗口拖出游戏主窗口，重启后生效。
+Texture filtering, aka texture smoothing. Requires a reload to take effect.\n\nThree-Point: Replicates real N64 texture filtering.\nBilinear: If Three-Point causes poor performance, try this.\nNearest: Disables texture smoothing. (Not recommended)	纹理过滤可平滑纹理，重启后生效。\n三点过滤：还原 N64 的纹理过滤。\n双线性：三点过滤性能不佳时可尝试。\n最近邻：关闭纹理平滑，不推荐。
+Enables text to speech for in game dialog	朗读游戏内对话。
+Disables the automatic re-centering of the camera when idle.	待机时，镜头不再自动回正。
+Holding down B skips text	按住 B 键跳过文字。
+Speeds up lifting silver rocks and obelisks	加快举起银色岩石和石柱的动作。
+Skip pickup messages for new consumable items and bottle swipes	跳过首次拾取消耗品及用瓶子捕获物品的提示。
+Skip the part where the Ocarina playback is called when you play a song	吹奏歌曲后跳过陶笛的回放部分。
+Pierre appears when Ocarina is pulled out. Requires learning scarecrow song.	取出陶笛时皮埃尔就会出现，需要先学会稻草人之歌。
+Skip the "Game saved." confirmation screen	跳过“游戏已保存”的确认画面。
+Greatly decreases cast time of Farore's Wind magic spell.	大幅缩短法罗雷之风的施法时间。
+Skips Link's taking breath animation after coming up from water. This setting does not interfere with getting items from underwater.	跳过浮出水面后的换气动作，不影响水下获取物品。
+Allows you to change the number of days it takes for Biggoron to forge the Biggoron Sword	调整大鼓隆铸造大鼓隆之剑所需的天数。
+When loading a save, places Link at the last entrance he went through.\nThis doesn't work if the save was made in grottos/fairy fountains or dungeons.	读取存档时，林克出现在上次经过的入口。\n在洞穴、精灵之泉或迷宫内保存时不适用。
+Prevent forced Navi conversations	取消娜薇强制发起的对话。
+Resets the Navi timer on scene change. If you have already talked to her, she will try and talk to you again, instead of needing a save warp or death. 	切换场景时重置娜薇提示计时。即使已交谈，她也会再次尝试提示，无需读档传送或死亡。
+Stops the game from freezing the player when picking up Gold Skulltulas	拾取金骷髅蜘蛛徽章时，玩家不再被暂时定住。
+Nighttime Skulltulas will spawn during both day and night.	原本仅夜间出现的金骷髅蜘蛛，白天也会出现。
+Makes Dampe appear anytime during the night, not just his usual working hours.	丹培在整晚都会出现，不限于原来的工作时间。
+Kick open every chest	所有宝箱都用踢开的快速动作。
+Chest sizes and textures are changed to help identify the item inside.\n - Major items: Large gold chests\n - Lesser items: Large brown chests\n - Junk items: Small brown chests\n - Small keys: Small silver chest\n - Boss keys: Vanilla size and texture\n - Skulltula Tokens: Small skulltula chest\n\nNOTE: Textures will not apply if you are using a mod pack with a custom chest model.	通过宝箱大小和纹理辨别内容：\n重要物品：大型金色宝箱\n次要物品：大型棕色宝箱\n普通物品：小型棕色宝箱\n小钥匙：小型银色宝箱\nBoss 钥匙：原版大小与纹理\n蜘蛛徽章：小型蜘蛛宝箱\n\n使用自定义宝箱模型的模组时，纹理可能不生效。
+Only change the size/texture of chests if you have the Stone of Agony.	只有获得震动石后，才按内容改变宝箱大小和纹理。
+Adds a prompt to equip newly-obtained swords, shields and tunics	获得新的剑、盾牌或服装时，询问是否立即装备。
+The default response to Kaepora Gaebora is always that you understood what he said	与猫头鹰对话时，默认选项始终表示已听懂。
+Allows exiting Hyrule Castle Market Town to Hyrule Field at night by speaking to the guard next to the gate.	夜间与城门旁的守卫交谈，可从城下町前往海拉鲁平原。
+Shops and minigames are open both day and night. Requires scene reload to take effect.	商店和小游戏白天、夜间均开放，重新载入场景后生效。
+Allows you to have "Link" as a premade file name	预先填入“Link”作为存档名称。
+Fisherman asks if you want to quit at the door when you still have the rod	仍拿着钓竿走到门口时，店主会询问是否结束钓鱼。
+Allows Link to freely change age by playing the Song of Time.\nTime Blocks can still be used properly.\n\nRequirements:\n- Obtained the Ocarina of Time (depends on selection)\n- Obtained the Song of Time\n- Obtained the Master Sword\n- Not within range of Time Block\n- Not within range of Ocarina playing spots	吹奏时之歌可切换林克的年龄，时之方块仍可正常使用。\n条件：获得时之笛（依所选规则）、时之歌和大师之剑；不在时之方块或吹奏触发点附近。
+Selection of warp song in pause menu initiates warp. Disables song playback.	在暂停菜单选择传送曲即可传送，不再播放歌曲。
+Allow Link to put items away without having to wait around	无需等待即可收起手中的物品。
+Instantly return the boomerang to Link by pressing its item button while it's in the air	回旋镖飞行时再次按对应物品键，可立即召回。
+Prevent dropping inputs when playing the ocarina quickly	防止快速吹奏陶笛时遗漏输入。
+Wearing the Bunny Hood grants a speed increase like in Majora's Mask. The longer jump option is not accounted for in randomizer logic.\n\nAlso disables NPC's reactions to wearing the Bunny Hood.	佩戴兔子头套时，像《姆吉拉的假面》一样加快移动。延长跳跃不计入随机模式逻辑。\n同时关闭 NPC 对兔子头套的特殊反应。
+Allows the bunny hood to be equipped normally from the pause menu as adult.	成年林克也可从暂停菜单正常装备兔子头套。
+After completing the mask trading sub-quest, press A and any direction on the mask slot to change masks	完成面具交易支线后，在面具格按 A 键和方向键切换面具。
+Makes nuts explode bombs, similar to how they interact with bombchus. This does not affect bombflowers.	德库果实可像触发炸弹鼠一样引爆炸弹，不影响炸弹花。
+Allow the bow and magic arrows to be equipped at the same time on different slots. (Note this will disable the behaviour of the 'Equip Dupe' glitch)	弓和魔法箭可同时装备到不同快捷栏，此功能会取消装备复制漏洞的行为。
+Allows child to use bow with arrows.\nAllows adult to use slingshot with seeds.\n\nRequires glitches or 'Timeless Equipment' cheat to equip.	孩童可使用弓箭，成人可使用弹弓。\n需要利用漏洞或开启“装备不受年龄限制”才能装备。
+Helps FW persist between ages, gives child and adult separate FW points, and can be used in more places.	法罗雷之风的传送点可跨年龄保留，孩童和成人各有独立传送点，并可在更多地点使用。
+Removes the cap of 3 active explosives being deployed at once.	取消最多同时存在三个爆炸物的限制。
+Explosions are now a static size, like in Majora's Mask and OoT3D. Makes bombchu hovering much easier.	爆炸范围改为固定大小，类似《姆吉拉的假面》和《时之笛 3D》，使炸弹鼠悬浮更容易。
+Prevent bombchus from forcing the camera into first-person mode when released.	放出炸弹鼠时，镜头不再强制进入第一人称。
+Aiming with a bow or slingshot will display a reticle as with the hookshot when the projectile is ready to fire.	弓或弹弓准备好发射时，显示类似钩索的准星。
+Allows strength to be toggled on and off by pressing A on the strength upgrade in the equipment subscreen of the pause menu (This allows performing some glitches that require the player to not have strength).	在暂停菜单的装备页，对力量升级按 A 键可开关效果，便于使用要求没有力量升级的漏洞。
+Enable the following changes to the amount of health restored by Red Potions	启用下方对红色药水生命回复量的修改。
+Changes the amount of health restored by Red Potions	调整红色药水回复的生命值。
+Toggles from Red Potions restoring a fixed amount of health to a percent of the player's current max health	将红色药水的回复方式从固定数值改为生命上限的百分比。
+Enable the following changes to the amount of mana restored by Green Potions	启用下方对绿色药水魔力回复量的修改。
+Changes the amount of mana restored by Green Potions, base max mana is 48, max upgraded mana is 96	调整绿色药水回复的魔力，基础魔力上限为 48，升级后为 96。
+Toggles from Green Potions restoring a fixed amount of mana to a percent of the player's current max mana	将绿色药水的回复方式从固定数值改为魔力上限的百分比。
+Enable the following changes to the amount of health and mana restored by Blue Potions	启用下方对蓝色药水生命和魔力回复量的修改。
+Changes the amount of health restored by Blue Potions	调整蓝色药水回复的生命值。
+Toggles from Blue Potions restoring a fixed amount of health to a percent of the player's current max health	将蓝色药水的生命回复方式改为生命上限的百分比。
+Changes the amount of mana restored by Blue Potions, base max mana is 48, max upgraded mana is 96	调整蓝色药水回复的魔力，基础上限为 48，升级后为 96。
+Toggles from Blue Potions restoring a fixed amount of mana to a percent of the player's current max mana	将蓝色药水的魔力回复方式改为魔力上限的百分比。
+Enable the following changes to the amount of health restored by Milk	启用下方对牛奶生命回复量的修改。
+Changes the amount of health restored by Milk	调整牛奶回复的生命值。
+Toggles from Milk restoring a fixed amount of health to a percent of the player's current max health	将牛奶的回复方式改为生命上限的百分比。
+Enable the following changes to the amount of health restored by Half Milk\nIf this is disabled, Half Milk will behave the same as Full Milk.	单独调整半瓶牛奶的生命回复量。关闭时，半瓶牛奶与满瓶牛奶每次的效果相同。
+Changes the amount of health restored by Half Milk	调整半瓶牛奶回复的生命值。
+Toggles from Half Milk restoring a fixed amount of health to a percent of the player's current max health	将半瓶牛奶的回复方式改为生命上限的百分比。
+Enable the following changes to the amount of health restored by Fairies	启用下方对精灵生命回复量的修改。
+Changes the amount of health restored by Fairies	调整精灵回复的生命值。
+Toggles from Fairies restoring a fixed amount of health to a percent of the player's current max health	将精灵的回复方式改为生命上限的百分比。
+Enable the following changes to the amount of health restored by Fairy Revivals	启用下方对精灵复活时生命回复量的修改。
+Changes the amount of health restored by Fairy Revivals	调整精灵复活时回复的生命值。
+Toggles from Fairy Revivals restoring a fixed amount of health to a percent of the player's current max health	将精灵复活的回复方式改为生命上限的百分比。
+Turn on/off changes to the shooting gallery behavior	开启或关闭对射击场规则的修改。
+Skips the shooting gallery minigame	跳过射击场小游戏并直接获胜。
+Forces the rupee order to not be randomized as adult, making it the same as chlid	成人射击场的卢比顺序不再随机，与孩童时一致。
+The ammunition at the start of the shooting gallery minigame as a child	孩童参加射击场小游戏时的初始弹药数量。
+The ammunition at the start of the shooting gallery minigame as an adult	成人参加射击场小游戏时的初始弹药数量。
+Turn on/off changes to the bombchu bowling behavior	开启或关闭对炸弹鼠保龄球规则的修改。
+Prevents the small cucco from appearing in the bombchu bowling minigame	炸弹鼠保龄球小游戏中不再出现小鸡。
+Prevents the big cucco from appearing in the bombchu bowling minigame	炸弹鼠保龄球小游戏中不再出现大鸡。
+The number of bombchus available at the start of the bombchu bowling minigame	炸弹鼠保龄球小游戏开始时可用的炸弹鼠数量。
+Turn on/off changes to the fishing behavior	开启或关闭对钓鱼规则的修改。
+All fish will be caught instantly	所有鱼都会立即被钓起。
+When a line is stable, guarantee bite. Otherwise use default logic	鱼线稳定时必定咬钩，否则使用原版逻辑。
+Once a hook has been set, fish will never let go while being reeled in.	咬钩后收线时，鱼不会逃脱。
+The minimum weight for the unique fishing reward as a child	孩童获得钓鱼特殊奖励所需的最低重量。
+The minimum weight for the unique fishing reward as an adult	成人获得钓鱼特殊奖励所需的最低重量。
+Turn on/off changes to the lost woods ocarina game behavior	开启或关闭迷失森林陶笛小游戏的规则修改。
+Skips the lost woods ocarina game	跳过迷失森林陶笛小游戏。
+Adjust the speed that the skull kids play notes	调整骷髅小子演奏音符的速度。
+Removes the timer to play back the song	取消跟奏歌曲的时间限制。
+Adjust the number of notes the skull kids play to start the first round	调整第一轮开始时骷髅小子演奏的音符数量。
+Adjust the number of notes you need to play to end the first round	调整完成第一轮所需的音符数量。
+Adjust the number of notes you need to play to end the second round	调整完成第二轮所需的音符数量。
+Adjust the number of notes you need to play to end the third round	调整完成第三轮所需的音符数量。
+Dying will delete your file\n\n     	死亡后会删除当前存档！\n\n     
+When you lose 4 quarters of a heart you will permanently lose that heart container.\n\nDisabling this after the fact will restore your heart containers.	每损失一整颗心，就永久失去一个心之容器。\n关闭此选项可恢复已经失去的容器。
+Modifies all sources of damage not affected by other sliders\n2x: Can survive all common attacks from the start of the game\n4x: Dies in 1 hit to any substantial attack from the start of the game\n8x: Can only survive trivial damage from the start of the game\n16x: Can survive all common attacks with max health without double defense\n32x: Can survive all common attacks with max health and double defense\n64x: Can survive trivial damage with max health without double defense\n128x: Can survive trivial damage with max health and double defense\n256x: Cannot survive damage	调整未被其他倍率设置覆盖的伤害。\n2 倍：初始生命可承受常见攻击。\n4 倍：初始生命会被较强攻击一击击倒。\n8 倍：初始生命仅可承受轻微伤害。\n16 倍：满生命可承受常见攻击。\n32 倍：满生命且双倍防御可承受常见攻击。\n64 倍：满生命仅可承受轻微伤害。\n128 倍：满生命且双倍防御仅可承受轻微伤害。\n256 倍：任何伤害都会致命。
+Modifies all fall damage\n2x: Can survive all fall damage from the start of the game\n4x: Can only survive short fall damage from the start of the game\n8x: Cannot survive any fall damage from the start of the game\n16x: Can survive all fall damage with max health without double defense\n32x: Can survive all fall damage with max health and double defense\n64x: Can survive short fall damage with double defense\n128x: Cannot survive fall damage	调整坠落伤害。\n2 倍：初始生命可承受所有坠落伤害。\n4 倍：初始生命仅可承受短距离坠落。\n8 倍：初始生命无法承受坠落。\n16 倍：满生命可承受所有坠落伤害。\n32 倍：满生命且双倍防御可承受所有坠落伤害。\n64 倍：双倍防御下可承受短距离坠落。\n128 倍：无法承受坠落伤害。
+Modifies damage taken after falling into a void\n2x: Can survive void damage from the start of the game\n4x: Cannot survive void damage from the start of the game\n8x: Can survive void damage twice with max health without double defense\n16x: Can survive void damage with max health without double defense\n32x: Can survive void damage with max health and double defense\n64x: Cannot survive void damage	调整掉入深渊后的伤害。\n2 倍：初始生命可承受一次。\n4 倍：初始生命无法承受。\n8 倍：满生命无双倍防御可承受两次。\n16 倍：满生命无双倍防御可承受一次。\n32 倍：满生命且双倍防御可承受一次。\n64 倍：无法承受深渊伤害。
+Modifies damage taken after bonking.	调整撞墙后受到的伤害。
+Respawn with full health instead of 3 Hearts	重新出现时回复满生命，而非三颗心。
+Disables random drops, except from the Goron Pot, Dampe, and bosses	取消随机掉落，鼓隆大罐子、丹培和 Boss 的掉落除外。
+Bombchus will sometimes drop in place of bombs	原本掉落炸弹时，有时改为掉落炸弹鼠。
+Bonking into trees will have a chance to drop up to 3 sticks. Must already have obtained sticks.	撞树有概率掉落最多三根德库木棒，需要已获得过木棒。
+Disables heart drops, but not heart placements, like from a Deku Scrub running off\nThis simulates Hero Mode from other games in the series	取消随机爱心掉落，但不移除固定爱心，例如逃跑的德库商人留下的爱心。模拟系列其他游戏的英雄模式。
+All major bosses move and act twice as fast.	所有主要 Boss 的移动和行动速度加倍。
+All regular enemies and mini-bosses move and act twice as fast.	所有普通敌人和小 Boss 的移动、行动速度加倍。
+Always get the heart piece/purple rupee from the spinning Goron pot	旋转的鼓隆大罐子必定给出心之碎片或紫色卢比。
+Always win the heart piece/purple rupee on the first dig in Dampe's grave digging game, just like in rando\nIn a rando file, this is unconditionally enabled	丹培挖掘小游戏第一次就挖出心之碎片或紫色卢比，和随机模式相同。随机模式存档中此效果始终开启。
+All dogs can be traded in and will count as Richard.	所有狗都可以作为理查德交回。
+Cuccos will stay in place longer after putting them down, by a multiple of the value of the slider.	按滑块指定的倍率延长鸡被放下后停留在原地的时间。
+The time between leever groups spawning.	两批沙地怪生成之间的间隔。
+Disable the low HP beeping sound	关闭生命值过低时的蜂鸣声。
+Hides most of the UI when not needed\nNote: Doesn't activate until after loading a new scene	不需要时隐藏大部分游戏界面，加载新场景后生效。
+Disables the voice audio when Navi calls you	关闭娜薇呼唤林克时的语音。
+Disables warning text when you don't have on the Goron/Zora Tunic in Hot/Underwater conditions.	在高温或水下未穿对应服装时，不显示警告文字。
+Preserves the minimap visibility state when going between areas rather than defaulting it to "on" when going through loading zones.	跨区域时保留小地图的显示状态，不再默认重新打开。
+Displays an icon and plays a sound when Stone of Agony should be activated, for those without rumble	震动石触发时显示图标并播放声音，适合没有震动功能的控制器。
+Allows equipping the tunic and boots to c-buttons	允许将服装和靴子分配到 C 键。
+Allows equipment to be removed by toggling it off on\nthe equipment subscreen.	在装备子菜单中再次选择装备，可以将其卸下。
+Introduces Options for unequipping Link's sword\n\nNone: Only Biggoron's Sword/Giant's Knife can be toggled. Doing so will equip the Master Sword.\n\nChild Toggle: This will allow for completely unequipping any sword as child link.\n\nBoth Ages: Any sword can be unequipped as either age. This may lead to swordless glitches as Adult.\n	设置卸下剑的规则。\n无：仅大鼓隆之剑／巨人之刃可切换，卸下后改持大师之剑。\n仅孩童：孩童可完全卸下剑。\n两种年龄：任何年龄均可卸下剑，成人可能因此触发无剑漏洞。
+Allows the Lon Lon Ranch obstacle course reward to be shared across time periods	隆隆牧场障碍赛奖励可在两个年代共享。
+Injects item counts in pickup messages, like golden skulltula tokens and heart pieces	拾取提示中显示金骷髅蜘蛛徽章、心之碎片等物品的累计数量。
+Allows graves to be pulled when child during the day	孩童在白天也可拉动墓碑。
+Allows dogs to follow you anywhere you go, even if you leave the market	即使离开城下町，狗也能继续跟随。
+Removes the input requirement on textboxes after defeating Ganon, allowing Credits sequence to continue to progress	击败加侬后的文字不再要求按键，让制作人员名单自动继续。
+Allows Ice Arrows to melt red ice.\nMay require a room reload if toggled during gameplay.	冰箭可融化红冰。游戏中开关此设置后可能需要重新进入房间。
+Allows Light Arrows to activate sun switches.\nMay require a room reload if toggled during gameplay.	光箭可触发太阳开关。游戏中开关此设置后可能需要重新进入房间。
+Disable random camera wiggle at low health	关闭低生命值时镜头的随机晃动。
+Renders a health bar for enemies when Z-Targeted	锁定敌人时显示其血条。
+Use a different color when aiming at hookshotable collision	准星瞄准钩索可抓取的表面时，使用不同颜色。
+Toggle between standard assets and alternate assets. Usually mods will indicate if this setting has to be used or not.	切换标准资源与替换资源，是否需要开启请参考模组说明。
+Disables bombs always rotating to face the camera. To be used in conjunction with mods that want to replace bombs with 3D objects.	炸弹不再始终旋转朝向镜头，适合将炸弹替换为 3D 模型的模组。
+Disables grottos rotating with the camera. To be used in conjunction with mods that want to replace grottos with 3D objects.	洞穴入口不再跟随镜头旋转，适合使用 3D 洞穴入口模型的模组。
+Turns Bunny Hood invisible while still maintaining its effects.	隐藏兔子头套的外观，但保留其效果。
+Disables the beating animation of the hearts on the HUD.	关闭界面中爱心跳动的动画。
+Allow you to rotate Link on the Equipment menu with the D-pad\nUse D-pad Up or D-pad Down to reset Link's rotation	在装备菜单中用方向键旋转林克，上下方向键恢复默认朝向。
+Allow you to rotate Link on the Equipment menu with the C-buttons\nUse C-Up or C-Down to reset Link's rotation	在装备菜单中用 C 键旋转林克，C 上／C 下恢复默认朝向。
+Allow you to rotate Link on the Equipment menu with the Right Stick\nYou can zoom in by pointing up and reset Link's rotation by pointing down	在装备菜单中用右摇杆旋转林克，向上可放大，向下恢复默认朝向。
+Randomize the animation played each time you open the menu	每次打开菜单时随机选择动画。
+Randomize the animation played on the menu after a certain time	经过一定时间后，随机切换菜单中的动画。
+Randomize the animation played on the menu after a certain time (Idle animations only)	经过一定时间后，随机切换菜单中的待机动画。
+Turns off the Level of Detail setting, making models use their higher-poly variants at any distance	关闭细节层级简化，任何距离均使用高面数模型。
+Turns off the objects draw distance, making objects being visible from a longer range	取消物体的绘制距离限制，让远处物体也能显示。
+The Kokiri are mystical beings that fade into view when approached\nEnabling this will remove their draw distance	科克里族原本在靠近时逐渐出现，开启此选项可取消他们的绘制距离限制。
+Makes all equipment visible, regardless of Age.	不论年龄，显示所有装备。
+Scales all of the Adult Equipment, as well and moving some a bit, to fit on Child Link Better. May not work properly with some mods.	缩放并调整成人装备，使其更适合孩童林克。可能与部分模组不兼容。
+Sets aspect ratio to 4:3 and lowers resolution to 240p, the N64's native resolution	将画面比例设为 4:3，分辨率降至 N64 原生的 240p。
+Displays a tick in the top center of the screen to help with glitch line-ups in SoH, as traditional UI based line-ups do not work outside of 4:3	在屏幕顶部中央显示对位标记，便于使用漏洞。传统界面对位法在非 4:3 比例下不适用。
+Change most 2D items and projectiles on the overworld to their 3D versions	将场景中大多数二维物品和投射物替换为三维模型。
+Disables Black Bar Letterboxes during cutscenes and Z-targeting\nNote: there may be minor visual glitches that were covered up by the black bars\nPlease disable this setting before reporting a bug	取消过场和锁定时的上下黑边。可能暴露原本被黑边遮住的轻微画面问题，报告问题前请先关闭此选项。
+Changes the rupee in the wallet icon to match the wallet size you currently have	让钱包旁的卢比图标颜色与当前钱包等级匹配。
+Always shows dungeon entrance icons on the minimap	始终在小地图上显示迷宫入口图标。
+Renders Gauntlets when using the Bow and Hookshot like in OOT3D	使用弓和钩索时显示手套，类似《时之笛 3D》。
+When medallions are collected, the medallion imprints around the Master Sword pedestal in the Temple of Time will become colored	获得徽章后，时之神殿大师之剑台座周围对应的徽章印记会着色。
+Disabled: Paths vanish more the higher the resolution (Z-fighting is based on resolution)\nConsistent: Certain paths vanish the same way in all resolutions\nNo Vanish: Paths do not vanish, Link seems to sink in to some paths\nThis might affect other decal effects\n	禁用：分辨率越高，道路因深度冲突而消失越明显。\n一致：所有分辨率下以相同方式消失。\n不消失：道路不消失，但林克可能看起来陷入地面。\n此设置也可能影响其他贴花效果。
+Space between text characters (useful for HD font textures)	调整字符间距，适用于高清字库纹理。
+Shows what items you have collected in the file select screen, like in N64 randomizer	在存档选择画面显示已收集物品，类似 N64 随机版。
+Ammo counts in the pause menu will work correctly regardless of the position of items in the inventory	无论物品在道具栏的位置如何，暂停菜单都正确显示弹药数量。
+Makes the L and R buttons in the pause menu the same color	让暂停菜单的 L 和 R 按钮使用相同颜色。
+Makes L and R switch pages like on the GameCube\nZ opens the Debug Menu instead	像 GameCube 版一样用 L／R 翻页，Z 键改为打开调试菜单。
+Removes the dungeon entrance icon on the top-left corner of the screen when no dungeon is present on the current map	当前地图没有迷宫时，不再在左上角显示迷宫入口图标。
+Re-enables the two-handed idle animation, a seemingly finished animation that was disabled on accident in the original game	重新启用原版中似乎意外关闭的双手武器待机动画。
+Fixes a bug where the Gravedigging Tour Heart Piece disappears if the area reloads	修正重新载入区域后，挖掘之旅的心之碎片消失的问题。
+Prevents the Forest Stage Deku Nut upgrade from becoming unobtainable after receiving the Poacher's Saw	获得偷猎者锯子后，仍可在森林舞台取得德库果实升级。
+Correctly centers the Navi text prompt on the HUD's C-Up button	将娜薇文字提示正确居中于界面的 C 上按钮。
+Make Anubis fireballs do fire damage when reflected back at them with the Mirror Shield	用镜盾反射阿努比斯的火球时，使其造成火焰伤害。
+Make the Megaton Hammer's crouch stab able to destroy rocks without first swinging it normally	巨人之锤无需先普通挥击，就能通过蹲刺破坏岩石。
+Make crouch stabbing always do the same damage as a regular slash	蹲刺始终造成与普通挥剑相同的伤害。
+Extend certain credits scenes so the music lines up properly with the visuals	延长部分制作人员名单场景，使画面与音乐正确对齐。
+Prevent the Gerudo Warrior's clothes changing color when changing Link's tunic or using bombs in front of her	改变林克服装或在格鲁德战士面前使用炸弹时，她的衣服不再错误变色。
+Fixes camera slightly drifting to the left when standing still due to a math error	修正数学误差导致站立时镜头轻微向左漂移。
+Fixes camera getting stuck on collision when standing still, also fixes slight shift back in camera when stop moving	修正站立时镜头被碰撞卡住，以及停止移动时镜头轻微回退的问题。
+Fixes camera swing rate when player falls off a ledge and camera swings around	修正林克从边缘落下时镜头转动的速度。
+Adds 5 higher pitches for the Silver Rupee Jingle for the rooms with more than 5 Silver Rupees. Currently only relevant in Master Quest.	为超过五枚银卢比的房间增加五个更高音阶的提示乐。目前仅适用于里世界。
+Fixes authentic out of bounds texture reads, instead loading textures with the correct size	修正原版纹理读取越界，改为加载正确尺寸的纹理。
+Prevents the Poacher's Saw softlock from mashing through the text, or with Skip Text enabled.	防止快速按键或跳过文字导致偷猎者锯子流程卡死。
+Causes respawning enemies, like stalchildren, to appear on land near bodies of water. Fixes an incorrect calculation that acted like water underneath ground was above it.	让骷髅小孩等会重新生成的敌人也能在水边陆地出现，修正将地底水面误判为地表水面的计算。
+Fixes the bushes to drop items correctly rather than spawning undefined items.	修正灌木生成未定义物品的问题，使掉落正确。
+Prevents immediately falling off climbable surfaces if climbing on the edges.	在可攀爬表面边缘攀爬时，不再立即脱落。
+Fixes Link's eyes being open in the opening cutscene when he is supposed to be sleeping.	修正开场过场中林克睡觉时仍睁着眼睛的问题。
+Fixes Darunia's dancing speed so he dances to the beat of Saria's Song, like in vanilla.	修正达鲁尼亚的舞速，使其像原版一样与莎莉亚之歌节拍一致。
+Fixes the two raised floor switches, the one in Forest Temple Basement and the one at the top of Fire Temple. \nThis will lower them, making activating them easier	降低森林神殿地下室和炎之神殿顶层两处异常凸起的地板开关，使其更容易踩下。
+Fixes one Zora's dialogue giving a hint about bringing Ruto's Letter to King Zora to properly occur before moving King Zora rather than after	让卓拉关于把露托的信交给卓拉王的提示在卓拉王让路前出现，而非之后。
+Hide the game version and build details and display the authentic model and texture on the boot logo start screen	启动标志画面隐藏版本及构建信息，显示原版模型和纹理。
+Restore the original red blood from NTSC 1.0/1.1. Disable for green blood	恢复 NTSC 1.0／1.1 的红色血液，关闭则使用绿色血液。
+Restore a bug from NTSC 1.0 that allows casting the Fishing Rod while using the Hover Boots	恢复 NTSC 1.0 中穿悬浮靴时可以抛竿的漏洞。
+Restores N64 Weird Frames allowing weirdshots to behave the same as N64	还原 N64 特殊帧行为，使相关钩索漏洞表现与 N64 一致。
+Allows bombchus to explode out of bounds\nSimilar to GameCube and Wii VC	允许炸弹鼠在场景边界外爆炸，类似 GameCube 和 Wii VC 版本。
+Restore a bug from NTSC 1.0 that allows putting away an item without an animation and performing Putaway Ocarina Items	恢复 NTSC 1.0 中无动画收起物品的漏洞，可用于收起陶笛物品等操作。
+Restore pre-release behavior where defeating a Gold Skulltula will play a cutscene showing it die.	恢复早期版本击败金骷髅蜘蛛后播放死亡过场的行为。
+Restore a bug from NTSC 1.0 that allows bypassing Bongo Bongo's intro cutscene to quickly kill him	恢复 NTSC 1.0 中跳过邦戈邦戈开场并快速击杀的漏洞。
+Restores the original outcomes when performing Reverse Bottle Adventure.	还原反向瓶子冒险（RBA）漏洞的原始结果。
+Mirrors the world horizontally\n\n- Always: Always mirror the world\n- Random: Randomly decide to mirror the world on each scene change\n- Random (Seeded): Scenes are mirrored based on the current randomizer seed/file\n- Dungeons: Mirror the world in Dungeons\n- Dungeons (Vanilla): Mirror the world in vanilla Dungeons\n- Dungeons (MQ): Mirror the world in MQ Dungeons\n- Dungeons Random: Randomly decide to mirror the world in Dungeons\n- Dungeons Random (Seeded): Dungeons are mirrored based on the current randomizer seed/file\n	水平镜像世界。\n始终：所有场景镜像。\n随机：每次切换场景随机决定。\n按种子随机：由当前随机种子或存档决定。\n迷宫：仅迷宫镜像。\n原版迷宫／里世界迷宫：仅对应类型镜像。\n迷宫随机：迷宫每次随机决定。\n迷宫按种子随机：由种子或存档决定迷宫是否镜像。
+Replaces fixed enemies throughout the game with a random enemy. Bosses, mini-bosses and a few specific regular enemies are excluded.\nEnemies that need more than Deku Nuts + either Deku Sticks or a sword to kill are excluded from spawning in "clear enemy" rooms.\n\n- Random: Enemies are randomized every time you load a room\n- Random (Seeded): Enemies are randomized based on the current randomizer seed/file\n	将固定敌人替换为随机敌人，主要 Boss、小 Boss 和少数特殊敌人除外。\n要求清除敌人的房间，不生成仅靠德库果实配合木棒或剑无法击败的敌人。\n随机：每次载入房间重新随机。\n按种子随机：由当前随机种子或存档决定。
+Enemies and Bosses spawn with random sizes.	敌人与 Boss 以随机体型出现。
+Scales normal enemies health with their randomized size. *This will NOT affect bosses*	普通敌人的生命值随随机体型变化，不影响 Boss。
+Enables Ivan the Fairy upon the next map change. Player 2 can control Ivan and press the C-Buttons to use items and mess with Player 1!	下次切换地图时启用精灵伊万。玩家二可控制伊万，并按 C 键使用物品干扰玩家一。
+Rupees reduced over time, Link suffers damage when the count hits 0.	卢比随时间减少，降至零后林克会持续受伤。
+Rupee Dash Interval: %d	卢比消耗间隔：%d
+Interval between Rupee reduction in Rupee Dash Mode	卢比消耗模式中，每次扣除卢比的时间间隔。
+A wallmaster follows Link everywhere, don't get caught!	墙壁大师会一直追踪林克，小心别被抓住！
+Enables additional Trap variants.	启用更多种类的陷阱。
+Changes Heart Piece and Heart Container functionality.\n\n- Each Heart Container or full Heart Piece reduces Links hearts by 1.\n- Can be enabled retroactively after a File has already started.	改变心之碎片和心之容器的效果。每个容器或凑齐的一组碎片会减少一颗心的上限，也可用于已有进度的存档。
+Automatically save the game when changing locations and/or obtaining items\nMajor items exclude rupees and health/magic/ammo refills (but include bombchus unless bombchu drops are enabled)	切换地点或获得物品时自动保存。重要物品不包括卢比及生命、魔力、弹药补给；炸弹鼠通常算重要物品，开启炸弹鼠掉落后除外。
+Makes every tunic have the effects of every other tunic	每件服装都拥有其他所有服装的效果。
+Passive Infinite Sword Glitch\nIt makes your sword's swing effect and hitbox stay active indefinitely	自动启用无限剑攻击漏洞，使剑的挥动效果和攻击判定持续存在。
+Gives you the glitched damage value of the quick put away glitch.	获得快速收起攻击漏洞产生的异常伤害值。
+Allows any item to be equipped, regardless of age\nAlso allows Child to use Adult strength upgrades	任何年龄均可装备所有物品，孩童也能使用成人的力量升级。
+Allows you to use any item at any location	允许在任何地点使用任意物品。
+Prevents the Deku Shield from burning on contact with fire	德库盾接触火焰时不会被烧毁。
+This allows you to put up your shield with any two-handed weapon in hand except for Deku Sticks	除德库木棒外，持双手武器时也能举盾。
+Makes every surface in the game hookshot-able	所有表面均可被钩索勾住。
+Switches Link's age and reloads the area.	切换林克的年龄，并重新载入当前区域。
+Clears the cutscene pointer to a value safe for wrong warps.	将过场指针清空为适合错误传送的安全值。
+F5 to save, F6 to change slots, F7 to load	F5 保存状态，F6 切换槽位，F7 读取状态。
+Allows you to walk through walls	允许穿过墙壁。
+Makes every surface in the game climbable	所有表面均可攀爬。
+Holding L makes you float into the air	按住 L 键即可向空中漂浮。
+Continue holding START button when unpausing to only advance a single frame and then re-pause	解除暂停时继续按住 START，只推进一帧后再次暂停。
+Inputs that are held down while the Subscreen is closing will be pressed when the game is resumed	关闭子菜单时按住的按键，会在游戏恢复时作为新按键输入。
+Drops from enemies, grass, etc. don't disappear after a set amount of time	敌人、草丛等掉落的物品不会随时间消失。
+Prevents fish from automatically despawning after a while when dropped	从瓶中放出的鱼不会过一段时间后自动消失。
+Prevents bugs from automatically despawning after a while when dropped	从瓶中放出的虫子不会过一段时间后自动消失。
+Freezes the time of day	冻结游戏内的昼夜时间。
+This syncs the ingame time with the real world time	使游戏时间与现实时间同步。
+Prevents ReDeads and Gibdos from being able to freeze you with their scream	僵尸和木乃伊的尖叫不再使林克定身。
+Keese and Guay no longer target you and simply ignore you as if you were wearing the skull mask	蝙蝠和乌鸦会像林克戴着骷髅面具时一样忽略林克，不再主动攻击。
+Turns on OoT Beta Quest. *WARNING* This will reset your game.	开启 Beta Quest。注意：这会重置游戏。
+Set the Beta Quest world to explore. *WARNING* Changing this will reset your game.\nCtrl+Click to type in a value.	选择要探索的 Beta Quest 世界。注意：修改会重置游戏。\n按 Ctrl 并点击可直接输入数值。
+Enables Debug Mode, allowing you to select maps with L + R + Z, noclip with L + D-pad Right, and open the debug menu with L on the pause screen	启用调试模式。L＋R＋Z 选择地图，L＋方向右穿墙，暂停画面按 L 打开调试菜单。
+Enables the registry editor	启用寄存器编辑器。
+Changes the behaviour of debug file select creation (creating a save file on slot 1 with debug mode on)\n- Off: The debug save file will be a normal savefile\n- Vanilla: The debug save file will be the debug save file from the original game\n- Maxed: The debug save file will be a save file with all of the items & upgrades	设置调试模式下在第一个槽位新建存档的行为。\n关闭：普通新存档。\n原版：使用原游戏的调试存档。\n全满：获得所有物品和升级。
+Enables Skulltula Debug, when moving the cursor in the menu above various map icons (boss key, compass, map screen locations, etc) will set the GS bits in that area.\nUSE WITH CAUTION AS IT DOES NOT UPDATE THE GS COUNT.	启用金骷髅蜘蛛调试。菜单光标移过 Boss 钥匙、罗盘、地图位置等图标时，会设置对应区域的蜘蛛标记。\n请谨慎使用：此功能不会更新蜘蛛总数。
+Load the game to the selected menu or file\n"Zelda Map Select" require debug mode else you will fallback to File choose menu\nUsing a file number that don't have save will create a save file only if you toggle on "Create a new save if none ?" else it will bring you to the File choose menu	启动后直接进入指定菜单或存档。“地图选择”需要调试模式，否则返回存档选择。指定槽位为空时，仅在启用创建新存档选项后新建，否则返回存档选择。
+Optimized debug warp screen, with the added ability to chose entrances and time of day	优化调试传送画面，并增加入口及昼夜时间选择。
+Translate the Debug Warp Screen based on the game language	根据游戏语言翻译调试传送画面。
+Logs some resources as XML when they're loaded in binary format	以二进制加载部分资源时，将其记录为 XML。
+Shows the stats window, with your FPS and frametimes, and the OS you're playing on	显示帧率、每帧耗时及当前操作系统等统计。
+Enables the console window, allowing you to input commands, type help for some examples	启用控制台，可输入命令；输入 help 查看示例。
+Sail is a networking protocol designed to facilitate remote control of the Ship of Harkinian client. It is intended to be utilized alongside a Sail server, for which we provide a few straightforward implementations on our GitHub. The current implementations available allow integration with Twitch chat and SAMMI Bot, feel free to contribute your own!\n\nClick the question mark to copy the link to the Sail Github page to your clipboard.	Sail 是用于远程控制本客户端的网络协议，需要配合 Sail 服务器使用。项目提供了 Twitch 聊天和 SAMMI Bot 等集成实现。\n点击问号可复制 Sail 项目页面链接。
+Replace Navi's overworld quest hints with rando-related gameplay hints.	用随机模式相关的玩法提示替换娜薇在地面世界提供的任务提示。
+When obtaining rupees, randomize what the rupee is called in the textbox.	获得卢比时，随机改变消息中对卢比的称呼。
+Matches the color of small keys and boss keys to the dungeon they belong to. This helps identify keys from afar and adds a little bit of flair.\n\nThis only applies to seeds with keys and boss keys shuffled to Any Dungeon, Overworld, or Anywhere.	小钥匙和 Boss 钥匙颜色与所属迷宫匹配，便于远距离识别。\n仅适用于将钥匙随机放入任意迷宫、地面世界或任意地点的种子。
+Play unique fanfares when obtaining quest items (medallions/stones/songs). Note that these fanfares are longer than usual.	获得徽章、宝石和歌曲等任务物品时播放专属提示乐，这些提示乐通常较长。
+Enemy Details...	敌人详情…
+Includes rupees collected with a full wallet.	包括钱包已满时拾取的卢比。
+Ammo Details...	弹药详情…
+Buttons...	按键…
+Show in-game total timer	游戏内显示总计时器
+Keep track of the timer as an in-game HUD element. The position of the timer can be changed in the Cosmetics Editor.	在游戏界面中显示计时器，位置可在外观编辑器中调整。
+Show latest timestamps on top	最新时间记录显示在最上方
+Room Breakdown	房间统计
+Allows a more in-depth perspective of time spent in a certain map.	更详细地查看在指定地图中花费的时间。
+RTA Timing on new files	新存档使用现实计时
+Timestamps are relative to starting timestamp rather than in game time, usually necessary for races/speedruns.\n\nStarting timestamp is on first non-c-up input after intro cutscene.\n\nNOTE: THIS NEEDS TO BE SET BEFORE CREATING A FILE TO TAKE EFFECT	时间戳相对于开始时刻，而非游戏内计时，通常用于竞赛或速通。开场过场后，首次按下非 C 上的按键时开始计时。\n必须在创建存档前设置才会生效。
+Show additional detail timers	显示更多分类计时器
+Show Debug Info	显示调试信息
+Gameplay Stats	游戏统计
+Timestamps	时间记录
+Counts	计数
+Breakdown	分类统计
+Note: Gameplay stats are saved to the current file and will be\nlost if you quit without saving.	注意：游戏统计随当前存档保存，未保存就退出会丢失。
+Stop Preview	停止试听
+Play Preview	试听
+Reset to default	恢复默认
+Randomize this sound	随机替换此声音
+Randomize All Groups	随机化所有分组
+Randomizes all unlocked music and sound effects across tab groups	随机替换所有标签页中未锁定的音乐和音效。
+Reset All Groups	重置所有分组
+Resets all unlocked music and sound effects across tab groups	重置所有标签页中未锁定的音乐和音效。
+Lock All Groups	锁定所有分组
+Locks all music and sound effects across tab groups	锁定所有标签页中的音乐和音效。
+Unlock All Groups	解锁所有分组
+Unlocks all music and sound effects across tab groups	解锁所有标签页中的音乐和音效。
+SfxContextTabBar	音效分类
+Background Music	背景音乐
+Fanfares	提示乐
+Events	事件
+Battle Music	战斗音乐
+Ocarina	陶笛
+Sound Effects	音效
+Voices	语音
+SfxOptions	音效选项
+Disable Enemy Proximity Music	关闭靠近敌人时的音乐
+Disables the music change when getting close to enemies. Useful for hearing your custom music for each scene more often.	靠近敌人时不切换音乐，便于持续听到场景的自定义音乐。
+Disable Leading Music in Lost Woods	关闭迷失森林的音乐引导
+Disables the volume shifting in the Lost Woods. Useful for hearing your custom music in the Lost Woods if you don't need the navigation assitance the volume changing provides. If toggling this while in the Lost Woods, reload the area for the effect to kick in.	关闭迷失森林用于指路的音量变化，适合不需要音乐导航时欣赏自定义音乐。在森林内修改后需重新进入区域。
+Display Sequence Name on Overlay	屏幕上显示音乐名称
+Displays the name of the current sequence in the corner of the screen whenever a new sequence is loaded to the main sequence player (does not apply to fanfares or enemy BGM).	主音乐播放器载入新曲目时，在屏幕角落显示其名称，不适用于提示乐和敌人音乐。
+Overlay Duration: %d seconds	名称显示时间：%d 秒
+Link's voice pitch multiplier: %.1f %%	林克语音音高：%.1f %%
+Randomize All Music and Sound Effects on New Scene	进入新场景时随机化所有音乐和音效
+Enables randomizing all unlocked music and sound effects when you enter a new scene.	进入新场景时，随机替换所有未锁定的音乐和音效。
+The following options are experimental and may cause music\nto sound odd or have other undesireable effects.	以下选项为实验功能，可能导致音乐异常或其他不期望的效果。
+Lower Octaves of Unplayable High Notes	降低无法播放的高音八度
+Some custom sequences may have notes that are too high for the game's audio engine to play. Enabling this checkbox will cause these notes to drop a couple of octaves so they can still harmonize with the other notes of the sequence.	部分自定义曲目的音高超出游戏音频引擎范围。开启后将这些音符降低几个八度，以便与其他音符保持和谐。
+Audio Shuffle Pool Management	音频随机池管理
+Exclude All	全部排除
+Include All	全部包含
+ChildIncludedSequences	已包含曲目
+ChildExcludedSequences	已排除曲目
+Input Viewer	输入显示器
+Input Viewer Settings	输入显示器设置
+Input Viewer Scale: %.2f	输入显示器缩放：%.2f
+Sets the on screen size of the input viewer	设置输入显示器在屏幕上的大小。
+Enable Dragging	允许拖动
+Show Background Layer	显示背景图层
+Buttons	按键
+Show A-Button Layers	显示 A 键图层
+Show B-Button Layers	显示 B 键图层
+Show C-Up Layers	显示 C 上图层
+Show C-Right Layers	显示 C 右图层
+Show C-Down Layers	显示 C 下图层
+Show C-Left Layers	显示 C 左图层
+Show L-Button Layers	显示 L 键图层
+Show R-Button Layers	显示 R 键图层
+Show Z-Button Layers	显示 Z 键图层
+Show Start Button Layers	显示 START 键图层
+Show D-Pad Layers	显示方向键图层
+Button Outlines/Backgrounds	按键边框与背景
+Sets the desired visibility behavior for the button outline/background layers. Useful for custom input viewers.	设置按键边框和背景图层的显示规则，适用于自定义输入显示器。
+Analog Stick	模拟摇杆
+Analog Stick Visibility	模拟摇杆显示规则
+Determines the conditions under which the moving layer of the analog stick texture is visible.	设置模拟摇杆活动纹理图层的显示条件。
+Analog Stick Outline/Background Visibility	模拟摇杆边框／背景显示规则
+Determines the conditions under which the analog stick outline/background texture is visible.	设置模拟摇杆边框和背景纹理的显示条件。
+Analog Stick Movement: %dpx	模拟摇杆移动范围：%d 像素
+Sets the distance to move the analog stick in the input viewer. Useful for custom input viewers.	设置输入显示器中的摇杆移动距离，适用于自定义输入显示器。
+Additional ("Right") Stick	附加右摇杆
+Right Stick Visibility	右摇杆显示规则
+Determines the conditions under which the moving layer of the right stick texture is visible.	设置右摇杆活动纹理图层的显示条件。
+Right Stick Outline/Background Visibility	右摇杆边框／背景显示规则
+Determines the conditions under which the right stick outline/background texture is visible.	设置右摇杆边框和背景纹理的显示条件。
+Right Stick Movement: %dpx	右摇杆移动范围：%d 像素
+Sets the distance to move the right stick in the input viewer. Useful for custom input viewers.	设置输入显示器中的右摇杆移动距离，适用于自定义输入显示器。
+Analog Angle Values	摇杆角度数值
+Show Analog Stick Angle Values	显示模拟摇杆角度
+Displays analog stick angle values in the input viewer	在输入显示器中显示模拟摇杆角度数值。
+Text Color	文字颜色
+Angle Text Scale: %.2f%%	角度文字缩放：%.2f%%
+Angle Text Offset: %dpx	角度文字偏移：%d 像素
+Highlight ESS Position	高亮 ESS 位置
+Highlights the angle value text when the analog stick is in ESS position (on flat ground)	摇杆位于平地上的 ESS 位置时，高亮角度文字。
+ESS Color	ESS 颜色
+Highlight Walking Speed Angles	高亮步行速度角度
+Highlights the angle value text when the analog stick is at an angle that would produce a walking speed (on flat ground)\n\nUseful for 1.0 Empty Jumpslash Quick Put Away	摇杆角度会在平地上产生步行速度时，高亮角度文字。适用于 1.0 版空跳斩快速收起漏洞。
+Walking Speed Color	步行速度颜色
+Press any button,\nmove any axis,\nor press any key\nto add mapping	按下任意手柄按键、移动摇杆或按键盘键，以添加映射。
+Press any button,\nmove any axis,\nor press any key\nto edit mapping	按下任意手柄按键、移动摇杆或按键盘键，以修改映射。
+Edit axis threshold	编辑轴触发阈值
+Axis Threshold\n\nThe extent to which the joystick\nmust be moved or the trigger\npressed to initiate the assigned\nbutton action.\n\n	轴触发阈值\n摇杆移动或扳机按下达到指定幅度时，才触发映射的按键动作。
+Stick axis threshold:	摇杆轴阈值：
+Trigger axis threshold:	扳机轴阈值：
+Sensitivity:	灵敏度：
+Deadzone:	死区：
+Notch Snap Angle:	方向吸附角度：
+Press any button\nor move any axis\nto add rumble device	按下任意按键或移动摇杆，以添加震动设备。
+Small Motor Intensity:	小马达强度：
+Large Motor Intensity:	大马达强度：
+Add rumble device	添加震动设备
+Press any button\nor move any axis\nto add LED device	按下任意按键或移动摇杆，以添加灯光设备。
+LED Color:	灯光颜色：
+Source	来源
+Health\n- Red when health critical (13-20% depending on max health)\n- Yellow when health < 40%. Green otherwise.\n\nTunics: colors will mirror currently equipped tunic, whether original or the current values in Cosmetics Editor.\n\nCustom: single, solid color	生命值：危急时显示红色，低于 40% 时为黄色，否则为绿色。危急阈值随生命上限约为 13% 至 20%。\n服装：跟随当前服装的原版或自定义颜色。\n自定义：固定单色。
+Custom Color	自定义颜色
+Brightness: %.1f %%	亮度：%.1f %%
+Sets the brightness of controller LEDs. 0% brightness = LEDs off.	设置手柄灯光亮度，0% 表示关闭。
+Critical Health Override	生命危急时覆盖颜色
+Shows red color when health is critical, otherwise displays according to color source.	生命值危急时显示红色，其他时候按所选来源显示。
+Add LED device	添加灯光设备
+Press any button\nor move any axis\nto add gyro device	按下任意按键或移动摇杆，以添加陀螺仪设备。
+Recalibrate	重新校准
+Add gyro device	添加陀螺仪设备
+Customize Ocarina Controls	自定义陶笛操作
+To modify the main ocarina controls, select the "Customize Ocarina Controls" checkbox.	勾选“自定义陶笛操作”后，可修改主要演奏按键。
+Play with D-pad	用方向键演奏
+Play with camera stick	用镜头摇杆演奏
+Right Stick Aiming	右摇杆瞄准
+Allows for aiming with the right stick in:\n-First-Person/C-Up view\n-Weapon Aiming	允许在第一人称、C 上视角和武器瞄准时使用右摇杆。
+Allow moving while in first person mode	第一人称时允许移动
+Changes the left stick to move the player while in first person mode	第一人称模式下，左摇杆改为控制玩家移动。
+Invert Aiming X Axis	反转瞄准横轴
+Inverts the Camera X Axis in:\n-First-Person/C-Up view\n-Weapon Aiming	反转第一人称、C 上视角和武器瞄准的横轴。
+Invert Aiming Y Axis	反转瞄准纵轴
+Inverts the Camera Y Axis in:\n-First-Person/C-Up view\n-Weapon Aiming	反转第一人称、C 上视角和武器瞄准的纵轴。
+Invert Shield Aiming Y Axis	反转盾牌瞄准纵轴
+Inverts the Shield Aiming Y Axis	反转盾牌瞄准的纵轴。
+Invert Shield Aiming X Axis	反转盾牌瞄准横轴
+Inverts the Shield Aiming X Axis	反转盾牌瞄准的横轴。
+Invert Z-Weapon Aiming Y Axis	反转锁定武器瞄准纵轴
+Inverts the Camera Y Axis in:\n-Z-Weapon Aiming	反转锁定状态下武器瞄准的纵轴。
+Disable Auto-Centering in First-Person View	第一人称视角不自动回正
+Prevents the C-Up view from auto-centering, allowing for Gyro Aiming	防止 C 上视角自动回正，便于陀螺仪瞄准。
+Enable Custom Aiming/First-Person sensitivity	自定义瞄准／第一人称灵敏度
+Aiming/First-Person Horizontal Sensitivity: %.0f %%	瞄准／第一人称水平灵敏度：%.0f %%
+Aiming/First-Person Vertical Sensitivity: %.0f %%	瞄准／第一人称垂直灵敏度：%.0f %%
+Free Camera	自由镜头
+Enables free camera control\nNote: You must remap C buttons off of the right stick in the controller config menu, and map the camera stick to the right stick.	启用自由镜头。需要在控制器设置中将 C 键移出右摇杆，并将镜头摇杆映射到右摇杆。
+Invert Camera X Axis	反转镜头横轴
+Inverts the Camera X Axis in:\n-Free camera	反转自由镜头的横轴。
+Invert Camera Y Axis	反转镜头纵轴
+Inverts the Camera Y Axis in:\n-Free camera	反转自由镜头的纵轴。
+Third-Person Horizontal Sensitivity: %.0f %%	第三人称水平灵敏度：%.0f %%
+Third-Person Vertical Sensitivity: %.0f %%	第三人称垂直灵敏度：%.0f %%
+Camera Distance: %d	镜头距离：%d
+Camera Transition Speed: %d	镜头过渡速度：%d
+D-pad Support on Pause Screen	暂停画面支持方向键
+Navigate Pause with the D-pad\nIf used with D-pad as Equip Items, you must hold C-Up to equip instead of navigate\nTo make the cursor only move a single space no matter how long a direction is held, manually set gDpadHoldChange to 0	用方向键操作暂停菜单。若同时启用方向键装备物品，需要按住 C 上再装备。手动将 gDpadHoldChange 设为 0，可使长按方向键也只移动一格。
+D-pad Support in Text Boxes	对话框支持方向键
+Navigate choices in text boxes, shop item selection, and the file select / name entry screens with the D-pad\nTo make the cursor only move a single space during name entry no matter how long a direction is held, manually set gDpadHoldChange to 0	用方向键操作对话选项、商店、存档选择和姓名输入。将 gDpadHoldChange 设为 0，可使姓名输入时长按也只移动一格。
+D-pad as Equip Items	方向键装备物品
+Equip items and equipment on the D-pad\nIf used with D-pad on Pause Screen, you must hold C-Up to equip instead of navigate	可将物品和装备分配给方向键。若同时启用暂停画面方向键导航，需要按住 C 上再装备。
+Allow the cursor to be on any slot	允许光标停留在任意格
+Allows the cursor on the pause menu to be over any slot. Sometimes required in rando to select certain items.	暂停菜单的光标可停在任意格，随机模式有时需要此功能来选择特定物品。
+Enable speed modifiers	启用速度调节键
+Hold the assigned button to change the maximum walking or swimming speed	按住指定按键时，改变步行或游泳的最高速度。
+Toggle modifier instead of holding	按一下切换，而非按住
+Don't affect jump distance/velocity	不影响跳跃距离和速度
+Walk Modifier 1: %.0f %%	步行调节 1：%.0f %%
+Walk Modifier 2: %.0f %%	步行调节 2：%.0f %%
+Swim Modifier 1: %.0f %%	游泳调节 1：%.0f %%
+Swim Modifier 2: %.0f %%	游泳调节 2：%.0f %%
+Answer Navi Prompt with L Button	用 L 键回应娜薇
+Speak to Navi with L but enter first-person camera with C-Up	L 键与娜薇交谈，C 上键进入第一人称视角。
+D-Pad	方向键
+Rumble	震动
+Gyro	陀螺仪
+LEDs	灯光
+Modifier Buttons	调节按键
+Ocarina Controls	陶笛操作
+Camera Controls	镜头操作
+D-Pad Controls	方向键操作
+Miscellaneous Controls	其他控制
+Clear All	清除全部
+This will clear all mappings for port %d.\n\nContinue?	这将清除端口 %d 的所有映射。\n\n是否继续？
+This will clear all existing mappings for\n%s on port %d.\n\nContinue?	这将清除\n%s 在端口 %d 上的所有现有映射。\n\n是否继续？
+Set defaults	设置默认值
+Devices	设备
+Set Defaults	设置默认值
+Set Defaults for Keyboard	恢复键盘默认映射
+This will clear all existing mappings for\nKeyboard on port %d.\n\nContinue?	这将清除键盘在端口 %d 上的所有现有映射。\n\n是否继续？
+This will clear all existing mappings for\n%s (SDL %d) on port %d.\n\nContinue?	这将清除\n%s（SDL %d）在端口 %d 上的所有现有映射。\n\n是否继续？
+Controller Configuration	控制器配置
+Reset all positions	重置所有位置
+Using this allow you move the element with General margins sliders	允许使用通用边距滑块移动此元素。
+Original position	原始位置
+This will use original intended elements position	使用元素原本的位置。
+Anchor to the left	靠左对齐
+This will make your elements follow the left side of your game window	使元素跟随游戏窗口左侧。
+Anchor to the right	靠右对齐
+This will make your elements follow the right side of your game window	使元素跟随游戏窗口右侧。
+No anchors	不固定对齐
+This will make your elements to not follow any side\nBetter used for center elements	元素不跟随窗口边缘。\n适合居中显示的元素。
+Hidden	隐藏
+This will make your elements hidden	隐藏此元素。
+Up <-> Down : %d	上下位置：%d
+This slider is used to move Up and Down your elements.	调整元素的上下位置。
+Left <-> Right : %d	左右位置：%d
+This slider is used to move Left and Right your elements.	调整元素的左右位置。
+Top : %dx	上边距：%dx
+Left: %dx	左边距：%dx
+Right: %dx	右边距：%dx
+Bottom: %dx	下边距：%dx
+Set most of the elements to use margins\nSome elements with default position will not be affected\nElements without Anchor or Hidden will not be turned on	让大部分元素使用边距。\n部分处于默认位置的元素不受影响。\n未固定对齐或隐藏的元素不会启用。
+Set all of the elements to not use margins	让所有元素都不使用边距。
+Revert every element to use their original position and no margins	恢复所有元素的原始位置，并取消边距。
+Hearts count position	红心数量位置
+Heart line length : %d	每行红心数量：%d
+This will set the length of a row of hearts. Set to 0 for unlimited length.	设置一行显示的红心数量。设为 0 表示不限。
+Magic Meter position	魔力槽位置
+Anchor to life bar	跟随生命槽
+This will make your elements follow the bottom of the life meter	使元素跟随生命槽下边缘。
+Visual stone of agony position	可视苦闷石提示位置
+DPad items position	方向键物品位置
+Enemy Health Bar position	敌人生命条位置
+Anchor to Enemy	跟随敌人
+This will use enemy on screen position	使用敌人在屏幕上的位置。
+Anchor to the top	靠上对齐
+This will make your elements follow the top edge of your game window	使元素跟随游戏窗口上边缘。
+Anchor to the bottom	靠下对齐
+This will make your elements follow the bottom edge of your game window	使元素跟随游戏窗口下边缘。
+Health Bar Width: %d	生命条宽度：%d
+This will change the width of the health bar	调整生命条的宽度。
+Let It Snow	下雪效果
+Link Body Scale: %.3fx	林克身体大小：%.3fx
+Link Head Scale: %.2fx	林克头部大小：%.2fx
+Link Sword Scale: %f	林克剑的大小：%f
+Bunny Hood Length: %f	兔子头巾长度：%f
+Bunny Hood Spread: %f	兔子头巾张开幅度：%f
+Goron Neck Length: %f	鼓隆脖子长度：%f
+Unfix Goron Spin	恢复鼓隆旋转异常
+Fairies Size: %f	妖精大小：%f
+N64 Logo Spin Speed: %f	N64 标志旋转速度：%f
+Moon Size: %f	月亮大小：%f
+Kak Windmill Speed: %f	卡卡利科风车速度：%f
+Mirror Shield Mirror	镜像镜盾
+Color Scheme	配色方案
+Advanced Mode	高级模式
+Some cosmetic options may not apply if you have any mods that provide custom models for the cosmetic option.\n\nFor example, if you have custom Link model, then the Link's Hair color option will most likely not apply.	部分外观选项可能无法作用于模组提供的自定义模型。\n\n例如，使用自定义林克模型时，林克发色选项很可能不会生效。
+Lock All Advanced	锁定全部高级选项
+Unlock All Advanced	解锁全部高级选项
+Sync Rainbow colors	同步彩虹颜色
+Rainbow Speed: %.3f	彩虹速度：%.3f
+Randomize All on New Scene	进入新场景时全部随机
+Enables randomizing all unlocked cosmetics when you enter a new scene.	进入新场景时，随机设置所有未锁定的外观选项。
+Randomize All	全部随机
+Lock All	全部锁定
+Unlock All	全部解锁
+CosmeticsContextTabBar	CosmeticsContextTabBar
+Link & Items	林克与物品
+Effects	特效
+Trails Duration: %d	拖尾时长：%d
+World & NPCs	世界与角色
+Silly	趣味
+HUD	屏幕界面
+HUD Placement	界面布局
+Pause Menu	暂停菜单
+Flower	花朵
+Shots Per Round	每轮发射次数
+Big	大型
+Can Turn	可转向
+Automatically Collect	自动收集
+Collectible Flag	收集物标志
+Item	物品
+Item Drop	掉落物品
+PoH Collectible Flag	心之碎片收集标志
+Switch Flag	开关标志
+Treasure Flag	宝箱标志
+Item Id	物品 ID
+Transition Index	场景切换索引
+Double Door	双开门
+Text ID - 0x200	文本 ID - 0x200
+Path	路径
+Piece	碎片
+Fishing Sign	钓鱼标牌
+Text ID	文本 ID
+Bugs	虫子
+Random Drop Params	随机掉落参数
+Controller Port	控制器端口
+Actor Type	实体类型
+Actor	实体
+Selected Actor	选中的实体
+Name: %s	名称：%s
+Description: %s	说明：%s
+Category: %s	类别：%s
+ID: %d	ID：%d
+Parameters: %d	参数：%d
+Actor Position	实体位置
+x pos	X 位置
+y pos	Y 位置
+z pos	Z 位置
+Actor Rotation	实体旋转
+x rot	X 旋转
+y rot	Y 旋转
+z rot	Z 旋转
+Enemy Health	敌人生命值
+Some actors might not use this!	部分实体可能不使用此数值！
+flags	标志
+bgCheckFlags	bgCheckFlags
+Go to Actor	移动到实体
+Fetch from Target	获取锁定目标
+Grabs actor with target arrow above it. You might need C-Up for enemies	获取头顶有锁定箭头的实体。敌人可能需要使用 C 上键。
+Fetch from Held	获取手持实体
+Grabs actor that Link is holding	获取林克正拿着的实体。
+Fetch from Interaction	获取交互实体
+Grabs actor from "interaction range"	获取交互范围内的实体。
+New...	新建……
+Search Actor	搜索实体
+Results	结果
+ID	ID
+Advanced mode	高级模式
+Changes the actor specific param menus with a direct input	使用直接输入代替各实体的专用参数菜单。
+params	参数
+Actor Specific Data	实体专用数据
+New Actor Position	新实体位置
+posX	posX
+posY	posY
+posZ	posZ
+New Actor Rotation	新实体旋转
+rotX	rotX
+rotY	rotY
+rotZ	rotZ
+Fetch from Link	取自林克
+Spawn	生成
+Spawn as Child	作为子实体生成
+Actor Name Tags	实体名称标签
+Adds "name tags" above actors for identification	在实体上方显示名称标签，便于识别。
+Global Context needed for actor info!	需要全局上下文才能读取实体信息！
+Scene	场景
+Bg Actors	背景实体
+Col Check	碰撞检测
+Waterbox	水域
+Apply as decal	作为贴花显示
+Applies the collision as a decal display. This can be useful if there is z-fighting occuring with the scene geometry, but can cause other artifacts.	以贴花方式显示碰撞模型，可缓解与场景模型重叠时的闪烁，但可能产生其他显示瑕疵。
+Shaded	应用光照
+Applies the scene's shading to the collision display.	将场景光照应用到碰撞模型显示。
+Player Name	玩家名称
+Max Health	最大生命值
+Maximum health. 16 units per full heart	最大生命值。每颗完整红心为 16 单位。
+Current health. 16 units per full heart	当前生命值。每颗完整红心为 16 单位。
+Double Defense	双倍防御
+Is double defense unlocked?	是否已解锁双倍防御？
+Magic Level	魔力等级
+Double	双倍
+Single	普通
+Current magic level	当前魔力等级
+Current magic. 48 units per magic level	当前魔力。每级魔力为 48 单位。
+Rupees	卢比
+Current rupees	当前卢比数量
+Time	时间
+Time of day	一天中的时间
+Dawn	黎明
+Noon	正午
+Sunset	日落
+Midnight	午夜
+Total Days	总天数
+Total number of days elapsed since the start of the game	从游戏开始至今经过的总天数。
+Deaths	死亡次数
+Total number of deaths	累计死亡次数
+Has BGS	拥有大鼓隆之剑
+Is Biggoron sword unlocked? Replaces Giant's knife	是否已解锁大鼓隆之剑？它会替换巨人之刀。
+Sword Health	剑的耐久
+Giant's knife health. Default is 8. Must be >0 for Biggoron sword to work	巨人之刀的耐久，默认为 8。大鼓隆之剑正常使用需要此值大于 0。
+Bgs Day Count	大鼓隆等待天数
+Total number of days elapsed since giving Biggoron the claim check	将兑换券交给大鼓隆后经过的天数。
+Entrance Index	入口索引
+From which entrance did Link arrive?	林克从哪个入口到达？
+Cutscene Index	过场索引
+Which cutscene is this?	当前是哪段过场？
+Navi Timer	娜薇计时器
+Navi wants to talk at 600 units, decides not to at 3000.	计时达到 600 时娜薇想说话，达到 3000 时放弃。
+Timer 1 State	计时器 1 状态
+Heat timer, race timer, etc. Has white font	高温、竞速等计时器，使用白色文字。
+Timer 1 Value	计时器 1 数值
+Time, in seconds	时间，单位为秒。
+Timer 2 State	计时器 2 状态
+Trade timer, Ganon collapse timer, etc. Has yellow font	交易、加侬城堡崩塌等计时器，使用黄色文字。
+Timer 2 Value	计时器 2 数值
+Stereo	立体声
+Mono	单声道
+Headset	耳机
+Surround	环绕声
+Sound setting	声音设置
+64 DD file?	64 DD 存档？
+WARNING! If you save, your file may be locked! Use caution!	警告！保存后可能锁定此存档，请谨慎操作！
+Z Target Mode	Z 锁定模式
+Switch	切换
+Hold	按住
+Z-Targeting behavior	Z 锁定的操作方式
+Triforce Pieces	三角力量碎片
+Currently obtained Triforce Pieces. For Triforce Hunt.	当前获得的三角力量碎片数量，用于三角力量寻宝模式。
+Minigames	小游戏
+Child Size Record	少年时期尺寸纪录
+Cheated as Child	少年时期使用作弊鱼饵
+Used the Sinking lure to catch it.	使用沉底鱼饵钓获。
+Adult Size Record	成年时期尺寸纪录
+Cheated as Adult	成年时期使用作弊鱼饵
+Played as Child	少年时期玩过
+Played at least one game as a child	少年时期至少玩过一次。
+Played as Adult	成年时期玩过
+Played at least one game as an adult	成年时期至少玩过一次。
+Got Prize as Child	少年时期获得奖品
+Got the prize item (Heart Piece, unless rando.)\nunlocks Sinking Lure for Child Link.	已获得奖品（非随机模式为心之碎片）。\n为少年林克解锁沉底鱼饵。
+Got Prize as Adult	成年时期获得奖品
+Got the prize item (Golden Scale, unless rando.)\nUnlocks Sinking Lure for Adult Link.	已获得奖品（非随机模式为黄金鳞片）。\n为成年林克解锁沉底鱼饵。
+Stole Owner's Hat	偷走老板帽子
+The owner's now visibly bald when Adult Link.	成年时期的老板会显示为光头。
+Times Played	游玩次数
+Determines weather and school size during dawn/dusk.	影响黎明和黄昏时的天气与鱼群规模。
+Restrict to valid items	限制为合法物品
+Restricts items and ammo to only what is possible to legally acquire in-game	将物品与弹药限制在游戏内正常可获得的范围。
+Adult trade quest items	成年交易任务物品
+Player State	玩家状态
+stateFlags1	stateFlags1
+stateFlags2	stateFlags2
+stateFlags3	stateFlags3
+unk_6AE	unk_6AE
+Current Scene	当前场景
+Permanently-saved switch flags	永久保存的开关标志。
+Set All	全部设置
+Temp Switch	临时开关
+Temporary switch flags. Unset on scene transitions	临时开关标志，切换场景后清除。
+Permanently-saved room-clear flags	永久保存的房间清除标志。
+Temp Clear	临时清除
+Temporary room-clear flags. Unset on scene transitions	临时房间清除标志，切换场景后清除。
+Collect	收集
+Permanently-saved collect flags	永久保存的收集标志。
+Temp Collect	临时收集
+Temporary collect flags. Unset on scene transitions	临时收集标志，切换场景后清除。
+Chest	宝箱
+Permanently-saved chest flags	永久保存的宝箱标志。
+Reload Flags	重新加载标志
+Load flags from saved scene flags. Normally happens on scene load	从已保存的场景标志中加载，通常在加载场景时执行。
+Save Flags	保存标志
+Save current scene flags. Normally happens on scene exit	保存当前场景标志，通常在离开场景时执行。
+Clear Flags	清除标志
+Clear current scene flags. Reload scene to see changes	清除当前场景标志，重新加载场景后查看变化。
+Current game state does not have an active scene	当前游戏状态没有活动场景。
+Saved Scene Flags	已保存的场景标志
+Map	地图
+Current	当前
+Open flags for current scene	打开当前场景的标志。
+Switch flags	开关标志
+Room-clear flags	房间清除标志
+Collect flags	收集标志
+Chest flags	宝箱标志
+Rooms	房间
+Flags for visted rooms	已到访房间的标志。
+Floors	楼层
+Flags for visted floors	已到访楼层的标志。
+Gold Skulltulas	黄金骷髅蜘蛛
+Flags	标志
+Keep GS Count Updated	同步更新黄金骷髅蜘蛛数量
+Automatically adjust the number of gold skulltula tokens acquired based on set flags.	根据已设置的标志，自动调整获得的黄金骷髅蜘蛛徽章数量。
+GS Count	黄金骷髅蜘蛛数量
+Number of gold skulltula tokens aquired	已获得的黄金骷髅蜘蛛徽章数量。
+GS unlocked	已解锁黄金骷髅蜘蛛
+If unlocked, enables showing the gold skulltula count in the quest status menu	解锁后，在任务状态菜单中显示黄金骷髅蜘蛛数量。
+PoH count	心之碎片数量
+The number of pieces of heart acquired towards the next heart container	用于组成下一个心之容器的已获得心之碎片数量。
+Dungeon Items	迷宫物品
+Barinade's Lair does not have small keys	巴里内德的巢穴没有小钥匙。
+Link's Position	林克位置
+X Pos	X 位置
+Y Pos	Y 位置
+Z Pos	Z 位置
+Link's Rotation	林克朝向
+For Link's rotation in relation to the world	林克相对于世界的朝向。
+X Rot	X 旋转
+Y Rot	Y 旋转
+Z Rot	Z 旋转
+Link's Model Rotation	林克模型旋转
+For Link's actual model	林克实际模型的旋转。
+X ModRot	模型 X 旋转
+Y ModRot	模型 Y 旋转
+Z ModRot	模型 Z 旋转
+Linear Velocity	水平速度
+Link's speed along the XZ plane	林克在 XZ 平面上的速度。
+Y Velocity	垂直速度
+Link's speed along the Y plane. Caps at -20	林克沿 Y 轴的速度，下限为 -20。
+Wall Height	墙壁高度
+Height used to determine whether Link can climb or grab a ledge at the top	用于判断林克能否攀爬或抓住顶部边缘的高度。
+Invincibility Timer	无敌计时器
+Can't take damage while this is nonzero	此值非零时不会受到伤害。
+Gravity	重力
+Rate at which Link falls. Default -4.0f	林克下落的加速度，默认为 -4.0f。
+Link Age on Load	加载时的林克年龄
+Adult	成年
+Child	少年
+This will change Link's age when you load a map	加载地图时切换林克的年龄。
+Link's Current Equipment	林克当前装备
+Sword	剑
+Kokiri Sword	科奇里之剑
+Master Sword	大师之剑
+Biggoron's Sword	大鼓隆之剑
+Fishing Pole	钓竿
+Shield	盾
+Deku Shield	德库盾
+Hylian Shield	海利亚盾
+Mirror Shield	镜盾
+Tunic	服装
+Kokiri Tunic	科奇里服
+Goron Tunic	鼓隆服
+Zora Tunic	卓拉服
+Boots	靴子
+Kokiri Boots	科奇里靴
+Iron Boots	铁靴
+Hover Boots	浮空靴
+Current B Item	当前 B 键物品
+B Button	B 键
+Current C Equips	当前 C 键装备
+C Left	C 左
+C Down	C 下
+C Right	C 右
+Current D-pad Equips	当前方向键装备
+D-pad Up  	方向键上
+D-pad Down	方向键下
+D-pad Left	方向键左
+D-pad Right	方向键右
+State Flags %d	状态标志 %d
+Global Context needed for player info!	需要全局上下文才能读取玩家信息！
+SaveContextTabBar	SaveContextTabBar
+Info	信息
+Inventory	物品栏
+Equipment	装备
+Quest Status	任务状态
+Player	玩家
+Search Display Lists	搜索显示列表
+Active Display List	当前显示列表
+Resource type is not a Display List. Please choose another.	该资源不是显示列表，请选择其他资源。
+Total Instruction Size: %lu	指令总大小：%lu
+%lu	%lu
+gsDPSetPrimColor	gsDPSetPrimColor
+gsDPSetEnvColor	gsDPSetEnvColor
+gsDPPipeSync	gsDPPipeSync
+gsSPGrayscale	gsSPGrayscale
+gsDPSetGrayscaleColor	gsDPSetGrayscaleColor
+FMT: %u	FMT：%u
+SIZ: %u	SIZ：%u
+LINE: %u	LINE：%u
+TMEM: %u	TMEM：%u
+TILE: %u	TILE：%u
+PAL: %u	PAL：%u
+CMT: %u	CMT：%u
+MASKT: %u	MASKT：%u
+SHIFT: %u	SHIFT：%u
+CMS: %u	CMS：%u
+MASKS: %u	MASKS：%u
+SHIFTS: %u	SHIFTS：%u
+WIDTH: %u	宽度：%u
+Texture Name: %s	纹理名称：%s
+Num VTX: %u	顶点数量：%u
+Offset: %u	偏移：%u
+Vertex Name: %s	顶点名称：%s
+DL Name: %s	显示列表名称：%s
+%lu - Reserved - Second half of %s	%lu - 保留 - %s 的后半部分
+Error displaying DL instructions.	显示列表指令显示错误。
+Custom Message Debugger	自定义消息调试器
+Table ID	表 ID
+Leave blank for vanilla table	留空以使用原版消息表。
+Decimal Text ID of the message to load. Decimal digits only (0-9).	要加载的消息的十进制文本 ID，仅接受 0—9。
+Hexadecimal Text ID of the message to load. Hexadecimal digits only (0-9/A-F).	要加载的消息的十六进制文本 ID，仅接受 0—9 与 A—F。
+Hexadecimal	十六进制
+Decimal	十进制
+Language	语言
+Which language to load from the selected text ID	从选定文本 ID 中加载的语言。
+Display Message	显示消息
+Custom Message	自定义消息
+Enter a string using Custom Message Syntax to preview it in-game. Any newline (\n) characters inserted by the Enter key will be stripped from the output.	输入使用自定义消息语法的字符串，在游戏中预览。按回车插入的换行（\n）字符将从输出中移除。
+Value Viewer	数值查看器
+Enable Printing	启用输出
+Randomizer Editor	随机模式编辑器
+Manual seed entry	手动输入种子
+Seed	种子
+Characters from a-z, A-Z, and 0-9 are supported.\nCharacter limit is 1023, after which the seed will be truncated.\n	支持 a—z、A—Z 和 0—9。\n最多 1023 个字符，超出部分将被截断。\n
+New Seed	新种子
+Creates a new random seed value to be used when generating a randomizer	创建一个新的随机种子值，用于生成随机模式。
+Clear Seed	清除种子
+Generate Randomizer	生成随机模式
+Spoiler File: %s	剧透文件：%s
+World	世界
+ChildOpenSettings	ChildOpenSettings
+Closed - Kokiri sword & shield are required to access the Deku Tree, and completing the Deku Tree is required to access the Hyrule Field exit.\n\nClosed Deku - Kokiri boy no longer blocks the path to Hyrule Field but Mido still requires the Kokiri sword and Deku shield to access the tree.\n\nOpen - Mido no longer blocks the path to the Deku Tree. Kokiri boy no longer blocks the path out of the forest.	关闭：进入德库树需要科奇里之剑和盾，通关德库树后才能前往海拉鲁平原。\n\n仅关闭德库树：科奇里少年不再阻挡通往平原的道路，但米多仍要求剑和德库盾。\n\n开放：米多不再阻挡德库树入口，科奇里少年也不再阻挡离开森林的道路。
+Closed - The gate will remain closed until Zelda's letter is shown to the guard.\n\nOpen - The gate is always open. The happy mask shop will open immediately after obtaining Zelda's letter.	关闭：向守卫出示塞尔达的信后才能开门。\n\n开放：大门始终开启，获得塞尔达的信后面具店立即开业。
+Closed - The Ocarina of Time, the Song of Time and all three spiritual stones are required to open the Door of Time.\n\nSong only - Play the Song of Time in front of the Door of Time to open it.\n\nOpen - The Door of Time is permanently open with no requirements.	关闭：需要时之笛、时之歌和三颗精灵石才能打开时之门。\n\n仅需歌曲：在时之门前演奏时之歌即可开启。\n\n开放：时之门永久开启，无需条件。
+Closed - King Zora obstructs the way to Zora's Fountain. Ruto's letter must be shown as child Link in order to move him in both time periods.\n\nClosed as child - Ruto's Letter is only required to move King Zora as child Link. Zora's Fountain starts open as adult.\n\nOpen - King Zora has already mweeped out of the way in both time periods. Ruto's Letter is removed from the item pool.	关闭：卓拉王挡住通往卓拉泉的道路。少年林克出示露朵的信后，两个时代的道路都会开放。\n\n少年时期关闭：只有少年时期需要出示露朵的信，成年时期默认开放。\n\n开放：两个时代的卓拉王都已让路，露朵的信从物品池中移除。
+ChildMiscWorldSettings	ChildMiscWorldSettings
+Choose which age Link will start as.\n\nStarting as adult means you start with the Master Sword in your inventory.\nThe child option is forcefully set if it would conflict with other options.	选择林克的初始年龄。\n\n以成年开始时，物品栏中会拥有大师之剑。\n若与其他选项冲突，将强制设为少年。
+Gerudo Fortress Carpenters	格鲁德要塞木匠
+Sets the amount of carpenters required to repair the bridge in Gerudo Valley.\n\nNormal - All 4 carpenters are required to be saved.\n\nFast - Only the bottom left carpenter requires rescuing.\n\nOpen - The bridge is repaired from the start.\n\nOnly "Normal" is compatible with Gerudo Fortress Key Rings.	设置修复格鲁德谷桥梁所需营救的木匠数量。\n\n普通：营救全部 4 名木匠。\n\n快速：只需营救左下方的木匠。\n\n开放：桥梁从一开始就已修复。\n\n只有“普通”兼容格鲁德要塞钥匙串。
+Rainbow Bridge Requirements	彩虹桥开启条件
+Alters the requirements to open the bridge to Ganon's Castle.\n\nVanilla - Obtain the Shadow Medallion, Spirit Medallion and Light Arrows.\n\nAlways open - No requirements.\n\nStones - Obtain the specified amount of spiritual stones.\n\nMedallions - Obtain the specified amount of medallions.\n\nDungeon rewards - Obtain the specified total sum of spiritual stones or medallions.\n\nDungeons - Complete the specified amount of dungeons. Dungeons are considered complete after stepping in to the blue warp after the boss.\n\nTokens - Obtain the specified amount of Skulltula tokens.\n\nGreg - Find Greg the Green Rupee.	修改通往加侬城堡的桥梁的开启条件。\n\n原版：获得暗之徽章、魂之徽章和光之箭。\n\n始终开放：无需条件。\n\n精灵石：获得指定数量的精灵石。\n\n徽章：获得指定数量的徽章。\n\n迷宫奖励：精灵石与徽章的总数达到指定数量。\n\n迷宫：通关指定数量的迷宫。击败首领后进入蓝色传送点才算通关。\n\n徽章代币：获得指定数量的黄金骷髅蜘蛛徽章。\n\n格雷格：找到名为格雷格的绿色卢比。
+Reward Options	奖励选项
+Standard Rewards - Greg does not change logic, Greg does not help open the bridge, max number of rewards on slider does not change.\n\nGreg as Reward - Greg does change logic (can be part of expected path for opening bridge), Greg helps open bridge, max number of rewards on slider increases by 1 to account for Greg. \n\nGreg as Wildcard - Greg does not change logic, Greg helps open the bridge, max number of rewards on slider does not change.	标准奖励：格雷格不影响逻辑、不帮助开桥，奖励数量滑块的上限不变。\n\n格雷格计为奖励：格雷格影响逻辑，可能成为开桥的必经步骤；可帮助开桥，奖励数量上限增加 1。\n\n格雷格作为替代：格雷格不影响逻辑，但可帮助开桥，奖励数量上限不变。
+Stone Count: %d	精灵石数量：%d
+Medallion Count: %d	徽章数量：%d
+Reward Count: %d	奖励数量：%d
+Dungeon Count: %d	迷宫数量：%d
+Token Count: %d	代币数量：%d
+Ganon's Trials	加侬的试炼
+Sets the number of Ganon's Trials required to dispel the barrier.\n\nSkip - No Trials are required and the barrier is already dispelled.\n\nSet Number - Select a number of trials that will be required from theslider below. Which specific trials you need to complete will be random.\n\nRandom Number - A Random number and set of trials will be required.	设置解除结界所需完成的加侬试炼数量。\n\n跳过：无需试炼，结界已解除。\n\n指定数量：使用下方滑块选择数量，具体试炼随机决定。\n\n随机数量：随机决定试炼数量及其种类。
+Ganon's Trial Count: %d	加侬试炼数量：%d
+Set the number of trials required to enter Ganon's Tower.	设置进入加侬塔所需完成的试炼数量。
+Master Quest Dungeons	大师模式迷宫
+Sets the number of Master Quest Dungeons that are shuffled into the pool.\n\nNone - All Dungeons will be their Vanilla versions.\n\nSet Number - Select a number of dungeons that will be their Master Quest versions using the slider below. Which dungeons are set to be the Master Quest variety will be random.\n\nRandom Number - A Random number and set of dungeons will be their Master Quest varieties.\n\nSelection - Leave unchecked for Vanilla and checked for Master Quest.	设置混入的大师模式迷宫数量。\n\n无：所有迷宫均为原版。\n\n指定数量：通过滑块选择数量，具体迷宫随机决定。\n\n随机数量：随机决定数量与迷宫。\n\n自行选择：未勾选使用原版，勾选使用大师模式。
+Master Quest Dungeon Count: %d	大师模式迷宫数量：%d
+Deku Tree	德库树
+Dodongo's Cavern	多东哥洞窟
+Jabu Jabu's Belly	加卜加卜肚子里
+Forest Temple	森林神殿
+Fire Temple	火之神殿
+Water Temple	水之神殿
+Spirit Temple	魂之神殿
+Shadow Temple	暗之神殿
+Bottom of the Well	井底
+Ice Cavern	冰之洞窟
+Gerudo Training Grounds	格鲁德训练场
+Ganon's Castle	加侬城堡
+Triforce Hunt	三角力量寻宝
+Pieces of the Triforce of Courage have been scattered across the world. Find them all to finish the game!\n\nWhen the required amount of pieces have been found, the game is saved and Ganon's Boss key is given to you when you load back into the game if you desire to beat Ganon afterwards.\n\nKeep in mind Ganon might not be logically beatable when "All Locations Reachable" is turned off.	勇气三角力量碎片散落在世界各处，找到所需数量即可完成游戏！\n\n集齐后会自动保存。若还想挑战加侬，重新加载游戏后会获得加侬首领钥匙。\n\n关闭“所有地点可到达”时，逻辑不保证能够击败加侬。
+Triforce Pieces in the world: %d	世界中的三角力量碎片：%d
+The amount of Triforce pieces that will be placed in the world. Keep in mind seed generation can fail if more pieces are placed than there are junk items in the item pool.	放入世界的三角力量碎片数量。若超过物品池中杂项物品的数量，种子生成可能失败。
+Triforce Pieces to win: %d	获胜所需三角力量碎片：%d
+The amount of Triforce pieces required to win the game.	完成游戏所需的三角力量碎片数量。
+ChildShuffleEntrances	ChildShuffleEntrances
+Shuffle Dungeon Entrances	打乱迷宫入口
+Shuffle the pool of dungeon entrances, including Bottom of the Well, Ice Cavern and Gerudo Training Grounds.\n\nShuffling Ganon's Castle can be enabled separately.\n\nAdditionally, the entrances of Deku Tree, Fire Temple, Bottom of the Well and Gerudo Training Ground are opened for both child and adult.\n\n- Deku Tree will be open for adult after Mido has seen child Link with a sword and shield.\n- Bottom of the Well will be open for adult after playing Song of Storms to the Windmill guy as child.\n- Gerudo Training Ground will be open for child after adult has paid to open the gate once.	打乱迷宫入口，包括井底、冰之洞窟和格鲁德训练场。\n\n加侬城堡可单独启用。\n\n德库树、火之神殿、井底和格鲁德训练场也会向两个年龄开放。\n\n德库树：少年林克向米多展示剑盾后，成年也可进入。\n井底：少年向风车男子演奏风暴之歌后，成年也可进入。\n格鲁德训练场：成年付费开门一次后，少年也可进入。
+Shuffle Boss Entrances	打乱首领入口
+Shuffle the pool of dungeon boss entrances. This affects the boss rooms of all stone and medallion dungeons.\n\nAge Restricted - Shuffle the entrances of child and adult boss rooms separately.\n\nFull - Shuffle the entrances of all boss rooms together. Child may be expected to defeat Phantom Ganon and/or Bongo Bongo.	打乱精灵石与徽章迷宫的首领房间入口。\n\n限制年龄：少年与成年首领房间分别打乱。\n\n完全打乱：所有首领房间混合，少年可能需要击败幻影加侬或邦戈邦戈。
+Shuffle Overworld Entrances	打乱地面区域入口
+Shuffle the pool of Overworld entrances, which corresponds to almost all loading zones between overworld areas.\n\nSome entrances are unshuffled to avoid issues:\n- Hyrule Castle Courtyard and Garden entrance\n- Both Market Back Alley entrances\n- Gerudo Valley to Lake Hylia (unless entrances are decoupled)	打乱地面区域间的大部分场景切换入口。\n\n为避免问题，以下入口保持原状：\n海拉鲁城堡庭院与花园入口；\n城镇后巷的两个入口；\n格鲁德谷至海利亚湖（除非启用入口分离）。
+Shuffle Interior Entrances	打乱室内入口
+Shuffle the pool of interior entrances which contains most Houses and all Great Fairies.\n\nAll - An extended version of 'Simple' with some extra places:\n- Windmill\n- Link's House\n- Temple of Time\n- Kakariko Potion Shop	打乱大部分房屋和所有大妖精泉的入口。\n\n“全部”在“简单”基础上额外包含：\n风车、林克的家、时之神殿、卡卡利科药店。
+Shuffle Grotto Entrances	打乱地洞入口
+Shuffle the pool of grotto entrances, including all graves, small Fairy fountains and the Deku Theatre.	打乱地洞入口，包括所有坟墓、小妖精泉和德库剧场。
+Shuffle Owl Drops	打乱猫头鹰落点
+Randomize where Kaepora Gaebora (the Owl) drops you at when you talk to him at Lake Hylia or at the top of Death Mountain Trail.	随机决定在海利亚湖或死亡之山顶与猫头鹰对话后，被带到的地点。
+Shuffle Warp Songs	打乱传送歌曲目的地
+Randomize where each of the 6 warp songs leads to.	随机决定六首传送歌曲各自的目的地。
+Shuffle Overworld Spawns	打乱地面出生点
+Randomize where you start as Child or Adult when loading a save in the Overworld. This means you may not necessarily spawn inside Link's House or Temple of Time.\n\nThis stays consistent after saving and loading the game again.\n\nKeep in mind you may need to temporarily disable the "Remember Save Location" time saver to be able use the spawn positions, especially if they are the only logical way to get to certain areas.	随机决定在地面区域加载存档时，少年或成年林克出现的位置，不一定是林克的家或时之神殿。\n\n保存并重新加载后，出生点保持一致。\n\n可能需要暂时关闭“记住保存位置”，尤其当出生点是逻辑上前往某区域的唯一途径时。
+Decouple Entrances	分离入口
+Decouple entrances when shuffling them. This means you are no longer guaranteed to end up back where you came from when you go back through an entrance.\n\nThis also adds the one-way entrance from Gerudo Valley to Lake Hylia in the pool of overworld entrances when they are shuffled.	打乱入口时将来回方向分离，原路返回不再保证回到来处。\n\n也会将格鲁德谷至海利亚湖的单向入口加入地面入口池。
+Mixed Entrance Pools	混合入口池
+Shuffle entrances into a mixed pool instead of separate ones. Has no affect on pools whose entrances aren't shuffled, and "Shuffle Boss Entrances" must be set to "Full" to include them.\n\nFor example, enabling the settings to shuffle grotto, dungeon, and overworld entrances and selecting grotto and dungeon entrances here will allow a dungeon to be inside a grotto or vice versa, while overworld entrances are shuffled in their own separate pool and indoors stay vanilla.	将所选入口类型混在同一个池中打乱。未启用打乱的类型不受影响，首领入口须设为“完全打乱”才能加入。\n\n例如，同时打乱地洞、迷宫和地面入口，并在此混合地洞与迷宫后，迷宫可能位于地洞内，反之亦然；地面入口仍单独打乱，室内保持原版。
+Mix Dungeons	混合迷宫
+Dungeon entrances will be part of the mixed pool	将迷宫入口加入混合池。
+Mix Bosses	混合首领
+Boss entrances will be part of the mixed pool	将首领入口加入混合池。
+Mix Overworld	混合地面区域
+Overworld entrances will be part of the mixed pool	将地面区域入口加入混合池。
+Mix Interiors	混合室内
+Interior entrances will be part of the mixed pool	将室内入口加入混合池。
+Mix Grottos	混合地洞
+Grotto entrances will be part of the mixed pool	将地洞入口加入混合池。
+ChildShuffleItems	ChildShuffleItems
+Song locations - Songs will only appear at locations that normally teach songs.\n\nDungeon rewards - Songs appear after beating a major dungeon boss.\nThe 4 remaining songs are located at:\n  - Zelda's lullaby location\n  - Ice Cavern's Serenade of Water location\n  - Bottom of the Well Lens of Truth location\n  - Gerudo Training Ground's Ice Arrows location\n\nAnywhere - Songs can appear at any location.	歌曲地点：歌曲只出现在原本传授歌曲的地点。\n\n迷宫奖励：击败主要迷宫首领后获得歌曲。剩余四首位于：\n塞尔达摇篮曲地点；\n冰之洞窟的水之小夜曲地点；\n井底的真实之眼地点；\n格鲁德训练场的冰之箭地点。\n\n任意地点：歌曲可出现在任何地点。
+Shuffles Golden Skulltula Tokens into the item pool. This means Golden Skulltulas can contain other items as well.\n\nOff - GS tokens will not be shuffled.\n\nDungeons - Only shuffle GS tokens that are within dungeons.\n\nOverworld - Only shuffle GS tokens that are outside of dungeons.\n\nAll Tokens - Shuffle all 100 GS tokens.	将黄金骷髅蜘蛛徽章加入随机物品池，黄金骷髅蜘蛛也可能掉落其他物品。\n\n关闭：不打乱徽章。\n\n迷宫：只打乱迷宫内的徽章。\n\n地面：只打乱迷宫外的徽章。\n\n全部：打乱全部 100 枚徽章。
+Nighttime GS expect Sun's Song	夜间骷髅蜘蛛要求太阳之歌
+All Golden Skulltulas that require nighttime to appear will only be expected to be collected after getting Sun's Song.	逻辑仅在获得太阳之歌后，才要求收集夜间出现的黄金骷髅蜘蛛。
+Shuffles the Kokiri Sword into the item pool.\n\nThis will require the use of sticks until the Kokiri Sword is found.	将科奇里之剑加入物品池。\n\n找到剑之前需要使用德库棒。
+Shuffles the Master Sword into the item pool.\n\nAdult Link will start with a second free item instead of the Master Sword.\nIf you haven't found the Master Sword before facing Ganon, you won't receive it during the fight.	将大师之剑加入物品池。\n\n成年林克开局将获得第二件免费物品，代替大师之剑。\n若挑战加侬前尚未找到大师之剑，战斗中也不会获得它。
+Enabling this shuffles the Fairy Ocarina and the Ocarina of Time into the item pool.\n\nThis will require finding an Ocarina before being able to play songs.	将妖精之笛与时之笛加入物品池。\n\n找到笛子后才能演奏歌曲。
+Shuffles the Weird Egg from Malon in to the item pool. Enabling "Skip Child Zelda" disables this feature.\n\nThe Weird Egg is required to unlock several events:\n  - Zelda's Lullaby from Impa\n  - Saria's song in Sacred Forest Meadow\n  - Epona's song and chicken minigame at Lon Lon Ranch\n  - Zelda's letter for Kakariko gate (if set to closed)\n  - Happy Mask Shop sidequest\n	将玛隆给的奇怪的蛋加入物品池。启用“跳过少年塞尔达”时无法使用。\n\n奇怪的蛋是解锁以下事件的条件：\n从英帕处学习塞尔达摇篮曲；\n圣域森林的萨莉亚之歌；\n隆隆牧场的艾波娜之歌和抓鸡游戏；\n用于开启卡卡利科大门的塞尔达的信；\n面具店支线任务。
+Shuffles the Gerudo Membership Card into the item pool.\n\nThe Gerudo Card is required to enter the Gerudo Training Grounds, opening the gate to Haunted Wasteland and the Horseback Archery minigame.	将格鲁德会员卡加入物品池。\n\n会员卡是进入格鲁德训练场、开启幽灵沙漠大门和参加骑射游戏的条件。
+ChildShuffleNpcs	ChildShuffleNpcs
+Off - All shop items will be the same as vanilla.\n\n0 Items - Vanilla shop items will be shuffled among different shops.\n\n1-4 Items - Vanilla shop items will be shuffled among different shops, and each shop will contain 1-4 non-vanilla shop items.\n\nRandom - Vanilla shop items will be shuffled among different shops, and each shop will contain a random number(1-4) of non-vanilla shop items.\n	关闭：商店物品保持原版。\n\n0 件：原版商品在不同商店之间打乱。\n\n1—4 件：打乱原版商品，每家商店另有 1—4 件非原版商品。\n\n随机：打乱原版商品，每家商店的非原版商品数量随机为 1—4 件。
+Balanced - The default randomization. Shop prices for shopsanity items will range between 0 to 300 rupees, with a bias towards values slightly below the middle of the range, in multiples of 5.\n \nX Wallet - Randomized between 5 and the wallet's max size, in multiples of 5	均衡：默认随机方式，价格为 0—300 卢比的 5 的倍数，偏向略低于中间值。\n\n指定钱包：价格在 5 卢比到钱包容量之间随机，取 5 的倍数。
+Random selection between the selected wallet tier's affordable price and the affordable prices of the preceding wallet tiers.\n\nAffordable prices per tier: starter = 10, adult = 105, giant = 205, tycoon = 505\n\nUse this to enable wallet tier locking, but make shop items not as expensive as they could be.	在所选钱包等级及更低等级的可负担价格之间随机选择。\n\n各等级价格：初始 10、成人 105、巨人 205、大富豪 505。\n\n可用于按钱包等级限制购买，同时避免商品过于昂贵。
+Off - Scrubs will not be shuffled. The 3 Scrubs that give one-time items in the vanilla game (PoH, Deku Nut capacity, and Deku Stick capacity) will have random items.\n\nAffordable - Scrubs will be shuffled and their item will cost 10 rupees.\n\nExpensive - Scrubs will be shuffled and their item will cost the vanilla price.\n\nRandom - Scrubs will be shuffled and their item will cost will be between 0-95 rupees.\n	关闭：不打乱德库商人。原版给予一次性物品的三位商人（心之碎片、德库果容量、德库棒容量）仍给予随机物品。\n\n便宜：打乱商人，售价 10 卢比。\n\n昂贵：打乱商人，使用原版价格。\n\n随机：打乱商人，售价随机为 0—95 卢比。
+Cows give a randomized item from the pool upon performing Epona's Song in front of them.	在牛面前演奏艾波娜之歌后，会获得物品池中的随机物品。
+Enabling this adds a pack of 10 beans to the item pool and changes the Magic Bean Salesman to sell a random item at a price of 60 rupees.	将一包 10 颗魔法豆加入物品池，魔法豆商人改为以 60 卢比出售随机物品。
+Enabling this changes Medigoron, Granny and the Carpet Salesman to sell a random item once at a high price (100 for Granny, 200 for the others).\nA Giant's Knife and a pack of Bombchus will be added to the item pool, and one of the bottles will contain a Blue Potion.\n\nOn (no hints) - Salesmen will be included but won't tell you what you'll get.\nOn (with hints) - Salesmen will be included and you'll know what you're buying.\n\nGranny's item will only be offered after you have traded in the Odd Mushroom when Shuffle Adult Trade is on. Otherwise when off, you will need to have found the Claim Check to buy her item (simulating the trade quest is complete).	让大鼓隆商人、婆婆和飞毯商人各出售一件随机物品，婆婆售价 100 卢比，另外两位为 200。\n物品池中增加巨人之刀和一包炸弹鼠，其中一个瓶子装有蓝色药水。\n\n开启（无提示）：商人不告知商品内容。\n开启（有提示）：购买前可知道商品内容。\n\n启用成年交易打乱时，须交出奇怪的蘑菇才能购买婆婆的商品；未启用时，须先找到兑换券，视为完成交易任务。
+Shuffles 5 Purple Rupees into to the item pool, and allows\nyou to earn items by playing songs at the Frog Choir.\n\nThis setting does not effect the item earned from playing\nthe Song of Storms and the frog song minigame.	将 5 枚紫色卢比加入物品池，并允许通过向青蛙合唱团演奏歌曲获得物品。\n\n不影响风暴之歌和青蛙演奏小游戏的奖励。
+Adds all of the adult trade quest items into the pool, each of which can be traded for a unique reward.\n\nYou will be able to choose which of your owned adult trade items is visible in the inventory by selecting the item with A and using the control stick or D-pad.\n\nIf disabled, only the Claim Check will be found in the pool.	将所有成年交易任务物品加入物品池，每件均可交换独特奖励。\n\n在物品栏中用 A 选中交易物品，再用摇杆或方向键切换已拥有的物品。\n\n关闭时，物品池中只有兑换券。
+Shuffle the item the cursed rich man in the House of Skulltula gives when you have collected all 100 Gold Skulltula Tokens.\n\nYou can still talk to him multiple times to get Huge Rupees.	打乱收集全部 100 枚黄金骷髅蜘蛛徽章后，骷髅蜘蛛之家被诅咒富翁给予的奖励。\n\n仍可反复对话获得巨额卢比。
+ChildShuffleDungeonItems	ChildShuffleDungeonItems
+Shuffles the location of spiritual stones and medallions.\n\nEnd of dungeons - Spiritual stones and medallions will be given as rewards for beating major dungeons. Link will always start with one stone or medallion.\n\nAny dungeon - Spiritual stones and medallions can be found inside any dungeon.\n\nOverworld - Spiritual stones and medallions can only be found outside of dungeons.\n\nAnywhere - Spiritual stones and medallions can appear anywhere.	打乱精灵石和徽章的位置。\n\n迷宫终点：作为通关主要迷宫的奖励，林克开局总会获得一颗精灵石或一枚徽章。\n\n任意迷宫：可位于任何迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在任何地点。
+Start with - You will start with Maps & Compasses from all dungeons.\n\nVanilla - Maps & Compasses will appear in their vanilla locations.\n\nOwn dungeon - Maps & Compasses can only appear in their respective dungeon.\n\nAny dungeon - Maps & Compasses can only appear inside of any dungon.\n\nOverworld - Maps & Compasses can only appear outside of dungeons.\n\nAnywhere - Maps & Compasses can appear anywhere in the world.	开局拥有：获得所有迷宫的地图和罗盘。\n\n原版：位于原版位置。\n\n所属迷宫：只能位于各自对应的迷宫。\n\n任意迷宫：可位于任何迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在世界任何地方。
+Start with - You will start with all Small Keys from all dungeons.\n\nVanilla - Small Keys will appear in their vanilla locations. You start with 3 keys in Spirit Temple MQ because the vanilla key layout is not beatable in logic.\n\nOwn dungeon - Small Keys can only appear in their respective dungeon. If Fire Temple is not a Master Quest dungeon, the door to the Boss Key chest will be unlocked.\n\nAny dungeon - Small Keys can only appear inside of any dungon.\n\nOverworld - Small Keys can only appear outside of dungeons.\n\nAnywhere - Small Keys can appear anywhere in the world.	开局拥有：获得所有迷宫的小钥匙。\n\n原版：位于原版位置。大师模式魂之神殿开局给予 3 把钥匙，因为原版布局在逻辑上无法通关。\n\n所属迷宫：只能位于对应迷宫。非大师模式火之神殿中，通往首领钥匙宝箱的门会解锁。\n\n任意迷宫：可位于任何迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在世界任何地方。
+Keyrings will replace all small keys from a particular dungeon with a single keyring that awards all keys for it's associated dungeon\n\nOff - No dungeons will have their keys replaced with keyrings.\n\nRandom - A random amount of dungeons(0-8 or 9) will have their keys replaced with keyrings.\n\nCount - A specified amount of randomly selected dungeons will have their keys replaced with keyrings.\n\nSelection - Hand select which dungeons will have their keys replaced with keyrings.\n\nSelecting key ring for dungeons will have no effect if Small Keys are set to Start With or Vanilla.\n\nIf Gerudo Fortress Carpenters is set to Normal, and Gerudo Fortress Keys is set to anything other than Vanilla, then the maximum amount of Key Rings that can be selected by Random or Count will be 9. Otherwise, the maximum amount of Key Rings will be 8.	钥匙串将某个迷宫的全部小钥匙替换为一件物品，获得时给予该迷宫的所有钥匙。\n\n关闭：不替换。\n\n随机：随机选择 0—8 或 9 个迷宫。\n\n指定数量：随机选择指定数量的迷宫。\n\n自行选择：手动选择迷宫。\n\n小钥匙设为“开局拥有”或“原版”时，此设置无效。\n\n格鲁德要塞木匠设为“普通”且要塞钥匙不设为“原版”时，随机或指定数量的上限为 9，否则为 8。
+Key Ring Count: %d	钥匙串数量：%d
+Gerudo Fortress	格鲁德要塞
+Vanilla - Thieve's Hideout Keys will appear in their vanilla locations.\n\nAny dungeon - Thieve's Hideout Keys can only appear inside of any dungon.\n\nOverworld - Thieve's Hideout Keys can only appear outside of dungeons.\n\nAnywhere - Thieve's Hideout Keys can appear anywhere in the world.	原版：盗贼藏身处钥匙位于原版位置。\n\n任意迷宫：只能位于迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在世界任何地方。
+Start with - You will start with Boss keys from all dungeons.\n\nVanilla - Boss Keys will appear in their vanilla locations.\n\nOwn dungeon - Boss Keys can only appear in their respective dungeon.\n\nAny dungeon - Boss Keys can only appear inside of any dungon.\n\nOverworld - Boss Keys can only appear outside of dungeons.\n\nAnywhere - Boss Keys can appear anywhere in the world.	开局拥有：获得所有迷宫的首领钥匙。\n\n原版：位于原版位置。\n\n所属迷宫：只能位于对应迷宫。\n\n任意迷宫：可位于任何迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在世界任何地方。
+Vanilla - Ganon's Boss Key will appear in the vanilla location.\n\nOwn dungeon - Ganon's Boss Key can appear anywhere inside Ganon's Castle.\n\nStart with - Places Ganon's Boss Key in your starting inventory.\nAny dungeon - Ganon's Boss Key Key can only appear inside of any dungon.\n\nOverworld - Ganon's Boss Key Key can only appear outside of dungeons.\n\nAnywhere - Ganon's Boss Key Key can appear anywhere in the world.\n\nLACS - These settings put the boss key on the Light Arrow Cutscene location, from Zelda in Temple of Time as adult, with differing requirements:\n- Vanilla: Obtain the Shadow Medallion and Spirit Medallion\n- Stones: Obtain the specified amount of spiritual stones.\n- Medallions: Obtain the specified amount of medallions.\n- Dungeon rewards: Obtain the specified total sum of spiritual stones or medallions.\n- Dungeons: Complete the specified amount of dungeons. Dungeons are considered complete after stepping in to the blue warp after the boss.\n- Tokens: Obtain the specified amount of Skulltula tokens.\n\n100 GS Reward - Ganon's Boss Key will be awarded by the cursed rich man after you collect 100 Gold Skulltula Tokens.	原版：加侬首领钥匙位于原版位置。\n\n所属迷宫：可位于加侬城堡内任何地方。\n\n开局拥有：开局获得。\n\n任意迷宫：只能位于迷宫内。\n\n地面区域：只能位于迷宫外。\n\n任意地点：可出现在世界任何地方。\n\n光之箭过场：成年时期在时之神殿由塞尔达给予，条件可选：\n原版：获得暗之徽章和魂之徽章；\n精灵石、徽章或迷宫奖励：获得指定数量；\n迷宫：通关指定数量，须进入首领后的蓝色传送点；\n代币：获得指定数量的黄金骷髅蜘蛛徽章。\n\n100 枚徽章奖励：收集 100 枚黄金骷髅蜘蛛徽章后由被诅咒的富翁给予。
+Standard Rewards - Greg does not change logic, Greg does not help obtain GBK, max number of rewards on slider does not change.\n\nGreg as Reward - Greg does change logic (can be part of expected path for obtaining GBK), Greg helps obtain GBK, max number of rewards on slider increases by 1 to account for Greg. \n\nGreg as Wildcard - Greg does not change logic, Greg helps obtain GBK, max number of rewards on slider does not change.	标准奖励：格雷格不影响逻辑、不帮助获得加侬首领钥匙，奖励数量上限不变。\n\n格雷格计为奖励：影响逻辑，可成为获得钥匙的必经步骤；帮助获得钥匙，奖励数量上限增加 1。\n\n格雷格作为替代：不影响逻辑，但帮助获得钥匙，奖励数量上限不变。
+ChildTimeSavers	ChildTimeSavers
+Cuccos to return: %d	需要找回的咕咕鸡：%d
+The amount of cuccos needed to claim the reward from Anju the cucco lady	从养鸡姑娘安珠处领取奖励所需找回的咕咕鸡数量。
+Big Poe Target Count: %d	大幽灵目标数量：%d
+The Poe collector will give a reward for turning in this many Big Poes.	向幽灵收集者交出此数量的大幽灵后获得奖励。
+The crawlspace into Hyrule Castle goes straight to Zelda, skipping the guards.	海拉鲁城堡的爬行通道直接通向塞尔达，跳过守卫潜行。
+Skip Child Zelda	跳过少年塞尔达
+Start with Zelda's Letter and the item Impa would normally give you and skip the sequence up until after meeting Zelda. Disables the ability to shuffle Weird Egg.	开局拥有塞尔达的信和英帕原本给予的物品，并跳过与塞尔达会面前的流程。无法同时打乱奇怪的蛋。
+Epona can be summoned with Epona's Song without needing to race Ingo.	无需与英戈赛马，即可用艾波娜之歌召唤艾波娜。
+The tower escape sequence between Ganondorf and Ganon will be skipped.	跳过加侬多夫与加侬战之间的城堡逃脱流程。
+Once the happy mask shop is opened, all masks will be available to be borrowed.	面具店开业后即可借用所有面具。
+Start with the ability to summon Pierre the scarecrow. Pulling out an ocarina in the usual locations will automatically summon him.	开局即可召唤稻草人皮埃尔。在通常的召唤地点拿出笛子即可自动召唤。
+ChildItemPoolHintSettings	ChildItemPoolHintSettings
+Sets how many major items appear in the item pool.\n\nPlentiful - Extra major items are added to the pool.\n\nBalanced - Original item pool.\n\nScarce - Some excess items are removed, including health upgrades.\n\nMinimal - Most excess items are removed.	设置物品池中主要物品的数量。\n\n充裕：加入额外主要物品。\n\n均衡：原始物品池。\n\n稀少：移除部分多余物品，包括生命升级。\n\n极少：移除大部分多余物品。
+Sets how many items are replaced by ice traps.\n\nOff - No ice traps.\n\nNormal - Only Ice Traps from the base item pool are shuffled in.\n\nExtra - Chance to replace added junk items with additional ice traps.\n\nMayhem - All added junk items will be Ice Traps.\n\nOnslaught - All junk items will be replaced by Ice Traps, even those in the base pool.	设置被冰冻陷阱替换的物品数量。\n\n关闭：没有冰冻陷阱。\n\n普通：仅使用基础物品池中的冰冻陷阱。\n\n额外：新增杂项物品有概率变为冰冻陷阱。\n\n混乱：所有新增杂项物品均为冰冻陷阱。\n\n全面冰冻：包括基础池在内的全部杂项物品均被替换。
+Allows Gossip Stones to provide hints on item locations. Hints mentioning "Way of the Hero" indicate a location that holds an item required to beat the seed.\n\nNo hints - No hints will be given at all.\n\nNeed Nothing - Hints are always available from Gossip Stones.\n\nNeed Stone of Agony - Hints are only available after obtaining the Stone of Agony.\n\nNeed Mask of Truth - Hints are only available whilst wearing the Mask of Truth.\n	让闲话石提示物品位置。“英雄之路”表示该地点有完成种子所必需的物品。\n\n无提示：不提供提示。\n\n无要求：随时可从闲话石获得提示。\n\n需要苦闷石：获得苦闷石后才可查看。\n\n需要真实面具：佩戴真实面具时才可查看。
+Sets the difficulty of hints.\n\nObscure - Hints are unique for each item, but the writing may be cryptic.\nEx: Kokiri Sword > a butter knife\n\nAmbiguous - Hints are clearly written, but may refer to more than one item.\nEx: Kokiri Sword > a sword\n\nClear - Hints are clearly written and are unique for each item.\nEx: Kokiri Sword > the Kokiri Sword	设置提示的难度。\n\n隐晦：每件物品有独特提示，但表述含蓄，例如科奇里之剑称为“黄油刀”。\n\n模糊：表述清楚，但可能指多件物品，例如称为“一把剑”。\n\n明确：清楚且唯一，例如直接称为“科奇里之剑”。
+Sets how many hints will be useful.\n\nUseless - Only junk hints.\n\nBalanced - Recommended hint spread.\n\nStrong - More useful hints.\n\nVery Strong - Many powerful hints.	设置有用提示的数量。\n\n无用：仅提供杂项提示。\n\n均衡：推荐分布。\n\n较强：更多有用提示。\n\n很强：大量关键提示。
+Extra Hints	额外提示
+This setting adds some hints at locations other than Gossip Stones.\n\nHouse of Skulltula: # - Talking to a cursed House of Skulltula resident will tell you the reward they will give you for obtaining that many tokens.	在闲话石以外的地点增加提示。\n\n骷髅蜘蛛之家：与被诅咒的住户对话，可得知收集对应数量徽章后的奖励。
+Altar Text	祭坛文本
+Reading the Temple of Time altar as child will tell you the locations of the Spiritual Stones.\nReading the Temple of Time altar as adult will tell you the locations of the Medallions, as well as the conditions for building the Rainbow Bridge and getting the Boss Key for Ganon's Castle.	少年阅读时之神殿祭坛可得知精灵石位置。\n成年阅读可得知徽章位置，以及彩虹桥和加侬城堡首领钥匙的获取条件。
+Light Arrows	光之箭
+Talking to Ganondorf in his boss room or Sheik inside Ganon's Castle (when trials are enabled) will tell you the location of the Light Arrows.If this option is enabled and Ganondorf is reachable without Light Arrows, Gossip Stones will never hint the Light Arrows.	与首领房间的加侬多夫或加侬城堡内的希克（启用试炼时）对话，可得知光之箭位置。若无需光之箭即可到达加侬多夫，启用后闲话石不会再提示光之箭。
+Dampe's Diary (Hookshot)	丹培日记（钩索）
+Reading the diary of Dampé the gravekeeper as adult will tell you the location of one of the Hookshots.	成年阅读守墓人丹培的日记，可得知一个钩索的位置。
+Greg the Green Rupee	绿色卢比格雷格
+Talking to the chest game owner after buying a key will tell you the location of Greg the Green Rupee.	购买钥匙后与宝箱游戏老板对话，可得知绿色卢比格雷格的位置。
+Saria (Magic)	萨莉亚（魔力）
+Talking to Saria either in person or through Saria's Song will tell you the location of a progressive magic meter.	直接与萨莉亚对话或使用萨莉亚之歌，可得知一次魔力槽升级的位置。
+Frog Ocarina Game	青蛙笛子游戏
+Standing near the pedestal for the frogs in Zora's River will tell you the reward for the frogs' ocarina game.	靠近卓拉河青蛙的平台时，可得知青蛙笛子游戏的奖励。
+Warp Song text	传送歌曲文本
+Playing a warp song will tell you where it leads. (If warp song destinations are vanilla, this is always enabled.)	演奏传送歌曲时提示目的地。目的地为原版时，此项始终启用。
+Scrub Item text	德库商人物品文本
+Business scrubs will reveal the identity of what they're selling.	德库商人会告知所售物品的真实内容。
+House of Skulltula: 10	骷髅蜘蛛之家：10
+House of Skulltula: 20	骷髅蜘蛛之家：20
+House of Skulltula: 30	骷髅蜘蛛之家：30
+House of Skulltula: 40	骷髅蜘蛛之家：40
+House of Skulltula: 50	骷髅蜘蛛之家：50
+ChildAdditionalFeatures	ChildAdditionalFeatures
+Full Wallets	满钱包
+Start with a full wallet. All wallet upgrades come filled with rupees.	开局钱包装满卢比，所有钱包升级也会装满。
+Bombchus are properly considered in logic.\n\nThe first Bombchu pack will always be 20, and subsequent packs will be 5 or 10 based on how many you have.\nOnce found, they can be replenished at the Bombchu shop.\n\nBombchu Bowling is opened by obtaining Bombchus.	将炸弹鼠纳入逻辑判断。\n\n第一包始终为 20 个，后续根据持有量为 5 或 10 个。找到后可在炸弹鼠商店补充。\n\n获得炸弹鼠后开放炸弹鼠保龄球。
+Once you obtain bombchus for the first time, refills can be found in bushes and other places where bomb drops can normally spawn.	首次获得炸弹鼠后，草丛等通常掉落炸弹的地点也可能掉落炸弹鼠补充。
+Ice Arrows act like Blue Fire, making them able to melt red ice. Item placement logic will respect this option, so it might be required to use this to progress.	冰之箭具有蓝色火焰效果，可融化红冰。物品放置逻辑会考虑此设置，推进流程可能需要使用。
+Light Arrows can be used to light up the sun switches instead of using the Mirror Shield. Item placement logic will respect this option, so it might be required to use this to progress.	光之箭可代替镜盾激活太阳开关。物品放置逻辑会考虑此设置，推进流程可能需要使用。
+Locations	地点
+ChildIncludedLocations	ChildIncludedLocations
+ChildExcludedLocations	ChildExcludedLocations
+Tricks/Glitches	技巧与漏洞
+Logic Rules	逻辑规则
+Glitchless - No glitches are required, but may require some minor tricks. Additional tricks may be enabled and disabled below.\n\nNo logic - Item placement is completely random. MAY BE IMPOSSIBLE TO BEAT.\n\nVanilla - Places all items and dungeon rewards in their vanilla locations.	无漏洞：不要求利用漏洞，但可能需要简单技巧，可在下方调整额外技巧。\n\n无逻辑：物品完全随机放置，可能无法通关。\n\n原版：所有物品与迷宫奖励位于原版位置。
+When this options is enabled, the randomizer will guarantee that every item is obtainable and every location is reachable. When disabled, only required items and locations to beat the game will be guaranteed reachable.	启用时保证所有物品可获取、所有地点可到达。关闭时只保证通关所需的物品与地点可到达。
+The cutscenes of the Poes in Forest Temple and Darunia in Fire Temple will not be skipped. These cutscenes are only useful for glitched gameplay and can be safely skipped otherwise.	保留森林神殿幽灵和火之神殿达鲁尼亚的过场。这些过场仅对利用漏洞的玩法有用，其他情况下可安全跳过。
+Disable All	全部禁用
+Enable All	全部启用
+Collapse All	全部折叠
+Open All	全部展开
+Enable Visible	启用可见项目
+ChildTricksDisabled	ChildTricksDisabled
+Disable Visible	禁用可见项目
+ChildTricksEnabled	ChildTricksEnabled
+ChildTrickAreas	ChildTrickAreas
+Requires Logic Turned On.	需要启用逻辑。
+Starting Inventory	初始物品
+ChildStartingEquipment	ChildStartingEquipment
+ChildStartingItems	ChildStartingItems
+Gold Skulltula Tokens: %d	黄金骷髅蜘蛛徽章：%d
+ChildStartingSongs	ChildStartingSongs
+Warp Songs	传送歌曲
+Waiting for file load...	等待存档加载……
+Show Hidden Items	显示隐藏物品
+Expand All	全部展开
+Clear the search field	清空搜索框
+(%d/%d) - MQ	（%d/%d）- 大师模式
+(%d/%d) - Vanilla	（%d/%d）- 原版
+Check Tracker Settings	地点追踪器设置
+Window Type	窗口类型
+Only enable while paused	仅在暂停时启用
+Display Mode	显示模式
+Combo Button 1	组合按键 1
+Combo Button 2	组合按键 2
+Vanilla/MQ Dungeon Spoilers	原版／大师模式迷宫剧透
+If enabled, Vanilla/MQ dungeons will show on the tracker immediately. Otherwise, Vanilla/MQ dungeon locations must be unlocked.	启用后立即显示各迷宫的原版／大师模式类型；否则需要先发现对应迷宫。
+Hide right-side shop item checks	隐藏商店右侧物品地点
+If enabled, will prevent the tracker from displaying slots 1-4 in all shops.	启用后不显示所有商店的第 1—4 个货位。
+Always show gold skulltulas	始终显示黄金骷髅蜘蛛
+If enabled, will show GS locations in the tracker regardless of tokensanity settings.	无论徽章打乱设置如何，都在追踪器中显示黄金骷髅蜘蛛地点。
+Filter Empty Areas	过滤空区域
+If enabled, will hide area headers that have no locations matching filter	隐藏没有符合筛选条件地点的区域标题。
+Tracker Settings	追踪器设置
+The entrance tracker will only track shuffled entrances	入口追踪器只追踪已打乱的入口。
+Sort By	排序依据
+To	前往
+Sort entrances by the original source entrance	按原始入口排序。
+From	来自
+Sort entrances by the overrided destination	按替换后的目的地排序。
+List Items	列表项目
+Auto scroll	自动滚动
+Automatically scroll to the first aviable entrance in the current scene	自动滚动到当前场景中第一个可用入口。
+Highlight previous	高亮来处
+Highlight the previous entrance that Link came from	高亮林克刚经过的入口。
+Highlight available	高亮可用入口
+Highlight available entrances in the current scene	高亮当前场景中的可用入口。
+Hide undiscovered	隐藏未发现入口
+Collapse undiscovered entrances towards the bottom of each group	将未发现的入口折叠到各分组底部。
+Hide reverse	隐藏反向入口
+Hide reverse entrance transitions when Decouple Entrances is off	未启用入口分离时，隐藏反向的入口转换。
+Group By	分组依据
+Area	区域
+Group entrances by their area	按所在区域分组。
+Group entrances by their entrance type	按入口类型分组。
+Spoiler Reveal	显示剧透
+Show "To"	显示“前往”
+Reveal the "To" entrance for undiscovered entrances	显示未发现入口的“前往”位置。
+Show "From"	显示“来自”
+Reveal the "From" entrance for undiscovered entrances	显示未发现入口的“来自”位置。
+Legend	图例
+Collapse all entrance groups	折叠全部入口分组。
+Expand all entrance groups	展开全部入口分组。
+ChildEntranceTrackerLocations	ChildEntranceTrackerLocations
+%s to %s%s->	%s 前往 %s%s->
+%s from %s	%s 来自 %s
+%d Undiscovered	%d 个未发现
+Item Tracker Settings	物品追踪器设置
+BG Color	背景颜色
+Icon size : %dpx	图标大小：%d 像素
+Icon margins : %dpx	图标边距：%d 像素
+Text size : %dpx	文字大小：%d 像素
+Ammo/Capacity Tracking	弹药／容量追踪
+Customize what the numbers under each item are tracking.\n\nNote: items without capacity upgrades will track ammo even in capacity mode	自定义各物品下方数字所追踪的内容。\n\n没有容量升级的物品，即使在容量模式下也会追踪弹药。
+Align count to left side	计数靠左对齐
+Key Count Tracking	钥匙数量追踪
+Customize what numbers are shown for key tracking.	自定义钥匙追踪显示的数字。
+Triforce Piece Count Tracking	三角力量碎片数量追踪
+Customize what numbers are shown for triforce piece tracking.	自定义三角力量碎片追踪显示的数字。
+Misc	杂项
+Dungeon Rewards	迷宫奖励
+Circle display	环形显示
+Songs	歌曲
+Horizontal display	横向显示
+Maps and compasses	地图与罗盘
+Greg	格雷格
+Personal notes	个人笔记
+Show Hookshot Identifiers	显示钩索标记
+Shows an 'H' or an 'L' to more easiely distinguish between Hookshot and Longshot.	使用 H 或 L 标记，方便区分钩索和长钩索。
+Advanced Resolution Settings	高级分辨率设置
+Original Settings	原始设置
+Internal Resolution: %.1f%%	内部分辨率：%.1f%%
+Multiplies your output resolution by the value entered.	将输出分辨率乘以输入值。
+MSAA: %d	多重采样抗锯齿：%d
+Activates multi-sample anti-aliasing when above 1x, up to 8x for 8 samples for every pixel.\n\n 	高于 1 倍时启用多重采样抗锯齿，最高为 8 倍，即每像素采样 8 次。\n\n
+Enable advanced settings.	启用高级设置。
+Click to disable	点击禁用
+Viewport dimensions: %d x %d	视口尺寸：%d x %d
+Internal resolution: %d x %d	内部分辨率：%d x %d
+Force aspect ratio:	强制宽高比：
+Aspect ratio: %.2f:1	宽高比：%.2f:1
+disabledTooltipText	disabledTooltipText
+Set fixed vertical resolution (disables Resolution slider)	设置固定垂直分辨率（禁用分辨率滑块）
+Override the resolution scale slider and use the settings below, irrespective of window size.	覆盖分辨率缩放滑块，使用下方设置，不受窗口尺寸影响。
+Pixel Count Presets	像素数量预设
+Horiz. Pixel Count	水平像素数
+Click to resolve	点击解决
+Vertical Pixel Count	垂直像素数
+Integer Scaling Settings	整数缩放设置
+Pixel-perfect Mode	像素精确模式
+Don't scale image to fill window.	不将画面缩放至填满窗口。
+Integer scale factor: %d	整数缩放倍数：%d
+Integer scales the image. Only available in pixel-perfect mode.	按整数倍缩放画面，仅在像素精确模式下可用。
+Automatically scale image to fit viewport	自动缩放以适应视口
+Automatically sets scale factor to fit window. Only available in pixel-perfect mode.	自动设置缩放倍数以适应窗口，仅在像素精确模式下可用。
+Additional Settings	其他设置
+Disable aspect correction and stretch the output image.\n(Might be useful for 4:3 televisions!)\nNot available in Pixel Perfect Mode.	禁用宽高比校正并拉伸画面。\n可能适合 4:3 电视。\n像素精确模式下不可用。
+Click to reenable aspect correction.	点击重新启用宽高比校正。
+Show a horizontal resolution field, instead of aspect ratio.	显示水平分辨率输入框，代替宽高比。
+Prevent integer scaling from exceeding screen bounds.\n(Makes screen bounds take priority over specified factor.)	避免整数缩放超出屏幕边界。\n屏幕边界优先于指定倍数。
+Prevents integer scaling factor from exceeding screen bounds.\n\nEnabled: Will clamp the scaling factor and display a gentle warning in the resolution editor.\nDisabled: Will allow scaling to exceed screen bounds, for users who want to crop overscan.\n\n 	限制整数缩放倍数，避免超出屏幕边界。\n\n启用：限制倍数，并在分辨率编辑器中显示提示。\n禁用：允许超出边界，适合需要裁掉过扫描区域的用户。
+Click to reset a console variable that may be causing this.	点击重置可能导致此问题的控制台变量。
+Controller for port %d disconnected.\nPress any button or move any axis\non an unused controller for port %d.	端口 %d 的控制器已断开。\n请在未使用的控制器上按任意键\n或移动任意摇杆，将其分配给端口 %d。
+Controller(s) disconnected.	控制器已断开。
+Controller Disconnected	控制器断开
+Set Controller	设置控制器
+Press any button or move any axis\non the controller for port %d	请在端口 %d 的控制器上\n按任意键或移动任意摇杆。
+AC_Child	AC_Child
+Context Menu	上下文菜单
+Copy Text	复制文本
+ScrollingRegion	ScrollingRegion
+Submit	提交
+Overlays Text Font	叠加文字字体
+GameOverlay	GameOverlay
+dlist: %p	dlist: %p
+BreakPoint: %s	断点：%s
+Disp Stack	显示栈
+Tiles	纹理块
+%s: %dx%d; type=%s	%s: %dx%d; type=%s
+%dx%d; type=%s	%dx%d; type=%s
+Loaded Textures	已加载纹理
+Texture To Load	待加载纹理
+GFX Debugger	图形调试器
+Debug	调试
+Resume Game	继续游戏
+Main - Deck	主界面 - Deck
+Main Game	主游戏
+Axis Threshold	轴阈值
+Reorder controllers	调整控制器顺序
+Debug Stats	调试统计
+Platform: Windows	平台：Windows
+Platform: iOS	平台：iOS
+Platform: macOS	平台：macOS
+Platform: Nintendo Switch	平台：Nintendo Switch
+Platform: Linux	平台：Linux
+Platform: Unknown	平台：未知
+Status: %.3f ms/frame (%.1f FPS)	状态：%.3f 毫秒／帧（%.1f FPS）

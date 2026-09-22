@@ -13,6 +13,9 @@ extern "C" MessageTableEntry* sNesMessageEntryTablePtr;
 extern "C" MessageTableEntry* sGerMessageEntryTablePtr;
 extern "C" MessageTableEntry* sFraMessageEntryTablePtr;
 extern "C" MessageTableEntry* sStaffMessageEntryTablePtr;
+// SOH [Chinese] - Chinese message table is compiled in, not loaded from the OTR
+extern "C" MessageTableEntry* sChiMessageEntryTablePtr;
+extern "C" void OTRMessage_InitChinese();
 //extern "C" MessageTableEntry* _message_0xFFFC_nes;	
 
 static void SetMessageEntry(MessageTableEntry& entry, const SOH::MessageEntry& msgEntry) {
@@ -133,6 +136,10 @@ extern "C" void OTRMessage_Init()
         // Assert staff credits start at the first credits ID
         assert(sStaffMessageEntryTablePtr[0].textId == 0x0500);
     }
+
+    // SOH [Chinese] - hand the embedded iQue-derived Chinese message table to
+    // the message system. Same pattern as upstream Shipwright-CN.
+    OTRMessage_InitChinese();
 
     CustomMessageManager::Instance->AddCustomMessageTable(customMessageTableID);
     CustomMessageManager::Instance->CreateGetItemMessage(

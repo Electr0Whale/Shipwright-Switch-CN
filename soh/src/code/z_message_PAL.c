@@ -40,6 +40,10 @@ MessageTableEntry* sNesMessageEntryTablePtr = NULL;
 MessageTableEntry* sGerMessageEntryTablePtr = NULL;
 MessageTableEntry* sFraMessageEntryTablePtr = NULL;
 MessageTableEntry* sStaffMessageEntryTablePtr = NULL;
+// SOH [Chinese] - populated by OTRMessage_InitChinese() from the embedded iQue data
+MessageTableEntry* sChiMessageEntryTablePtr = NULL;
+// Encoding belongs to the selected message, not the UI language.
+static u8 sMessageIsChinese = false;
 
 char* _message_0xFFFC_nes;
 
@@ -282,13 +286,9 @@ void Message_GrowTextbox(MessageContext* msgCtx) {
     R_TEXTBOX_X = (R_TEXTBOX_X_TARGET + R_TEXTBOX_WIDTH_TARGET) - (R_TEXTBOX_WIDTH / 2);
 }
 
-void Message_FindMessage(PlayState* play, u16 textId) {
-    const char* foundSeg;
-    const char* nextSeg;
+void Message_FindMessageForLanguage(PlayState* play, u16 textId, u8 language) {
     MessageTableEntry* messageTableEntry = sNesMessageEntryTablePtr;
-    const char** languageSegmentTable;
     Font* font;
-    const char* seg;
     u16 bufferId = textId;
     // Use the better owl message if better owl is enabled
     if (CVarGetInteger(CVAR_ENHANCEMENT("BetterOwl"), 0) != 0 && (bufferId == 0x2066 || bufferId == 0x607B ||
@@ -297,48 +297,49 @@ void Message_FindMessage(PlayState* play, u16 textId) {
         bufferId = 0x71B3;
     }
 
-    if (gSaveContext.language == LANGUAGE_GER)
+    if (language == LANGUAGE_GER)
         messageTableEntry = sGerMessageEntryTablePtr;
-    else if (gSaveContext.language == LANGUAGE_FRA)
+    else if (language == LANGUAGE_FRA)
         messageTableEntry = sFraMessageEntryTablePtr;
+    // SOH [Chinese] - iQue-derived Chinese message table
+    else if (language == LANGUAGE_CHI)
+        messageTableEntry = sChiMessageEntryTablePtr;
 
     // If PAL languages are not present in the OTR file, default to English
     if (messageTableEntry == NULL)
         messageTableEntry = sNesMessageEntryTablePtr;
 
-    seg = messageTableEntry->segment;
-
-    while (messageTableEntry->textId != 0xFFFF) {
-        font = &play->msgCtx.font;
-
-        if (messageTableEntry->textId == bufferId) {
-            foundSeg = messageTableEntry->segment;
-            font->charTexBuf[0] = messageTableEntry->typePos;
-
-            nextSeg = messageTableEntry->segment;
-            font->msgOffset = messageTableEntry->segment;
-            font->msgLength = messageTableEntry->msgSize;
-
-            // "Message found!!!"
-            osSyncPrintf(" メッセージが,見つかった！！！ = %x  "
-                         "(data=%x) (data0=%x) (data1=%x) (data2=%x) (data3=%x)\n",
-                         bufferId, font->msgOffset, font->msgLength, foundSeg, seg, nextSeg);
-            return;
+    sMessageIsChinese = messageTableEntry == sChiMessageEntryTablePtr && messageTableEntry != NULL;
+    // Search the selected table, then the English table for this same ID.
+    for (int pass = 0; pass < 2; ++pass) {
+        if (messageTableEntry != NULL) {
+            for (; messageTableEntry->textId != 0xFFFF; ++messageTableEntry) {
+                if (messageTableEntry->textId == bufferId) {
+                    font = &play->msgCtx.font;
+                    font->charTexBuf[0] = messageTableEntry->typePos;
+                    font->msgOffset = (uintptr_t)messageTableEntry->segment;
+                    font->msgLength = messageTableEntry->msgSize;
+                    return;
+                }
+            }
         }
-        messageTableEntry++;
+        messageTableEntry = sNesMessageEntryTablePtr;
+        sMessageIsChinese = false;
     }
-
-    // "Message not found!!!"
-    osSyncPrintf(" メッセージが,見つからなかった！！！ = %x\n", bufferId);
+    // Unknown custom IDs must never subtract pointers from unrelated tables.
+    static const char missingMessage[] = "Message unavailable.\x02";
     font = &play->msgCtx.font;
-    messageTableEntry = sNesMessageEntryTablePtr;
+    font->charTexBuf[0] = 0;
+    font->msgOffset = (uintptr_t)missingMessage;
+    font->msgLength = sizeof(missingMessage) - 1;
+}
 
-    foundSeg = messageTableEntry->segment;
-    font->charTexBuf[0] = messageTableEntry->typePos;
-    messageTableEntry++;
-    nextSeg = messageTableEntry->segment;
-    font->msgOffset = foundSeg - seg;
-    font->msgLength = nextSeg - foundSeg;
+void Message_FindMessage(PlayState* play, u16 textId) {
+    Message_FindMessageForLanguage(play, textId, gSaveContext.language);
+}
+
+void Message_UseEnglishEncoding(void) {
+    sMessageIsChinese = false;
 }
 
 void Message_FindCreditsMessage(PlayState* play, u16 textId) {
@@ -715,7 +716,8 @@ f32 sFontWidths[144] = {
 };
 
 f32 Message_GetCharacterWidth(unsigned char characterIndex) {
-    return sFontWidths[characterIndex] * (R_TEXT_CHAR_SCALE / 100.0f);
+    const f32 width = characterIndex < ARRAY_COUNT(sFontWidths) ? sFontWidths[characterIndex] : 16.0f;
+    return width * (R_TEXT_CHAR_SCALE / 100.0f);
 }
 
 u16 Message_DrawItemIcon(PlayState* play, u16 itemId, Gfx** p, u16 i) {
@@ -1111,7 +1113,17 @@ void Message_DrawText(PlayState* play, Gfx** gfxP) {
                 Message_DrawTextChar(play, &font->charTexBuf[charTexIdx], &gfx);
                 charTexIdx += FONT_CHAR_TEX_SIZE;
 
-                msgCtx->textPosX += (s32)(sFontWidths[character - ' '] * (R_TEXT_CHAR_SCALE / 100.0f));
+                // #region SOH [Chinese] - Full-width advance for CJK glyphs
+                // Message_Decode emits 0xFE as an out-of-band marker for every
+                // 2-byte Chinese character. It must not reach the sFontWidths
+                // lookup below (that table only covers 0x20..0xAF), so give it a
+                // fixed 16px advance instead.
+                if (character == 0xFE) {
+                    msgCtx->textPosX += (s32)(16.0f * (R_TEXT_CHAR_SCALE / 100.0f));
+                } else {
+                    msgCtx->textPosX += (s32)(sFontWidths[character - ' '] * (R_TEXT_CHAR_SCALE / 100.0f));
+                }
+                // #endregion
                 break;
         }
     }
@@ -1125,8 +1137,8 @@ void Message_DrawText(PlayState* play, Gfx** gfxP) {
 }
 
 void Message_LoadItemIcon(PlayState* play, u16 itemId, s16 y) {
-    static s16 sIconItem32XOffsets[] = { 74, 74, 74 };
-    static s16 sIconItem24XOffsets[] = { 72, 72, 72 };
+    static s16 sIconItem32XOffsets[] = { 74, 74, 74, 74 };
+    static s16 sIconItem24XOffsets[] = { 72, 72, 72, 72 };
     MessageContext* msgCtx = &play->msgCtx;
     InterfaceContext* interfaceCtx = &play->interfaceCtx;
 
@@ -1186,7 +1198,7 @@ void Message_Decode(PlayState* play) {
     sTextFade = false;
 
     while (true) {
-        phi_s1 = temp_s2 = msgCtx->msgBufDecoded[decodedBufPos] = font->msgBuf[msgCtx->msgBufPos];
+        phi_s1 = temp_s2 = msgCtx->msgBufDecoded[decodedBufPos] = (u8)font->msgBuf[msgCtx->msgBufPos];
 
         // Don't require input for credits textboxes in randomizer
         if (CVarGetInteger(CVAR_ENHANCEMENT("NoInputForCredits"), 0) && (
@@ -1565,6 +1577,23 @@ void Message_Decode(PlayState* play) {
                 msgCtx->choiceNum = 2;
             } else if (temp_s2 == MESSAGE_THREE_CHOICE) {
                 msgCtx->choiceNum = 3;
+            // #region SOH [Chinese] - 2-byte CJK character
+            // In Chinese mode a byte >= 0xA0 starts a 2-byte iQue character.
+            // The pair occupies 2 raw message bytes but only 1 slot in
+            // msgBufDecoded, which is filled with 0xFE: an out-of-band marker
+            // that tells Message_DrawText to use full-width (16px) spacing.
+            // 0xFE is safe in this slot because it is > 0x8B (the largest valid
+            // Font_LoadChar index), not a control code (0x01-0x1F), not ASCII
+            // (0x20-0x7E) and not a 1-byte icon code (0x9F-0xAB).
+            } else if (sMessageIsChinese && !sTextIsCredits && temp_s2 >= 0xA0 &&
+                       (msgCtx->msgBufPos + 1) < font->msgLength) {
+                u8 lowByte = font->msgBuf[++msgCtx->msgBufPos];
+                u16 chiChar = (temp_s2 << 8) | lowByte;
+
+                Font_LoadCharChinese(font, chiChar, charTexIdx);
+                charTexIdx += FONT_CHAR_TEX_SIZE;
+                msgCtx->msgBufDecoded[decodedBufPos] = 0xFE;
+            // #endregion
             } else if (temp_s2 != ' ') {
                 Font_LoadChar(font, temp_s2 - ' ', charTexIdx);
                 charTexIdx += FONT_CHAR_TEX_SIZE;
@@ -1641,6 +1670,7 @@ void Message_OpenText(PlayState* play, u16 textId) {
         gSaveContext.eventInf[0] = gSaveContext.eventInf[1] = gSaveContext.eventInf[2] = gSaveContext.eventInf[3] = 0;
     }
 
+    sMessageIsChinese = false;
     // RANDOTODO: Use this for ice trap messages
     if (CustomMessage_RetrieveIfExists(play)) {
         osSyncPrintf("Found custom message");
@@ -1648,7 +1678,12 @@ void Message_OpenText(PlayState* play, u16 textId) {
         Message_FindCreditsMessage(play, textId);
         msgCtx->msgLength = font->msgLength;
         char* src = (uintptr_t)font->msgOffset;
-        memcpy(font->msgBuf, src, font->msgLength);
+        if (font->msgLength > sizeof(font->msgBuf)) {
+            font->msgLength = msgCtx->msgLength = 1;
+            font->msgBuf[0] = MESSAGE_END;
+        } else {
+            memcpy(font->msgBuf, src, font->msgLength);
+        }
 
         // OTRTODO
         //DmaMgr_SendRequest1(font->msgBuf, (uintptr_t)(_staff_message_data_staticSegmentRomStart + 4 + font->msgOffset),
@@ -1664,13 +1699,22 @@ void Message_OpenText(PlayState* play, u16 textId) {
                  (textId == 0x4C || textId == 0xA4)) ||
                 // 4D == Hylian Shield
                 textId == 0x4D)) {
+        u8 savedLanguage = gSaveContext.language;
+        if (savedLanguage == LANGUAGE_CHI) gSaveContext.language = LANGUAGE_ENG;
         Message_FindMessage(play, textId);
+        gSaveContext.language = savedLanguage;
+        sMessageIsChinese = false;
         msgCtx->msgLength = font->msgLength = GetEquipNowMessage(font->msgBuf, font->msgOffset, sizeof(font->msgBuf));
     } else {
         Message_FindMessage(play, textId);
         msgCtx->msgLength = font->msgLength;
         char* src = (uintptr_t)font->msgOffset;
-        memcpy(font->msgBuf, src, font->msgLength);
+        if (font->msgLength > sizeof(font->msgBuf)) {
+            font->msgLength = msgCtx->msgLength = 1;
+            font->msgBuf[0] = MESSAGE_END;
+        } else {
+            memcpy(font->msgBuf, src, font->msgLength);
+        }
     }
 
     msgCtx->textBoxProperties = font->charTexBuf[0];

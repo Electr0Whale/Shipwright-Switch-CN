@@ -5,6 +5,12 @@
 #include "message_data_static.h"
 #include "textures/nes_font_static/nes_font_static.h"
 #include "textures/message_static/message_static.h"
+// SOH [Chinese] - custom CJK glyph textures (16x16 I4), shipped in soh.otr
+#include "textures/chinese_font/chinese_font.h"
+
+// SOH [Chinese] - Chinese message table, populated by OTRMessage_InitChinese()
+// (introduced in a later upstream revision, backported here for the port).
+extern MessageTableEntry* sChiMessageEntryTablePtr;
 
 static const char* fntTbl[] =
 {
@@ -161,6 +167,25 @@ const char* msgStaticTbl[] =
     gMessageArrowTex
 };
 
+/*
+ * Font buffers are consumed directly by gDPLoadTextureBlock_4b.  They must
+ * therefore contain the 16x16 I4 pixels, rather than an __OTR__ resource
+ * name.  Most display lists resolve resource names through a segment load,
+ * but the file-name keyboard and message renderer do not have that step.
+ */
+static void Font_CopyTexture(void* destination, const char* resourceName) {
+    char* texture = ResourceMgr_LoadTexOrDListByName(resourceName);
+
+    if (texture != NULL) {
+        memcpy(destination, texture, FONT_CHAR_TEX_SIZE);
+    } else {
+        memset(destination, 0, FONT_CHAR_TEX_SIZE);
+    }
+}
+
+// SOH [Chinese] - All-CharChn glyph lookup table (codes 0xA08C..0xAC48)
+#include "z_kanfont_chinese_tbl.inc"
+
 void func_8006EE50(Font* font, u16 arg1, u16 arg2) {
 }
 
@@ -173,9 +198,59 @@ void Font_LoadChar(Font* font, u8 character, u16 codePointIndex) {
                         //&_nes_font_staticSegmentRomStart[character * FONT_CHAR_TEX_SIZE], FONT_CHAR_TEX_SIZE,
                         //__FILE__, __LINE__);
 
-    if (character < 0x8B)
-        memcpy(&font->charTexBuf[codePointIndex], fntTbl[character], strlen(fntTbl[character]) + 1);
+    if (character < ARRAY_COUNT(fntTbl) && codePointIndex <= sizeof(font->charTexBuf) - FONT_CHAR_TEX_SIZE) {
+        Font_CopyTexture(&font->charTexBuf[codePointIndex], fntTbl[character]);
+    }
 }
+
+// #region SOH [Chinese] - Load Chinese character glyph via OTR path
+/**
+ * Loads a Chinese character glyph into the character texture buffer at `codePointIndex`.
+ * `character` is the 2-byte iQue encoding:
+ *   0xA08C–0xA775  main CJK range
+ *   0xAA9F–0xAAAB  button / icon codes (redirected to NES font textures below)
+ *   0xAAAC–0xAC48  extended CJK range
+ *
+ * The glyph table is contiguous: glyphIndex = character - 0xA08C. Undefined codes and
+ * button codes resolve to a blank texture. Note that this mirrors upstream
+ * Shipwright-CN's All-CharChn design so the generated .inc stays drop-in compatible.
+ */
+void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
+    if (codePointIndex > sizeof(font->charTexBuf) - FONT_CHAR_TEX_SIZE) {
+        return;
+    }
+
+    // iQue button/icon codes (0xAA9F–0xAAAB) — map to the NES font textures the
+    // N64/American builds already use for the same icons.
+    if (character >= 0xAA9F && character <= 0xAAAB) {
+        static const char* buttonIconTbl[] = {
+            gMsgChar9FButtonATex,      // 0xAA9F
+            gMsgCharA0ButtonBTex,      // 0xAAA0
+            gMsgCharA1ButtonCTex,      // 0xAAA1
+            gMsgCharA2ButtonLTex,      // 0xAAA2
+            gMsgCharA3ButtonRTex,      // 0xAAA3
+            gMsgCharA4ButtonZTex,      // 0xAAA4
+            gMsgCharA5ButtonCUpTex,    // 0xAAA5
+            gMsgCharA6ButtonCDownTex,  // 0xAAA6
+            gMsgCharA7ButtonCLeftTex,  // 0xAAA7
+            gMsgCharA8ButtonCRightTex, // 0xAAA8
+            gMsgCharA9ZTargetSignTex,  // 0xAAA9
+            gMsgCharAAControlStickTex, // 0xAAAA
+            gMsgCharABControlPadTex,   // 0xAAAB
+        };
+        s32 btnIndex = character - 0xAA9F;
+        Font_CopyTexture(&font->charTexBuf[codePointIndex], buttonIconTbl[btnIndex]);
+        return;
+    }
+
+    Font_LoadChar(font, '?' - ' ', codePointIndex);
+    // Contiguous table index: glyphIndex = code – 0xA08C
+    s32 glyphIndex = character - 0xA08C;
+    if (glyphIndex >= 0 && glyphIndex < ARRAY_COUNT(chineseFontTbl)) {
+        Font_CopyTexture(&font->charTexBuf[codePointIndex], chineseFontTbl[glyphIndex]);
+    }
+}
+// #endregion
 
 void* Font_FetchCharTexture(u8 character) {
     return fntTbl[character];
@@ -187,7 +262,7 @@ void* Font_FetchCharTexture(u8 character) {
  * The different icons are given in the MessageBoxIcon enum.
  */
 void Font_LoadMessageBoxIcon(Font* font, u16 icon) {
-    memcpy(font->iconBuf, msgStaticTbl[4 + icon], strlen(msgStaticTbl[4 + icon]) + 1);
+    Font_CopyTexture(font->iconBuf, msgStaticTbl[4 + icon]);
 }
 
 /**
@@ -195,34 +270,56 @@ void Font_LoadMessageBoxIcon(Font* font, u16 icon) {
  * the font buffer.
  */
 void Font_LoadOrderedFont(Font* font) {
+    // NTSC ROMs do not contain the PAL-only 0xFFFC NES message.  The ordered
+    // font is nevertheless used by the title and file-select code in this
+    // branch, so reproduce the PAL message's ASCII ordering when it is absent.
+    // See assets/text/message_data.h in the OoT decompilation.
+    static const char sOrderedFontFallback[] =
+        "0123456789\x01"
+        "ABCDEFGHIJKLMN\x01"
+        "OPQRSTUVWXYZ\x01"
+        "abcdefghijklmn\x01"
+        "opqrstuvwxyz\x01"
+        " -.\x01"
+        "\x02";
     size_t len;
     size_t jj;
-    s32 fontStatic;
     u8* fontBuf;
     s32 codePointIndex;
     s32 fontBufIndex;
     s32 offset;
 
-    len = strlen(_message_0xFFFC_nes);
-    memcpy(font->msgBuf, _message_0xFFFC_nes, len);
+    const char* orderedFontMessage =
+        (_message_0xFFFC_nes != NULL) ? _message_0xFFFC_nes : sOrderedFontFallback;
+
+    len = strlen(orderedFontMessage);
+    if (len >= sizeof(font->msgBuf)) {
+        len = sizeof(font->msgBuf) - 1;
+    }
+    memcpy(font->msgBuf, orderedFontMessage, len);
+    font->msgBuf[len] = MESSAGE_END;
 
     osSyncPrintf("msg_data=%x,  msg_data0=%x   jj=%x\n", font->msgOffset, font->msgLength, jj = len);
 
     len = jj;
     for (fontBufIndex = 0, codePointIndex = 0; font->msgBuf[codePointIndex] != MESSAGE_END; codePointIndex++) {
-        if (codePointIndex > len) {
+        if ((size_t)codePointIndex > len) {
             osSyncPrintf("ＥＲＲＯＲ！！  エラー！！！  error───！！！！\n");
             return;
         }
 
         if (font->msgBuf[codePointIndex] != MESSAGE_NEWLINE) {
             fontBuf = font->fontBuf + fontBufIndex * 8;
-            fontStatic = _nes_font_staticSegmentRomStart;
 
             osSyncPrintf("nes_mes_buf[%d]=%d\n", codePointIndex, font->msgBuf[codePointIndex]);
 
             offset = (font->msgBuf[codePointIndex] - '\x20') * FONT_CHAR_TEX_SIZE;
-            memcpy(fontBuf, fntTbl[offset / FONT_CHAR_TEX_SIZE], strlen(fntTbl[offset / FONT_CHAR_TEX_SIZE]) + 1);
+            if (offset < 0 || offset / FONT_CHAR_TEX_SIZE >= ARRAY_COUNT(fntTbl) ||
+                (size_t)fontBufIndex * 8 > sizeof(font->fontBuf) - FONT_CHAR_TEX_SIZE) {
+                osSyncPrintf("Font_LoadOrderedFont: invalid glyph or destination index\n");
+                return;
+            }
+            Font_CopyTexture(fontBuf, fntTbl[offset / FONT_CHAR_TEX_SIZE]);
             //DmaMgr_SendRequest1(fontBuf, fontStatic + offset, FONT_CHAR_TEX_SIZE, __FILE__, __LINE__);
             fontBufIndex += FONT_CHAR_TEX_SIZE / 8;
         }

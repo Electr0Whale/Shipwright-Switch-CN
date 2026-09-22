@@ -1,0 +1,596 @@
+Glitchless	无漏洞
+No logic	无逻辑
+Closed	关闭
+Closed Deku	仅关闭德库树
+Song only	仅需歌曲
+Closed as child	少年时期关闭
+Fast	快速
+Always open	始终开放
+Stones	精灵石
+Medallions	徽章
+Dungeon rewards	迷宫奖励
+Tokens	代币
+Standard Rewards	标准奖励
+Greg as Reward	格雷格计为奖励
+Greg as Wildcard	格雷格作为替代
+Skip	跳过
+Set Number	指定数量
+Random Number	随机数量
+Selection	自行选择
+On + Ganon	开启并包含加侬
+Age Restricted	限制年龄
+Full	完全打乱
+Simple	简单
+On + Bombchu	开启并包含炸弹鼠
+No Drop	不掉落
+No Refill	不补充
+End of dungeons	迷宫终点
+Any dungeon	任意迷宫
+Overworld	地面区域
+Anywhere	任意地点
+Dungeon Reward	迷宫奖励
+Advancement	推进流程的物品
+Anything	任何物品
+Nothing	无物品
+Song Locations	歌曲地点
+0 Items	0 件物品
+1 Item	1 件物品
+2 Items	2 件物品
+3 Items	3 件物品
+4 Items	4 件物品
+Balanced	均衡
+Starter Wallet	初始钱包
+Adult Wallet	成人钱包
+Tycoon's Wallet	大富豪钱包
+All Tokens	全部徽章
+Affordable	便宜
+Expensive	昂贵
+Random Prices	随机价格
+On (no hints)	开启（无提示）
+On (with hints)	开启（有提示）
+Start With	开局拥有
+Own Dungeon	所属迷宫
+Any Dungeon	任意迷宫
+Own dungeon	所属迷宫
+Start with	开局拥有
+LACS-Vanilla	光之箭过场：原版
+LACS-Stones	光之箭过场：精灵石
+LACS-Medallions	光之箭过场：徽章
+LACS-Rewards	光之箭过场：奖励
+LACS-Dungeons	光之箭过场：迷宫
+LACS-Tokens	光之箭过场：代币
+100 GS Reward	100 枚徽章奖励
+Standard Reward	标准奖励
+Count	数量
+No Hints	无提示
+Need Nothing	无要求
+Obscure	隐晦
+Ambiguous	模糊
+Useless	无用
+Strong	较强
+Very Strong	很强
+Day	白天
+Night	夜晚
+Plentiful	充裕
+Scarce	稀少
+Minimal	极少
+Extra	额外
+Mayhem	混乱
+Onslaught	全面冰冻
+Floating	悬浮
+Window	窗口
+Combo Button Hold	按住组合按键
+C-Up	C 上
+C-Down	C 下
+C-Left	C 左
+C-Right	C 右
+L Button	L 键
+Z Button	Z 键
+R Button	R 键
+D-Up	方向键上
+D-Down	方向键下
+D-Left	方向键左
+D-Right	方向键右
+No Numbers	不显示数字
+Current Capacity	当前容量
+Current Ammo	当前弹药
+Current Capacity / Max Capacity	当前容量／最大容量
+Current Ammo / Current Capacity	当前弹药／当前容量
+Collected / Max	已收集／最大数量
+Current / Collected / Max	当前／已收集／最大数量
+Current / Max	当前／最大数量
+Collected / Required	已收集／所需数量
+Collected / Required / Max	已收集／所需／最大数量
+Main Window	主窗口
+Separate	独立
+Misc Window	杂项窗口
+Original (4:3)	原始（4:3）
+Widescreen (16:9)	宽屏（16:9）
+Nintendo 3DS (5:3)	Nintendo 3DS（5:3）
+Ultrawide (21:9)	超宽屏（21:9）
+Native N64 (240p)	N64 原生（240p）
+Full HD (1080p)	全高清（1080p）
+OGC Great Fairy Fountain -> Castle Grounds	加侬城堡外大妖精泉 -> 城堡庭院
+GV Carpenter Tent -> GV Fortress Side	格鲁德谷木匠帐篷 -> 谷地要塞侧
+Ganon's Castle Entryway -> Castle Grounds From Ganon's Castle	加侬城堡入口 -> 来自加侬城堡的城堡庭院
+HC Great Fairy Fountain -> Castle Grounds	海拉鲁城堡大妖精泉 -> 城堡庭院
+HC Storms Grotto -> Castle Grounds	海拉鲁城堡风暴地洞 -> 城堡庭院
+Dodongos Cavern	多东哥洞窟
+Jabu Jabus Belly	加卜加卜肚子里
+Milk	牛奶
+Half Milk	半瓶牛奶
+Randomize Settings	随机设置
+Forest	森林
+Kakariko Gate	卡卡利科大门
+Door of Time	时之门
+Rainbow Bridge	彩虹桥
+Stone Count	精灵石数量
+Medallion Count	徽章数量
+Reward Count	奖励数量
+Dungeon Count	迷宫数量
+Token Count	代币数量
+Bridge Reward Options	彩虹桥奖励选项
+Random Ganon's Trials	随机加侬试炼
+Trial Count	试炼数量
+Starting Age	初始年龄
+Shuffle Entrances	打乱入口
+Dungeon Entrances	迷宫入口
+Boss Entrances	首领入口
+Overworld Entrances	地面区域入口
+Interior Entrances	室内入口
+Grottos Entrances	地洞入口
+Owl Drops	猫头鹰落点
+Overworld Spawns	地面出生点
+Bombchus in Logic	炸弹鼠纳入逻辑
+Ammo Drops	弹药掉落
+Heart Drops and Refills	红心掉落与恢复
+Triforce Hunt Total Pieces	三角力量碎片总数
+Triforce Hunt Required Pieces	所需三角力量碎片数
+MQ Dungeon Count	大师模式迷宫数量
+Set Dungeon Types	设置迷宫类型
+Master Quest	大师模式
+Jabu-Jabu's Belly	加卜加卜肚子里
+Training Grounds	训练场
+Shuffle Dungeon Rewards	打乱迷宫奖励
+Link's Pocket	林克的口袋
+Shuffle Songs	打乱歌曲
+Song locations	歌曲地点
+Shopsanity	商店打乱
+Shopsanity Prices	商店随机价格
+Starting Wallet	初始钱包
+Affordable Prices	可负担价格
+Tokensanity	徽章打乱
+Scrub Shuffle	德库商人打乱
+Shuffle Cows	打乱牛的奖励
+Shuffle Kokiri Sword	打乱科奇里之剑
+Shuffle Master Sword	打乱大师之剑
+Shuffle Ocarinas	打乱笛子
+Shuffle Weird Egg	打乱奇怪的蛋
+Shuffle Gerudo Card	打乱格鲁德会员卡
+Shuffle Magic Beans	打乱魔法豆
+Shuffle Merchants	打乱商人
+On (No Hints)	开启（无提示）
+On (With Hints)	开启（有提示）
+Shuffle Frog Song Rupees	打乱青蛙歌曲卢比
+Shuffle Adult Trade	打乱成年交易
+Shuffle Chest Minigame	打乱宝箱小游戏
+On (Separate)	开启（分开）
+On (Pack)	开启（打包）
+Shuffle 100 GS Reward	打乱 100 枚徽章奖励
+Maps/Compasses	地图／罗盘
+Small Keys	小钥匙
+Gerudo Fortress Keys	格鲁德要塞钥匙
+Boss Keys	首领钥匙
+Ganon's Boss Key	加侬首领钥匙
+LACS Reward Options	光之箭过场奖励选项
+Key Rings	钥匙串
+Keyring Dungeon Count	钥匙串迷宫数量
+GTG	格鲁德训练场
+Skip Child Stealth	跳过少年潜行
+Don't Skip	不跳过
+Skip Tower Escape	跳过城堡逃脱
+Skip Epona Race	跳过艾波娜赛马
+Minigames repetitions	小游戏重复次数
+Skip Scarecrow's Song	跳过稻草人之歌
+Four Poes Cutscene	四姐妹幽灵过场
+Lake Hylia Owl	海利亚湖猫头鹰
+Big Poe Target Count	大幽灵目标数量
+Cuccos to return	需要找回的咕咕鸡
+King Zora Speed	卓拉王移动速度
+Complete Mask Quest	完成面具任务
+Enable Glitch-Useful Cutscenes	保留有助于漏洞的过场
+Quick Text	快速文本
+0: Vanilla	0：原版
+1: Skippable	1：可跳过
+2: Instant	2：瞬间
+3: Turbo	3：极速
+Skip Song Replays	跳过歌曲重放
+Skip (No SFX)	跳过（无音效）
+Skip (Keep SFX)	跳过（保留音效）
+Keep FW Warp Point	保留法罗之风传送点
+Fast Bunny Hood	加速兔子头巾
+Gossip Stone Hints	闲话石提示
+Hint Clarity	提示清晰度
+Hint Distribution	提示分布
+ToT Altar Hint	时之神殿祭坛提示
+Light Arrow Hint	光之箭提示
+Dampe's Diary Hint	丹培日记提示
+Greg the Rupee Hint	格雷格卢比提示
+Saria's Hint	萨莉亚提示
+Frog Ocarina Game Hint	青蛙笛子游戏提示
+Warp Song Hints	传送歌曲提示
+10 GS Hint	10 枚徽章提示
+20 GS Hint	20 枚徽章提示
+30 GS Hint	30 枚徽章提示
+40 GS Hint	40 枚徽章提示
+50 GS Hint	50 枚徽章提示
+Scrub Hint Text	德库商人提示文本
+Compasses Show Rewards	罗盘显示奖励
+Compasses Show WotH	罗盘显示英雄之路
+Maps Show Dungeon Modes	地图显示迷宫模式
+Starting Time	初始时间
+Chest Animations	宝箱动画
+Always Fast	始终快速
+Match Contents	匹配内容
+Chest Size and Color	宝箱大小与颜色
+Generate Spoiler Log	生成剧透日志
+Ingame Spoilers	游戏内剧透
+Hide	隐藏
+Show	显示
+Random Trap Damage	随机陷阱伤害
+Farore's Wind Anywhere	随处使用法罗之风
+Lift Age Restrictions	解除年龄限制
+All Disabled	全部禁用
+All Enabled	全部启用
+Choose	选择
+Adult Deku Stick	成年使用德库棒
+Adult Boomerang	成年使用回旋镖
+Child Hammer	少年使用巨锤
+Adult Slingshot	成年使用弹弓
+Child Bow	少年使用弓
+Child Hookshot	少年使用钩索
+Child Iron Boots	少年使用铁靴
+Child Hover Boots	少年使用浮空靴
+Adult Masks	成年使用面具
+Adult Kokiri Sword	成年使用科奇里之剑
+Child Master Sword	少年使用大师之剑
+Child Biggoron Sword	少年使用大鼓隆之剑
+Adult Deku Shield	成年使用德库盾
+Child Mirror Shield	少年使用镜盾
+Child Goron Tunic	少年使用鼓隆服
+Child Zora Tunic	少年使用卓拉服
+GK Durability	巨人之刀耐久
+Random Risk	随机（有风险）
+Random Safe	随机（安全）
+Item Pool	物品池
+Remove Double Defense	移除双倍防御
+Prog Goron Sword	渐进升级鼓隆剑
+Deku Stick Capacity	德库棒容量
+ Deku Sticks	 根德库棒
+Deku Nut Capacity	德库果容量
+ Deku Nuts	 颗德库果
+Slingshot	弹弓
+Slingshot (30)	弹弓（30）
+Slingshot (40)	弹弓（40）
+Slingshot (50)	弹弓（50）
+Start with Fairy Ocarina	开局拥有妖精之笛
+Bombs	炸弹
+Bomb Bag (30)	炸弹袋（30）
+Bomb Bag (40)	炸弹袋（40）
+20 Bombchus	20 个炸弹鼠
+50 Bombchus	50 个炸弹鼠
+Bow	弓
+Bow (30)	弓（30）
+Bow (40)	弓（40）
+Bow (50)	弓（50）
+Magic Beans	魔法豆
+Bottle 1	瓶子 1
+Bottle 2	瓶子 2
+Bottle 3	瓶子 3
+Bottle 4	瓶子 4
+Start with Zelda's Lullaby	开局学会塞尔达摇篮曲
+Start with Epona's Song	开局学会艾波娜之歌
+Start with Saria's Song	开局学会萨莉亚之歌
+Start with Sun's Song	开局学会太阳之歌
+Start with Song of Time	开局学会时之歌
+Start with Song of Storms	开局学会风暴之歌
+Start with Minuet of Forest	开局学会森林小步舞曲
+Start with Bolero of Fire	开局学会火之波莱罗舞曲
+Start with Serenade of Water	开局学会水之小夜曲
+Start with Requiem of Spirit	开局学会魂之安魂曲
+Start with Nocturne of Shadow	开局学会暗之夜曲
+Start with Prelude of Light	开局学会光之前奏曲
+Start with Kokiri Sword	开局拥有科奇里之剑
+Start with Master Sword	开局拥有大师之剑
+Giant's Knife	巨人之刀
+Start with Deku Shield	开局拥有德库盾
+Strength Upgrade	力量升级
+Silver Gauntlet	白银手套
+Golden Gauntlet	黄金手套
+Scale Upgrade	鳞片升级
+Wallet Upgrade	钱包升级
+Magic Meter	魔力槽
+Single Magic	普通魔力
+Double Magic	双倍魔力
+Start with Consumables	开局拥有消耗品
+Start with Max Rupees	开局拥有最大卢比
+Gold Skulltula Tokens	黄金骷髅蜘蛛徽章
+Logic	逻辑
+Glitched	允许漏洞
+No Logic	无逻辑
+All Locations Reachable	所有地点可到达
+Night GSs Expect Sun's	夜间骷髅蜘蛛要求太阳之歌
+Always Shown	始终显示
+Shown Only While Not Pressed	仅未按下时显示
+Shown Only While Pressed	仅按下时显示
+Always Hidden	始终隐藏
+While In Use	使用时显示
+Original Tunic Colors	原始服装颜色
+Cosmetics Tunic Colors	外观设置服装颜色
+Health Colors	生命值颜色
+Original Navi Targeting Colors	娜薇原始锁定颜色
+Cosmetics Navi Targeting Colors	娜薇外观设置锁定颜色
+Only in Rando	仅随机模式
+Swords	剑
+Gloves	手套
+Consumables	消耗品
+Title Screen	标题画面
+NPCs	角色
+Magic Effects	魔法特效
+Arrow Effects	箭矢特效
+Trails	拖尾
+Navi	娜薇
+Ivan	伊凡
+Gamecube	GameCube
+Hair	头发
+Linen	内衬
+Body	主体
+Mirror	镜面
+Emblem	徽记
+Kokiri Sword Blade	科奇里之剑剑刃
+Master Sword Blade	大师之剑剑刃
+Biggoron Sword Blade	大鼓隆之剑剑刃
+Goron Bracelet	鼓隆手镯
+Gauntlets Gem	手套宝石
+Boomerang Body	回旋镖主体
+Boomerang Gem	回旋镖宝石
+Slingshot String	弹弓弦
+Hammer Head	锤头
+Hammer Handle	锤柄
+Hookshotable Reticle	可钩取准星
+Non-Hookshotable Reticle	不可钩取准星
+Bow Tips	弓梢
+Bow String	弓弦
+Bow Body	弓身
+Bow Handle	弓柄
+Bombchu Face	炸弹鼠面部
+Bombchu Body	炸弹鼠主体
+Hearts	红心
+Heart Border	红心边框
+DD Hearts	双倍防御红心
+DD Heart Border	双倍防御红心边框
+Magic Active	使用中的魔力
+Magic Border	魔力槽边框
+Magic Border Active	使用中的魔力槽边框
+Gold Rupee	金色卢比
+A Button	A 键
+C Buttons	C 键
+C Up Button	C 上键
+C Down Button	C 下键
+C Left Button	C 左键
+C Right Button	C 右键
+Start Button	开始键
+Dpad	方向键
+Key Count	钥匙数量
+Minimap	小地图
+Minimap Position	小地图位置标记
+Minimap Entrance	小地图入口标记
+Enemy Health Bar	敌人生命条
+Enemy Health Border	敌人生命条边框
+Nametag Text	名称标签文字
+Nametag Background	名称标签背景
+Item Select Color	物品选择颜色
+Item Select Color B	物品选择颜色 B
+Item Select Color C	物品选择颜色 C
+Item Select Color D	物品选择颜色 D
+Equip Select Color	装备选择颜色
+Equip Select Color B	装备选择颜色 B
+Equip Select Color C	装备选择颜色 C
+Equip Select Color D	装备选择颜色 D
+Map Dungeon Color	迷宫地图颜色
+Map Dungeon Color B	迷宫地图颜色 B
+Map Dungeon Color C	迷宫地图颜色 C
+Map Dungeon Color D	迷宫地图颜色 D
+Quest Status Color	任务状态颜色
+Quest Status Color B	任务状态颜色 B
+Quest Status Color C	任务状态颜色 C
+Quest Status Color D	任务状态颜色 D
+Map Color	地图颜色
+Map Color B	地图颜色 B
+Map Color C	地图颜色 C
+Map Color D	地图颜色 D
+Save Color	保存界面颜色
+Save Color B	保存界面颜色 B
+Save Color C	保存界面颜色 C
+Save Color D	保存界面颜色 D
+Name Panel	名称面板
+File Choose	存档选择
+Nintendo Logo	任天堂标志
+N64 Red	N64 红色
+N64 Blue	N64 蓝色
+N64 Green	N64 绿色
+N64 Yellow	N64 黄色
+Normal Primary	普通主色
+Normal Secondary	普通辅色
+Fire Primary	火焰主色
+Fire Secondary	火焰辅色
+Ice Primary	冰霜主色
+Ice Secondary	冰霜辅色
+Light Primary	光芒主色
+Light Secondary	光芒辅色
+Level 1 Primary	一级主色
+Level 1 Secondary	一级辅色
+Level 2 Primary	二级主色
+Level 2 Secondary	二级辅色
+Biggoron Sword	大鼓隆之剑
+Stick	德库棒
+Hammer	巨锤
+Block of Time	时之方块
+Moon	月亮
+Idle Primary	空闲主色
+Idle Secondary	空闲辅色
+NPC Primary	角色主色
+NPC Secondary	角色辅色
+Enemy Primary	敌人主色
+Enemy Secondary	敌人辅色
+Props Primary	物体主色
+Props Secondary	物体辅色
+Ivan Idle Primary	伊凡空闲主色
+Ivan Idle Secondary	伊凡空闲辅色
+Fire Keese Primary	火蝙蝠主色
+Fire Keese Secondary	火蝙蝠辅色
+Ice Keese Primary	冰蝙蝠主色
+Ice Keese Secondary	冰蝙蝠辅色
+Dog 1	狗 1
+Dog 2	狗 2
+Golden Skulltula	黄金骷髅蜘蛛
+Kokiri	科奇里
+Gerudo	格鲁德
+Metal Trap	金属陷阱
+Iron Knuckles	铁甲武士
+Background (Prop type 1)	背景（物体类型 1）
+NPC	角色
+Enemy	敌人
+Prop type 2	物体类型 2
+Item/Action	物品／动作
+Misc.	杂项
+Boss	首领
+Statue	雕像
+Stalagmite	石笋
+Stalactite	钟乳石
+Stalactite (Regrow)	钟乳石（再生）
+DC Entrance	多东哥洞窟入口
+Wall	墙壁
+KD Floor	多东哥王地板
+KD Lava Cover	多东哥王熔岩盖
+Invisible	不可见
+Ceiling	天花板
+Wooden	木质
+Stone (1)	石质（1）
+Stone (2)	石质（2）
+Minuet	小步舞曲
+Bolero	波莱罗舞曲
+Serenade	小夜曲
+LH Sun	海利亚湖太阳
+Eye	眼睛
+Flame Move	移动火焰
+Flame Drop	下落火焰
+Bombs (A)	炸弹（A）
+Heart Piece	心之碎片
+Arrows (5)	箭（5）
+Arrows (10)	箭（10）
+Arrows (30)	箭（30）
+Bombs (B)	炸弹（B）
+Magic (Large)	魔力（大）
+Magic (Small)	魔力（小）
+Flexible	自适应
+Bombs (Special)	炸弹（特殊）
+Bombchus	炸弹鼠
+Arrows (50)	箭（50）
+Bombs (5) (25 Rupees)	炸弹（5）（25 卢比）
+Red Potion (30 Rupees)	红色药水（30 卢比）
+Longsword	长剑
+Heart	红心
+Milk Bottle	牛奶瓶
+Bomchu (10) [1]	炸弹鼠（10）[1]
+Bomchu (20) [1]	炸弹鼠（20）[1]
+Bomchu (20) [2]	炸弹鼠（20）[2]
+Bomchu (10) [2]	炸弹鼠（10）[2]
+Bomchu (10) [3]	炸弹鼠（10）[3]
+Bomchu (20) [3]	炸弹鼠（20）[3]
+Bomchu (20) [4]	炸弹鼠（20）[4]
+Bomchu (10) [4]	炸弹鼠（10）[4]
+Mask Of Truth	真实面具
+Sold Out	售罄
+Bombs (5) (35 Rupees)	炸弹（5）（35 卢比）
+Red Potion (40 Rupees)	红色药水（40 卢比）
+Red Potion (50 Rupees)	红色药水（50 卢比）
+Randomizer Item	随机模式物品
+Spawned Falling (1)	生成后下落（1）
+Broken Piece (1)	碎片（1）
+Broken Piece (2)	碎片（2）
+Spawned Falling (2)	生成后下落（2）
+Ceiling Spot Spawner	天花板位置生成器
+On Floor	位于地面
+Bomb Bag Bowling	保龄球炸弹袋
+Heart Piece Bowling	保龄球心之碎片
+Bombchus Bowling	保龄球炸弹鼠
+Bombs Bowling	保龄球炸弹
+Purple Rupee Bowling	保龄球紫色卢比
+Bomb Bag Counter	柜台炸弹袋
+Heart Piece Counter	柜台心之碎片
+Bombchus Counter	柜台炸弹鼠
+Bombs Counter	柜台炸弹
+Purple Rupee Counter	柜台紫色卢比
+Green Rupee Chest	宝箱绿色卢比
+Blue Rupee Chest	宝箱蓝色卢比
+Red Rupee Chest	宝箱红色卢比
+Small Key Chest	宝箱小钥匙
+Magic Fire	火焰魔法
+Magic Wind	风之魔法
+Magic Dark	暗之魔法
+Bullet Bag	种子袋
+Revive Bottle	瓶装复活
+Heal Timed	定时治疗
+Spawner	生成器
+Revive Death	死亡复活
+Heal	治疗
+Heal Big	大量治疗
+Cutscene	过场
+Laser	激光
+Explosion	爆炸
+Blue Crystal	蓝色水晶
+Dungeon Adult	成年迷宫
+Dungeon Child	少年迷宫
+Clear Flag	清除标志
+Sages	贤者
+Purple Crystal	紫色水晶
+Blue Ruto	蓝色露朵
+Destination	目的地
+UNK 7	未知 7
+Big (Default)	大型（默认）
+Room Clear Big	房间清除后出现（大）
+Decorated Big	装饰型（大）
+Switch Flag Fall Big	开关触发后下落（大）
+Room Clear Small	房间清除后出现（小）
+Switch Flag Fall Small	开关触发后下落（小）
+Switch Flag Big	开关触发（大）
+Room Load	加载房间
+Locked	已锁定
+Room Load (2)	加载房间（2）
+Scene Exit	场景出口
+Ajar	半开
+Checkable	可调查
+Evening	傍晚
+Room Load (7)	加载房间（7）
+Port 1	端口 1
+Port 2	端口 2
+Port 3	端口 3
+Port 4	端口 4
+Short Description	简短说明
+Actor ID	实体 ID
+Solid	不透明
+Transparent	透明
+Lost Woods, Sacred Forest Meadow	迷失森林、圣域森林
+Castle Town and Ganon's Castle	城下町与加侬城堡
+Death Mountain Trail, Goron City	死亡之山登山道、鼓隆城
+Zora Fountain, River	卓拉泉、卓拉河
+Desert Colossus, Haunted Wasteland	沙漠巨像、幽灵沙漠
+Horseback Archery	骑射
+Big Poe Points	大幽灵积分
+Malon's Obstacle Course	玛隆障碍赛
+Running Man Race	跑步男子竞赛
+Dampe's Race	丹培竞赛
+Child (99)	少年（99）
+Adult (200)	成人（200）
+Giant (500)	巨人（500）

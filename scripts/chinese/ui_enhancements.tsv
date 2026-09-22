@@ -1,0 +1,148 @@
+Change Red Potion Effect	修改红色药水效果
+Red Potion Health: %d	红色药水回复生命：%d
+Red Potion Percent Restore	红色药水按百分比回复
+Change Green Potion Effect	修改绿色药水效果
+Green Potion Mana: %d	绿色药水回复魔力：%d
+Green Potion Percent Restore	绿色药水按百分比回复
+Change Blue Potion Effects	修改蓝色药水效果
+Blue Potion Health: %d	蓝色药水回复生命：%d
+Blue Potion Health Percent Restore	蓝色药水按百分比回复生命
+Blue Potion Mana: %d	蓝色药水回复魔力：%d
+Blue Potion Mana Percent Restore	蓝色药水按百分比回复魔力
+Change Milk Effect	修改牛奶效果
+Milk Health: %d	牛奶回复生命：%d
+Milk Percent Restore	牛奶按百分比回复
+Separate Half Milk Effect	单独设置半瓶牛奶效果
+Half Milk Health: %d	半瓶牛奶回复生命：%d
+Half Milk Percent Restore	半瓶牛奶按百分比回复
+Change Fairy Effect	修改精灵效果
+Fairy: %d	精灵回复量：%d
+Fairy Percent Restore	精灵按百分比回复
+Change Fairy Revive Effect	修改精灵复活效果
+Fairy Revival: %d	精灵复活回复量：%d
+Fairy Revive Percent Restore	精灵复活按百分比回复
+Customize Behavior	自定义规则
+No Rupee Randomization	取消卢比目标随机排列
+Child Starting Ammunition: %d	孩童初始弹药：%d
+Adult Starting Ammunition: %d	成人初始弹药：%d
+Remove Small Cucco	移除小鸡
+Remove Big Cucco	移除大鸡
+Bombchu Count: %d	炸弹鼠数量：%d
+Instant Fishing	立即钓上鱼
+Guarantee Bite	必定咬钩
+Fish Never Escape	鱼不会逃脱
+Child Minimum Weight: %d	孩童获奖最低重量：%d
+Adult Minimum Weight: %d	成人获奖最低重量：%d
+Instant Win	立即获胜
+Note Play Speed: %dx	音符播放速度：%d 倍
+Unlimited Playback Time	不限演奏时间
+Number of Starting Notes: %d	初始音符数量：%d
+Round One Notes: %d	第一轮音符：%d
+Round Two Notes: %d	第二轮音符：%d
+Round Three Notes: %d	第三轮音符：%d
+Delete File On Death	死亡后删除存档
+Permanent heart loss	永久失去生命上限
+Damage Multiplier	伤害倍率
+Fall Damage Multiplier	坠落伤害倍率
+Void Damage Multiplier	掉入深渊伤害倍率
+Bonk Damage Multiplier	撞墙伤害倍率
+Spawn with full health	以满生命值开始
+No Random Drops	取消随机掉落
+Enable Bombchu Drops	启用炸弹鼠掉落
+Trees Drop Sticks	树木掉落德库木棒
+No Heart Drops	不掉落爱心
+Hyper Bosses	加速 Boss
+Hyper Enemies	加速敌人
+Always Win Goron Pot	鼓隆大罐子必定获奖
+Always Win Dampe Digging Game	丹培挖掘必定获奖
+All Dogs are Richard	所有狗都视为理查德
+Cuccos Stay Put Multiplier: %dx	鸡原地停留时间：%d 倍
+Leever Spawn Rate: %d seconds	沙地怪生成间隔：%d 秒
+Mute Low HP Alarm	关闭低生命值警报
+Minimal UI	精简界面
+Disable Navi Call Audio	关闭娜薇呼唤声
+Disable Hot/Underwater Warning Text	关闭高温／水下警告文字
+Remember Minimap State Between Areas	跨区域记住小地图开关
+Visual Stone of Agony	震动石视觉提示
+Assignable Tunics and Boots	服装与靴子可设为快捷物品
+Equipment Toggle	装备切换
+Sword Toggle Options	剑的切换选项
+Link's Cow in Both Time Periods	两个年代均保留林克的牛
+Enable visible guard vision	显示守卫视野
+Enable passage of time on file select	选择存档时允许时间流逝
+Item counts in messages	消息中显示物品数量
+Pull grave during the day	白天可拉动墓碑
+Dogs follow you everywhere	狗可以跨区域跟随
+Don't require input for Credits sequence	制作人员名单无需按键推进
+Blue Fire Arrows	蓝火箭
+Sunlight Arrows	阳光箭
+Disable Crit wiggle	关闭低生命值蹒跚动作
+Enemy Health Bars	敌人血条
+Targetable Hookshot Reticle	钩索准星标出可勾住的目标
+Use Alternate Assets	使用替换资源
+Disable Bomb Billboarding	关闭炸弹始终朝向镜头
+Disable Grotto Fixed Rotation	关闭洞穴入口固定旋转
+Invisible Bunny Hood	隐藏兔子头套外观
+Disable HUD Heart animations	关闭界面爱心动画
+Rotation	旋转
+Rotate Link with D-pad	用方向键旋转林克
+Rotate Link with C-buttons	用 C 键旋转林克
+Rotate Link with Right Stick	用右摇杆旋转林克
+Rotation Speed: %d	旋转速度：%d
+Static loop	固定循环动画
+Idle (standing)	待机（站立）
+Idle (look around)	待机（环顾四周）
+Idle (belt)	待机（整理腰带）
+Idle (shield)	待机（整理盾牌）
+Idle (test sword)	待机（试剑）
+Idle (yawn)	待机（打哈欠）
+Battle Stance	战斗姿势
+Walking (no shield)	行走（不持盾）
+Walking (holding shield)	行走（持盾）
+Running (no shield)	奔跑（不持盾）
+Running (holding shield)	奔跑（持盾）
+Hand on hip	叉腰
+Spin attack charge	回旋斩蓄力
+Look at hand	查看手掌
+Randomize	随机化
+Random cycle	随机循环
+Random cycle (Idle)	随机循环（待机）
+Frame to wait: %d	等待帧数：%d
+Disable LOD	关闭远处模型简化
+Disable Draw Distance	取消绘制距离限制
+Kokiri Draw Distance	科克里族绘制距离
+Show Age-Dependent Equipment	显示另一年龄的装备
+Scale Adult Equipment as Child	缩小孩童使用的成人装备
+N64 Mode	N64 显示模式
+Glitch line-up tick	漏洞对位标记
+Enable 3D Dropped items/projectiles	掉落物与投射物使用 3D 模型
+Disable Black Bar Letterboxes	取消上下黑边
+Dynamic Wallet Icon	动态钱包图标
+Always show dungeon entrances	始终显示迷宫入口
+Show Gauntlets in First Person	第一人称显示手套
+Color Temple of Time's Medallions	时之神殿徽章着色
+Show locked door chains on both sides of locked doors	锁门两侧均显示锁链
+Fix Vanishing Paths	修正道路消失
+Text Spacing: %d	文字间距：%d
+More info in file select	存档选择界面显示更多信息
+Better ammo rendering in pause menu	改进暂停菜单弹药显示
+Fix L&R Pause menu	修正暂停菜单 L／R 键
+Fix L&Z Page switch in Pause menu	修正暂停菜单 L／Z 翻页
+Fix Dungeon entrances	修正迷宫入口
+Fix Two Handed idle animations	修正双手武器待机动作
+Fix the Gravedigging Tour Glitch	修正挖掘之旅漏洞
+Fix Deku Nut upgrade	修正德库果实升级
+Fix Navi text HUD position	修正娜薇文字位置
+Fix Anubis fireballs	修正阿努比斯火球
+Fix Megaton Hammer crouch stab	修正巨人之锤蹲刺
+Remove power crouch stab	取消强力蹲刺
+Fix credits timing	修正制作人员名单时序
+Fix Gerudo Warrior's clothing colors	修正格鲁德战士服装颜色
+Fix Camera Drift	修正镜头漂移
+Fix Camera Swing	修正镜头摆动
+Fix Hanging Ledge Swing Rate	修正悬挂边缘时的摆动速度
+Fix Missing Jingle after 5 Silver Rupees	修正集齐五枚银卢比后缺失的提示乐
+Fix out of bounds textures	修正越界纹理
+Fix Poacher's Saw Softlock	修正偷猎者锯子流程卡死
+Fix enemies not spawning near water	修正水边敌人不生成
+Fix Bush Item Drops	修正灌木物品掉落

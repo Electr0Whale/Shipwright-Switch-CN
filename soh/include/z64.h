@@ -541,6 +541,9 @@ typedef enum {
     LANGUAGE_ENG,
     LANGUAGE_GER,
     LANGUAGE_FRA,
+    // SOH [Chinese] - Simplified Chinese (iQue-derived). Appended last so that
+    // indices 0..2 stay compatible with the vanilla language ordering.
+    LANGUAGE_CHI,
     LANGUAGE_MAX
 } Language;
 

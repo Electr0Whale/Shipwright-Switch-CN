@@ -140,6 +140,8 @@ Randomizer::Randomizer() {
             item.GetName().english,
             item.GetName().english,
             item.GetName().french,
+            // SOH [Chinese] - no localised randomizer names yet; reuse the English entry.
+            item.GetName().english,
         };
     }
 }

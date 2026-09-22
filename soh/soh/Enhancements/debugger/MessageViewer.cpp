@@ -113,56 +113,11 @@ extern "C" MessageTableEntry* sNesMessageEntryTablePtr;
 extern "C" MessageTableEntry* sGerMessageEntryTablePtr;
 extern "C" MessageTableEntry* sFraMessageEntryTablePtr;
 extern "C" MessageTableEntry* sStaffMessageEntryTablePtr;
+// SOH [Chinese]
+extern "C" MessageTableEntry* sChiMessageEntryTablePtr;
 
-void FindMessage(PlayState* play, const uint16_t textId, const uint8_t language) {
-    const char* foundSeg;
-    const char* nextSeg;
-    MessageTableEntry* messageTableEntry = sNesMessageEntryTablePtr;
-    Font* font;
-    u16 bufferId = textId;
-    // Use the better owl message if better owl is enabled
-    if (CVarGetInteger(CVAR_ENHANCEMENT("BetterOwl"), 0) != 0 && (bufferId == 0x2066 || bufferId == 0x607B ||
-        bufferId == 0x10C2 || bufferId == 0x10C6 || bufferId == 0x206A))
-    {
-        bufferId = 0x71B3;
-    }
-
-    if (language == LANGUAGE_GER)
-        messageTableEntry = sGerMessageEntryTablePtr;
-    else if (language == LANGUAGE_FRA)
-        messageTableEntry = sFraMessageEntryTablePtr;
-
-    // If PAL languages are not present in the OTR file, default to English
-    if (messageTableEntry == nullptr)
-        messageTableEntry = sNesMessageEntryTablePtr;
-
-    const char* seg = messageTableEntry->segment;
-
-    while (messageTableEntry->textId != 0xFFFF) {
-        font = &play->msgCtx.font;
-
-        if (messageTableEntry->textId == bufferId) {
-            foundSeg = messageTableEntry->segment;
-            font->charTexBuf[0] = messageTableEntry->typePos;
-
-            nextSeg = messageTableEntry->segment;
-            font->msgOffset = reinterpret_cast<uintptr_t>(messageTableEntry->segment);
-            font->msgLength = messageTableEntry->msgSize;
-            return;
-        }
-        messageTableEntry++;
-    }
-
-    font = &play->msgCtx.font;
-    messageTableEntry = sNesMessageEntryTablePtr;
-
-    foundSeg = messageTableEntry->segment;
-    font->charTexBuf[0] = messageTableEntry->typePos;
-    messageTableEntry++;
-    nextSeg = messageTableEntry->segment;
-    font->msgOffset = foundSeg - seg;
-    font->msgLength = nextSeg - foundSeg;
-}
+extern "C" void Message_FindMessageForLanguage(PlayState* play, u16 textId, u8 language);
+extern "C" void Message_UseEnglishEncoding(void);
 
 static const char* msgStaticTbl[] =
 {
@@ -195,11 +150,13 @@ void MessageDebug_StartTextBox(const char* tableId, uint16_t textId, uint8_t lan
     char* buffer = font->msgBuf;
     msgCtx->textId = textId;
     if (strlen(tableId) == 0) {
-        FindMessage(play, textId, language);
+        Message_FindMessageForLanguage(play, textId, language);
+        if (font->msgLength > sizeof(font->msgBuf)) return;
         msgCtx->msgLength = static_cast<int32_t>(font->msgLength);
         const uintptr_t src = font->msgOffset;
         memcpy(font->msgBuf, reinterpret_cast<void const *>(src), font->msgLength);
     } else {
+        Message_UseEnglishEncoding();
         constexpr int maxBufferSize = sizeof(font->msgBuf);
         const CustomMessage messageEntry = CustomMessageManager::Instance->RetrieveMessage(tableId, textId);
         font->charTexBuf[0] = (messageEntry.GetTextBoxType() << 4) | messageEntry.GetTextBoxPosition();

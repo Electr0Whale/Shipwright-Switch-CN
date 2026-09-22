@@ -1455,7 +1455,9 @@ void DrawLocation(RandomizerCheckObject rcObj) {
                     txt = OTRGlobals::Instance->gRandomizer->EnumToSpoilerfileGetName[gSaveContext.itemLocations[rcObj.rc].get.rgID][gSaveContext.language];
                 } else {
                     if (IsHeartPiece(rcObj.ogItemId)) {
-                        if (gSaveContext.language == LANGUAGE_ENG || gSaveContext.language == LANGUAGE_GER) {
+                        // SOH [Chinese] - no localised item names, so Chinese uses English.
+                        if (gSaveContext.language == LANGUAGE_ENG || gSaveContext.language == LANGUAGE_GER ||
+                            gSaveContext.language == LANGUAGE_CHI) {
                             txt = ItemFromGIID(rcObj.ogItemId).GetName().english;
                         } else if (gSaveContext.language == LANGUAGE_FRA) {
                             txt = ItemFromGIID(rcObj.ogItemId).GetName().french;
@@ -1480,7 +1482,9 @@ void DrawLocation(RandomizerCheckObject rcObj) {
                     }
                 } else {
                     if (IsHeartPiece(rcObj.ogItemId)) {
-                        if (gSaveContext.language == LANGUAGE_ENG || gSaveContext.language == LANGUAGE_GER) {
+                        // SOH [Chinese] - no localised item names, so Chinese uses English.
+                        if (gSaveContext.language == LANGUAGE_ENG || gSaveContext.language == LANGUAGE_GER ||
+                            gSaveContext.language == LANGUAGE_CHI) {
                             txt = ItemFromGIID(rcObj.ogItemId).GetName().english;
                         } else if (gSaveContext.language == LANGUAGE_FRA) {
                             txt = ItemFromGIID(rcObj.ogItemId).GetName().french;

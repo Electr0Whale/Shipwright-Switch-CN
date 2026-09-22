@@ -1304,7 +1304,11 @@ void Select_PrintCutsceneSetting(SelectContext* this, GfxPrint* printer, u16 csI
     };
     
     char* label;
-    int lang = CVarGetInteger(CVAR_DEVELOPER_TOOLS("DebugWarpScreenTranslation"), 1) ? gSaveContext.language + 1 : 0;
+    // SOH [Chinese] - cutsceneLabels rows only have JPN/ENG/GER/FRA columns, so Chinese
+    // reuses the English column instead of indexing past the end of the row.
+    int lang = CVarGetInteger(CVAR_DEVELOPER_TOOLS("DebugWarpScreenTranslation"), 1)
+                   ? (gSaveContext.language == LANGUAGE_CHI ? LANGUAGE_ENG + 1 : gSaveContext.language + 1)
+                   : 0;
 
     GfxPrint_SetPos(printer, 4, 25);
     GfxPrint_SetColor(printer, 255, 255, 55, 255);

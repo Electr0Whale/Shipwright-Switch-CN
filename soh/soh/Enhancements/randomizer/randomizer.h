@@ -57,7 +57,10 @@ class Randomizer {
     std::unordered_map<RandomizerInf, bool> trialsRequired;
     std::unordered_set<uint16_t> masterQuestDungeons;
     std::unordered_map<RandomizerCheck, u16> merchantPrices;
-    std::unordered_map<RandomizerGet, std::array<std::string, 3>> EnumToSpoilerfileGetName;
+    // SOH [Chinese] - sized by LANGUAGE_MAX so the check tracker can index it with
+    // gSaveContext.language without reading out of bounds.
+    // (literal 4: LANGUAGE_MAX lives in z64.h which is not on this header's include path)
+    std::unordered_map<RandomizerGet, std::array<std::string, 4>> EnumToSpoilerfileGetName;
 
     static Sprite* GetSeedTexture(uint8_t index);
     s16 GetItemModelFromId(s16 itemId);

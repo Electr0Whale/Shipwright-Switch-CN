@@ -6,6 +6,7 @@
 #include "textures/icon_item_field_static/icon_item_field_static.h"
 #include "textures/icon_item_dungeon_static/icon_item_dungeon_static.h"
 #include "textures/icon_item_nes_static/icon_item_nes_static.h"
+#include "textures/chinese_textures.h" // SOH [Chinese]
 
 #include "public/bridge/gfxbridge.h"
 
@@ -27,6 +28,11 @@ void KaleidoScope_DrawDungeonMap(PlayState* play, GraphicsContext* gfxCtx) {
         gPauseDekuTitleFRATex, gPauseDodongoTitleFRATex,   gPauseJabuTitleFRATex,   gPauseForestTitleFRATex,
         gPauseFireTitleFRATex, gPauseWaterTitleFRATex,     gPauseSpiritTitleFRATex, gPauseShadowTitleFRATex,
         gPauseBotWTitleFRATex, gPauseIceCavernTitleFRATex,
+
+        // SOH [Chinese]
+        gPauseDekuTitleCHITex, gPauseDodongoTitleCHITex,   gPauseJabuTitleCHITex,   gPauseForestTitleCHITex,
+        gPauseFireTitleCHITex, gPauseWaterTitleCHITex,     gPauseSpiritTitleCHITex, gPauseShadowTitleCHITex,
+        gPauseBotWTitleCHITex, gPauseIceCavernTitleCHITex,
     };
     static void* floorIconTexs[] = {
         gDungeonMapBlankFloorButtonTex, gDungeonMap8FButtonTex, gDungeonMap7FButtonTex, gDungeonMap6FButtonTex,
@@ -431,6 +437,7 @@ void KaleidoScope_DrawWorldMap(PlayState* play, GraphicsContext* gfxCtx) {
         gPauseCurrentPositionENGTex,
         gPauseCurrentPositionGERTex,
         gPauseCurrentPositionFRATex,
+        gPauseCurrentPositionCHITex, // SOH [Chinese]
     };
     static u16 D_8082A6D4 = 0;
     PauseContext* pauseCtx = &play->pauseCtx;

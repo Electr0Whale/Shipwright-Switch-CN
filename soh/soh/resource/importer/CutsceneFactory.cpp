@@ -206,8 +206,28 @@ std::shared_ptr<Ship::IResource> ResourceFactoryBinaryCutsceneV0::ReadResource(s
                 }
                 break;
             }
+            // Generic 12-word cutscene commands emitted by CutsceneExporter.
+            // These must consume their payload here.  Treating one as an
+            // unknown command leaves the reader in the middle of the payload,
+            // where an embedded 0xFFFFFFFF can truncate the resource and make
+            // Cutscene_ProcessCommands read past commands.data().
+            case 0x0B:
+            case 0x0D:
             case 0x15:
-            case (uint32_t)CutsceneCommands::Unknown: {
+            case 0x16:
+            case (uint32_t)CutsceneCommands::Unknown:
+            case 0x1B:
+            case 0x1C:
+            case 0x20:
+            case 0x21:
+            case 0x3B:
+            case 0x3D:
+            case 0x47:
+            case 0x49:
+            case 0x4A:
+            case 0x6D:
+            case 0x70:
+            case 0x71: {
                 uint32_t size = reader->ReadUInt32();
                 cutscene->commands.push_back(size);
 
@@ -281,7 +301,6 @@ std::shared_ptr<Ship::IResource> ResourceFactoryBinaryCutsceneV0::ReadResource(s
             case 67:
             case 69:
             case 72:
-            case 74:
             case 81:
             case 106:
             case 117:

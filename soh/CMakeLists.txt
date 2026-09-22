@@ -261,6 +261,12 @@ set(ALL_FILES
 # Target
 ################################################################################
 add_executable(${PROJECT_NAME} ${ALL_FILES})
+target_sources(${PROJECT_NAME} PRIVATE soh/localization/ChineseUI.cpp soh/localization/ChineseUIFont.cpp)
+if(CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch")
+    # GCC 14 promoted these legacy decompilation diagnostics to errors.
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        $<$<COMPILE_LANGUAGE:C>:-Wno-error=int-conversion;-Wno-error=incompatible-pointer-types>)
+endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
 use_props(${PROJECT_NAME} "${CMAKE_CONFIGURATION_TYPES}" "${DEFAULT_CXX_PROPS}")
@@ -339,8 +345,9 @@ find_package(Boost)
 if (NOT ${Boost_FOUND})
     message("Boost not found. Downloading now...")
     FetchContent_MakeAvailable(Boost)
-    message("Boost downloaded to " ${FETCHCONTENT_BASE_DIR}/boost-src)
-    set(BOOST-INCLUDE ${FETCHCONTENT_BASE_DIR}/boost-src)
+    # SOH [build] - use the real source dir so FETCHCONTENT_SOURCE_DIR_BOOST works
+    message("Boost downloaded to " ${boost_SOURCE_DIR})
+    set(BOOST-INCLUDE ${boost_SOURCE_DIR})
 else()
     message("Boost found in " ${Boost_INCLUDE_DIRS})
     set(BOOST-INCLUDE ${Boost_INCLUDE_DIRS})

@@ -25,28 +25,44 @@ namespace UIWidgets {
     // Manually included newlines will still be respected and reset the line length
     // If line is midword when it hits the limit, text should break at the last encountered space
     char* WrappedText(const char* text, unsigned int charactersPerLine) {
-        std::string newText(text);
-        const size_t tipLength = newText.length();
-        int lastSpace = -1;
-        int currentLineLength = 0;
-        for (unsigned int currentCharacter = 0; currentCharacter < tipLength; currentCharacter++) {
-            if (newText[currentCharacter] == '\n') {
-                currentLineLength = 0;
-                lastSpace = -1;
-                continue;
-            } else if (newText[currentCharacter] == ' ') {
-                lastSpace = currentCharacter;
+        text = ImGui::LocalizeText(text);
+        // UTF-8 characters must never be split. CJK characters occupy roughly
+        // two Latin columns and may wrap without spaces.
+        static thread_local std::string result;
+        result.clear();
+        unsigned int columns = 0;
+        size_t lastSpace = std::string::npos;
+        for (size_t i = 0; text[i];) {
+            const unsigned char ch = static_cast<unsigned char>(text[i]);
+            size_t bytes = ch < 0x80 ? 1 : ch < 0xE0 ? 2 : ch < 0xF0 ? 3 : 4;
+            for (size_t j = 1; j < bytes; ++j) {
+                if (!text[i + j] || (static_cast<unsigned char>(text[i + j]) & 0xC0) != 0x80) {
+                    bytes = 1;
+                    break;
+                }
             }
-
-            if ((currentLineLength >= charactersPerLine) && (lastSpace >= 0)) {
-                newText[lastSpace] = '\n';
-                currentLineLength = currentCharacter - lastSpace - 1;
-                lastSpace = -1;
+            if (ch == '\n') {
+                columns = 0;
+                lastSpace = std::string::npos;
+            } else {
+                const unsigned int width = bytes >= 3 ? 2 : 1;
+                if (charactersPerLine && columns + width > charactersPerLine) {
+                    if (bytes >= 3 || lastSpace == std::string::npos) {
+                        result += '\n';
+                        columns = 0;
+                    } else {
+                        result[lastSpace] = '\n';
+                        columns = static_cast<unsigned int>(result.size() - lastSpace - 1);
+                    }
+                    lastSpace = std::string::npos;
+                }
+                if (ch == ' ') lastSpace = result.size();
+                columns += width;
             }
-            currentLineLength++;
+            result.append(text + i, bytes);
+            i += bytes;
         }
-
-        return strdup(newText.c_str());
+        return result.data();
     }
 
     char* WrappedText(const std::string& text, unsigned int charactersPerLine) {

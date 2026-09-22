@@ -844,6 +844,11 @@ void TitleCard_InitBossName(PlayState* play, TitleCardContext* titleCtx, void* t
             newName[length - 6] = 'G';
             newName[length - 5] = 'E';
             newName[length - 4] = 'R';
+        // SOH [Chinese] - ...ENGTex -> ...CHITex (boss title cards)
+        } else if (gSaveContext.language == LANGUAGE_CHI) {
+            newName[length - 6] = 'C';
+            newName[length - 5] = 'H';
+            newName[length - 4] = 'I';
         }
         texture = newName;
     }
@@ -1064,6 +1069,12 @@ void TitleCard_InitPlaceName(PlayState* play, TitleCardContext* titleCtx, void* 
             newName[length - 6] = 'G';
             newName[length - 5] = 'E';
             newName[length - 4] = 'R';
+        }
+        // SOH [Chinese] - ...ENGTex -> ...CHITex (place title cards)
+        else if (gSaveContext.language == LANGUAGE_CHI) {
+            newName[length - 6] = 'C';
+            newName[length - 5] = 'H';
+            newName[length - 4] = 'I';
         }
         texture = newName;
     }

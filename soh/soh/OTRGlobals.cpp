@@ -1,4 +1,5 @@
-﻿#include "OTRGlobals.h"
+#include "localization/ChineseUI.h"
+#include "OTRGlobals.h"
 #include "OTRAudio.h"
 #include <iostream>
 #include <algorithm>
@@ -308,6 +309,8 @@ OTRGlobals::OTRGlobals() {
     context->InitGfxDebugger();
     context->InitConfiguration();
     context->InitConsoleVariables();
+    if (!CVarGet("gLanguages")) CVarSetInteger("gLanguages", LANGUAGE_CHI);
+    ChineseUI::Initialize();
 
     // tell LUS to reserve 3 SoH specific threads (Game, Audio, Save)
     context->InitResourceManager(OTRFiles, {}, 3);
@@ -356,6 +359,7 @@ OTRGlobals::OTRGlobals() {
     hasMasterQuest = hasOriginal = false;
 
     previousImGuiScale = defaultImGuiScale;
+    ChineseUI::MergeFont(ImGui::GetIO().Fonts->Fonts[0], 13.0f);
     defaultFontSmaller = CreateDefaultFontWithSize(10.0f);
     defaultFontLarger = CreateDefaultFontWithSize(16.0f);
     defaultFontLargest = CreateDefaultFontWithSize(20.0f);
@@ -438,6 +442,7 @@ ImFont* OTRGlobals::CreateDefaultFontWithSize(float size) {
     iconsConfig.PixelSnapH = true;
     iconsConfig.GlyphMinAdvanceX = iconFontSize;
     mImGuiIo->Fonts->AddFontFromMemoryCompressedBase85TTF(fontawesome_compressed_data_base85, iconFontSize, &iconsConfig, sIconsRanges);
+    ChineseUI::MergeFont(font, size);
     return font;
 }
 

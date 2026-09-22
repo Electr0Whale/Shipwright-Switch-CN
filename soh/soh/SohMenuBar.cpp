@@ -521,6 +521,10 @@ void DrawSettingsMenu() {
             if (UIWidgets::EnhancementRadioButton("French", "gLanguages", LANGUAGE_FRA)) {
                 GameInteractor::Instance->ExecuteHooks<GameInteractor::OnSetGameLanguage>();
             }
+            // SOH [Chinese] - Simplified Chinese (iQue-derived text + font)
+            if (UIWidgets::EnhancementRadioButton("Chinese (Simplified)", "gLanguages", LANGUAGE_CHI)) {
+                GameInteractor::Instance->ExecuteHooks<GameInteractor::OnSetGameLanguage>();
+            }
             ImGui::EndMenu();
         }
         

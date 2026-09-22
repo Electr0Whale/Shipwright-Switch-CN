@@ -657,6 +657,11 @@ void EnMag_DrawInnerMq(Actor* thisx, PlayState* play, Gfx** gfxp) {
     int lang = LANGUAGE_ENG;
     if (CVarGetInteger("gTitleScreenTranslation", 0)) {
         lang = gSaveContext.language;
+        // SOH [Chinese] - noControllerMsg/pressStartMsg only cover ENG/GER/FRA and are drawn
+        // with the ASCII title font, so Chinese falls back to English.
+        if (lang >= (int)ARRAY_COUNT(noControllerMsg)) {
+            lang = LANGUAGE_ENG;
+        }
     }
 
     const char* copy_tex = NULL;
@@ -857,6 +862,11 @@ void EnMag_DrawInnerVanilla(Actor* thisx, PlayState* play, Gfx** gfxp) {
     int lang = LANGUAGE_ENG;
     if (CVarGetInteger("gTitleScreenTranslation", 0)) {
         lang = gSaveContext.language;
+        // SOH [Chinese] - noControllerMsg/pressStartMsg only cover ENG/GER/FRA and are drawn
+        // with the ASCII title font, so Chinese falls back to English.
+        if (lang >= (int)ARRAY_COUNT(noControllerMsg)) {
+            lang = LANGUAGE_ENG;
+        }
     }
 
     const char* copy_tex = NULL;
