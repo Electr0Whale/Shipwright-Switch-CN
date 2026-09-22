@@ -1,6 +1,10 @@
 ![Ship of Harkinian](docs/shiptitle.darkmode.png#gh-dark-mode-only)
 ![Ship of Harkinian](docs/shiptitle.lightmode.png#gh-light-mode-only)
 
+> **声明：本仓库包含 AI 生成代码。** 相关代码经过本项目维护者整理、审阅与测试。
+
+本汉化移植工作特别感谢 [wonderfulnx/Shipwright-CN](https://github.com/wonderfulnx/Shipwright-CN)、[HarbourMasters/Shipwright](https://github.com/HarbourMasters/Shipwright) 以及 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的无私付出与贡献，让在 Nintendo Switch 上游玩原生中文《塞尔达传说：时之笛》成为可能。
+
 ## Website
 
 Official Website: https://www.shipofharkinian.com/

@@ -1,5 +1,9 @@
 # 时之笛 Switch 简体中文补丁
 
+> **声明：本项目包含 AI 生成代码。** 相关代码经过项目维护者整理、审阅与测试。
+
+本汉化移植工作特别感谢 [wonderfulnx/Shipwright-CN](https://github.com/wonderfulnx/Shipwright-CN)、[HarbourMasters/Shipwright](https://github.com/HarbourMasters/Shipwright) 以及 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的无私付出与贡献，让在 Nintendo Switch 上游玩原生中文《塞尔达传说：时之笛》成为可能。
+
 此目录是由个人合法美版 Rev 2 ROM 生成的本地安装包。将整个 `switch/soh/` 目录复制到 SD 卡根目录的 `switch/soh/`，启动 `soh.nro`。`oot.otr` 是按 ROM 提取的原版资源，`soh.otr` 包含中文消息、字库、界面贴图和菜单字体；两者必须来自同一次构建。
 
 首次启动默认简体中文。游戏内语言选择位于存档选项，增强菜单语言选择位于增强设置。已有配置中的 `gLanguages` 会保留原值；中文消息缺失或随机模式动态消息会显示英文。复制或升级前请备份 `sd:/switch/soh/` 下的配置和存档文件。
