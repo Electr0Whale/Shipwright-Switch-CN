@@ -1,23 +1,54 @@
-# 时之笛 Switch 简体中文补丁
+# 时之笛 Switch 简体中文移植：构建与安装
 
-> **声明：本项目包含 AI 生成代码。** 相关代码经过项目维护者整理、审阅与测试。
+本项目基于 Shipwright-Switch `2976c182`，移植 Shipwright-CN 的美版 Rev 2 中文实现，并修复 Switch 使用中的输入、字体和新游戏开场问题。此文档说明如何使用个人 ROM 生成完整安装目录。
 
-本汉化移植工作特别感谢 [wonderfulnx/Shipwright-CN](https://github.com/wonderfulnx/Shipwright-CN)、[HarbourMasters/Shipwright](https://github.com/HarbourMasters/Shipwright) 以及 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的无私付出与贡献，让在 Nintendo Switch 上游玩原生中文《塞尔达传说：时之笛》成为可能。
+## 准备
 
-此目录是由个人合法美版 Rev 2 ROM 生成的本地安装包。将整个 `switch/soh/` 目录复制到 SD 卡根目录的 `switch/soh/`，启动 `soh.nro`。`oot.otr` 是按 ROM 提取的原版资源，`soh.otr` 包含中文消息、字库、界面贴图和菜单字体；两者必须来自同一次构建。
-
-首次启动默认简体中文。游戏内语言选择位于存档选项，增强菜单语言选择位于增强设置。已有配置中的 `gLanguages` 会保留原值；中文消息缺失或随机模式动态消息会显示英文。复制或升级前请备份 `sd:/switch/soh/` 下的配置和存档文件。
-
-本包使用 Source Han Sans 简体中文字体子集，授权文本在 `licenses/SourceHanSans-OFL.txt`。字体只用于增强菜单，用户昵称、路径、种子和技术标识不会被翻译。
-
-2026-09-22 r5 修复了美版 Rev 2 缺少 `0xFFFC` 字体顺序表时的回退控制码：命名键盘会完整加载数字、大小写字母和标点，不再出现条纹方块。同时补齐美版 Rev 2 过场动画的通用命令导入；旧版本会在林克家开场资源的 `0x3D` 命令处截断缓冲区，进入新存档后黑屏、长时间假死或崩溃。r5 还补上了“选择游戏模式”和“首领连战设置”标题。该版本已通过 Eden CLI 自动创建/打开存档并进入林克家开场画面。
-
-Switch 默认 A/B 映射已按实体按键交换；已有配置会在首次启动时迁移旧的默认映射。升级时必须完整替换 `switch/soh/`，尤其是 `soh.nro`；不要把旧版 NRO 与本包资源混用。
-
-构建需要 Windows devkitPro/MSYS2、WSL Ubuntu、CMake/Ninja，以及个人 ROM：
+- Windows 10/11、devkitPro/MSYS2、WSL Ubuntu、CMake、Ninja 和 Python 3。
+- 自己合法拥有的《时之笛》美版 Rev 2 `.z64` ROM。构建脚本只接受 SHA-1 `41b3bdc48d98c48529219919015a1af22f5057c2`；不会上传或复制 ROM 文件。
+- 通过递归克隆获取固定的 Git 子模块：
 
 ```powershell
-python scripts/chinese/build_package.py "D:\Download\Legend of Zelda, The - Ocarina of Time (USA) (Rev 2)\Legend of Zelda, The - Ocarina of Time (USA) (Rev 2).z64"
+git clone --recurse-submodules https://github.com/Electr0Whale/Shipwright-Switch-CN.git
+cd Shipwright-Switch-CN
 ```
 
-脚本会先核验 ROM SHA-1 `41b3bdc48d98c48529219919015a1af22f5057c2`，使用新建构建目录，构建宿主导出器和 Switch Release，生成并读取 OTR，最后写出 `switch/soh/manifest.json` 和 zip。硬件验证仍需检查标题画面、存档、开场剧情、暂停菜单、增强菜单、掌机/底座分辨率、换页和手柄操作。
+## 生成本机安装包
+
+```powershell
+python scripts/chinese/build_package.py "D:\path\to\Legend of Zelda, The - Ocarina of Time (USA) (Rev 2).z64"
+```
+
+脚本会在新的构建目录中配置并构建宿主资源工具和 Switch Release，运行中文资源检查，导出并检查 OTR，最后生成 `switch/soh/` 安装目录。构建日志和校验结果保存在输出目录的 `checks/` 中。完整安装目录包含 `soh.nro`、同次构建生成的 `oot.otr` / `soh.otr`、菜单字体和授权文本；这些本机资源包不要上传到公开 Release，因为其中包含从 ROM 导出的游戏资源。
+
+## 安装与升级
+
+备份 `sd:/switch/soh/` 中的设置和存档，然后将本机生成的 `switch/soh/` 目录完整复制到 SD 卡根目录，覆盖旧文件。使用 Atmosphere 的 `Game+R` 启动。必须配套使用同一次构建生成的 NRO 和 OTR，不要只替换程序文件。
+
+首次启动默认简体中文。已有配置中的 `gLanguages` 选择会保留；可从存档选项切换游戏语言。没有中文译文的消息，以及随机模式的动态消息，会安全显示为英文。
+
+## 高清中文字体
+
+本程序兼容 [Shipwright-CN 发布页](https://github.com/wonderfulnx/Shipwright-CN/releases/)提供的 `chinese_font_hd.o2r.zip`：
+
+1. 解压下载的 ZIP，取出里面的 `chinese_font_hd.o2r`。
+2. 将该文件放到 SD 卡根目录的 `mods/`，例如 `sd:/mods/chinese_font_hd.o2r`。
+3. 在增强设置中开启“使用替代资源”（Use Alternate Assets）。
+
+本项目不重新分发高清字体包。关闭高清字体或删除该 mod 时，游戏继续使用安装包内的标准中文字库。
+
+## Switch 操作
+
+增强菜单的实体 A 为确认，B 为返回，X 将焦点切换到菜单栏；方向键或左摇杆移动。实体减号键显示或隐藏增强菜单栏。游戏内默认简体中文，游戏按键仍可在原设置界面调整。
+
+## 已包含的移植与修复
+
+- 简体中文剧情消息、双字节解码、中文游戏字形、标题/存档/暂停菜单贴图、物品和地点等界面文字。
+- 增强设置、控制器配置、随机模式、追踪器、调试工具的中文菜单；配置键、序列化值和 ImGui 控件 ID 保持兼容。
+- 中文菜单字体及 Source Han Sans OFL 授权文本；用户昵称、文件路径、种子和技术标识保留用户输入。
+- 美版 Rev 2 命名键盘字符回退、创建存档后开场过场资源导入、Switch A/B 与减号菜单输入、菜单字体加载路径等修复。
+- 高清中文字库按资源路径直接进入纹理绘制，避免把高分辨率像素写进固定大小的字形缓冲区。
+
+## 验证
+
+资源脚本会检查消息表、控制码、字形和贴图引用。当前 Switch Release 构建以及 Eden CLI 开场对白检查通过；标准和高清中文字库均能显示。真实 Switch 的掌机/底座显示与性能仍需用户实机验证。首次游玩前请备份存档；升级时保留原存档文件。

@@ -1,108 +1,48 @@
-![Ship of Harkinian](docs/shiptitle.darkmode.png#gh-dark-mode-only)
-![Ship of Harkinian](docs/shiptitle.lightmode.png#gh-light-mode-only)
+# 时之笛 Switch 简体中文移植
 
-> **声明：本仓库包含 AI 生成代码。** 相关代码经过本项目维护者整理、审阅与测试。
+基于 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的 Nintendo Switch 简体中文移植。项目加入游戏内中文、简体中文字体、增强菜单翻译和适配 Switch 的操作修正。
 
-本汉化移植工作特别感谢 [wonderfulnx/Shipwright-CN](https://github.com/wonderfulnx/Shipwright-CN)、[HarbourMasters/Shipwright](https://github.com/HarbourMasters/Shipwright) 以及 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的无私付出与贡献，让在 Nintendo Switch 上游玩原生中文《塞尔达传说：时之笛》成为可能。
+本仓库及公开 Release 不包含游戏 ROM，也不发布从 ROM 提取的 `oot.otr` / `soh.otr`。请使用自己合法拥有的美版 Rev 2 ROM，在本机生成资源包。Release 提供程序文件和源码；完整安装目录由构建脚本在本机生成。
 
-## Website
+## 下载与安装
 
-Official Website: https://www.shipofharkinian.com/
+查看[最新发布](https://github.com/Electr0Whale/Shipwright-Switch-CN/releases/latest)。构建完整安装目录需要 Windows、devkitPro/MSYS2、WSL Ubuntu、CMake/Ninja 和个人 ROM。按[中文构建与安装说明](packaging/README-zh-CN.md)操作，完成后将生成的 `switch/soh/` 复制到 SD 卡根目录。升级前请备份存档和设置。
 
-## Discord
+构建脚本只接受 SHA-1 为 `41b3bdc48d98c48529219919015a1af22f5057c2` 的美版 Rev 2 ROM；ROM 文件本身不会被复制进仓库或安装目录。脚本会生成配套的 `oot.otr`、`soh.otr`、`soh.nro`、菜单字体和校验清单。
 
-Official Discord: https://discord.com/invite/shipofharkinian
+首次启动默认简体中文。已有配置中的语言选择会保留；缺少中文翻译的消息和随机模式动态对话会回退到英文。可在存档选项切换游戏语言。
 
-If you're having any trouble after reading through this `README`, feel free ask for help in the Support text channels. Please keep in mind that we do not condone piracy.
+## 当前功能与修复
 
-# Quick Start
+- 移植中文消息表、双字节消息解码与字形加载，覆盖剧情对白、标题和存档界面、暂停菜单、物品、地点、首领名称及结尾内容。
+- 加入约 2,180 个中文游戏字形，以及菜单所需的简体中文字体和界面贴图；字体授权文件随本机安装包提供。
+- 翻译增强设置、控制器配置、随机模式设置、追踪器和调试工具菜单；配置键、保存值和控件 ID 保持兼容，用户昵称、文件路径、种子和技术标识保留原样。
+- 修复美版 Rev 2 命名键盘的字体顺序回退，避免数字、字母和标点显示为条纹方块。
+- 修复存档创建后进入新游戏时的过场资源导入问题，避免在开场黑屏、假死或崩溃。
+- 修复 Switch 增强菜单操作：实体 A 确认、B 返回、X 切换菜单栏焦点，方向键或左摇杆移动，减号键显示或隐藏菜单栏。
+- 修复增强菜单中文字体在 Switch / Eden 启动目录变化时无法加载的问题。
+- 支持 Shipwright-CN 发布的高清中文字库：将 `chinese_font_hd.o2r` 放到 SD 卡根目录的 `mods/`，并开启“使用替代资源”。高清字体文件由用户从[原仓库发布页](https://github.com/wonderfulnx/Shipwright-CN/releases/)获取，本项目不重新分发。
 
-The Ship does not include any copyrighted assets.  You are required to provide a supported copy of the game.
+## 构建
 
-### 1. Verify your ROM dump
-You can verify you have dumped a supported copy of the game by using the compatibility checker at https://ship.equipment/. If you'd prefer to manually validate your ROM dump, you can cross-reference its `sha1` hash with the hashes [here](docs/supportedHashes.json).
+使用递归克隆以取回固定版本的子模块：
 
-### 2. Download The Ship of Harkinian from [Releases](https://github.com/HarbourMasters/Shipwright/releases)
-
-### 3. Launch the Game!
-#### Windows
-* Extract the zip
-* Launch `soh.exe`
-
-#### Linux
-* Place your supported copy of the game in the same folder as the appimage.
-* Execute `soh.appimage`.  You may have to `chmod +x` the appimage via terminal.
-
-#### macOS
-* Run `soh.app`. When prompted, select your supported copy of the game.
-* You should see a notification saying `Processing OTR`, then, once the process is complete, you should get a notification saying `OTR Successfully Generated`, then the game should start.
-
-#### Nintendo Switch
-* Run one of the PC releases to generate an `oot.otr` and/or `oot-mq.otr` file. After launching the game on PC, you will be able to find these files in the same directory as `soh.exe` or `soh.appimage`. On macOS, these files can be found in `/Users/<username>/Library/Application Support/com.shipofharkinian.soh/`
-* Copy the files to your sd card
+```powershell
+git clone --recurse-submodules https://github.com/Electr0Whale/Shipwright-Switch-CN.git
+cd Shipwright-Switch-CN
+python scripts/chinese/build_package.py "D:\path\to\Legend of Zelda, The - Ocarina of Time (USA) (Rev 2).z64"
 ```
-sdcard
-└── switch
-    └── soh
-        ├── oot-mq.otr
-        ├── oot.otr
-        ├── soh.nro
-        └── soh.otr
-```
-* Launch via Atmosphere's `Game+R` launcher method.
 
-### 4. Play!
+脚本创建新的宿主及 Switch Release 构建目录，校验 ROM，运行中文资源检查，生成配套 OTR 和 NRO，并输出本机安装包、源码归档及构建日志。完整要求、手动安装步骤和存档备份建议见[构建说明](packaging/README-zh-CN.md)。
 
-Congratulations, you are now sailing with the Ship of Harkinian! Have fun!
+当前移植基线记录在 [`packaging/BASELINES.json`](packaging/BASELINES.json)：Switch 主线 `2976c182`、Shipwright-CN `9749ffb8`、PC 主仓库 `2bc50f60`；资源导出器、ZAPDTR 和 libultraship 子模块版本也一并固定。
 
-# Configuration
+## 验证状态
 
-### Default keyboard configuration
-| N64 | A | B | Z | Start | Analog stick | C buttons | D-Pad |
-| - | - | - | - | - | - | - | - |
-| Keyboard | X | C | Z | Space | WASD | Arrow keys | TFGH |
+中文资源检查、Switch Release 构建和 Eden CLI 开场对白验证已通过。高清字库开启时，对话可以正常显示；未安装高清字库时，普通中文字库也能正常显示。真实 Switch 上的掌机/底座画面、长时间运行和性能仍需实机确认。
 
-### Other shortcuts
-| Keys | Action |
-| - | - |
-| F1 | Toggle menubar |
-| F5 | Save state |
-| F6 | Change state |
-| F7 | Load state |
-| F9 | Toggle Text-to-Speech (Windows and Mac only) |
-| F11 | Fullscreen |
-| Tab | Toggle Alternate assets |
-| Ctrl+R | Reset |
+## 致谢与授权
 
-### Graphics Backends
-Currently, there are three rendering APIs supported: DirectX11 (Windows), OpenGL (all platforms), and Metal (MacOS). You can change which API to use in the `Settings` menu of the menubar, which requires a restart.  If you're having an issue with crashing, you can change the API in the `shipofharkinian.json` file by finding the line `gfxbackend:""` and changing the value to `sdl` for OpenGL. DirectX 11 is the default on Windows.
+感谢 [wonderfulnx/Shipwright-CN](https://github.com/wonderfulnx/Shipwright-CN)、[HarbourMasters/Shipwright](https://github.com/HarbourMasters/Shipwright) 和 [HarbourMasters/Shipwright-Switch](https://github.com/HarbourMasters/Shipwright-Switch) 的工作。
 
-# Custom Assets
-
-Custom assets are packed in `.otr` files. To use custom assets, place them in the `mods` folder.
-
-If you're interested in creating and/or packing your own custom asset `.otr` files, check out the following tools:
-* [**retro - OTR generator**](https://github.com/HarbourMasters64/retro)
-* [**fast64 - Blender plugin**](https://github.com/HarbourMasters/fast64)
-
-# Development
-### Building
-
-If you want to manually compile SoH, please consult the [building instructions](docs/BUILDING.md).
-
-### Playtesting
-If you want to playtest a continuous integration build, you can find them at the links below. Keep in mind that these are for playtesting only, and you will likely encounter bugs and possibly crashes. 
-
-* [Windows](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-windows.zip)
-* [macOS](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-mac.zip)
-* [Linux (performance)](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-linux-performance.zip) _(requires `glibc 2.35` or newer, but will be more performant than the compatibility build.)_
-* [Linux (compatibility)](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-linux-compatibility.zip) _(compatible with most Linux distributions, but may not be as performant as the performance build.)_
-* [Switch](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-switch.zip)
-* [Wii U](https://nightly.link/HarbourMasters/Shipwright/workflows/generate-builds/develop/soh-wiiu.zip)
-
-<a href="https://github.com/Kenix3/libultraship/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./docs/poweredbylus.darkmode.png">
-    <img alt="Powered by libultraship" src="./docs/poweredbylus.lightmode.png">
-  </picture>
-</a>
+菜单字体使用 Source Han Sans 子集，随本机安装包提供 OFL 授权文本。代码和各上游组件沿用其各自许可证。仓库包含 AI 辅助生成的代码；相关改动已由维护者整理并纳入构建及模拟器检查。

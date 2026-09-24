@@ -133,10 +133,15 @@ def main():
             ('libultraship/extern/ImGui/imgui.cpp', 'libultraship/extern/ImGui/imgui.cpp'),
             ('libultraship/extern/ImGui/imgui.h', 'libultraship/extern/ImGui/imgui.h'),
             ('libultraship/extern/ImGui/imgui_widgets.cpp', 'libultraship/extern/ImGui/imgui_widgets.cpp'),
+            ('libultraship/extern/ImGui/backends/imgui_impl_sdl2.cpp',
+             'libultraship/extern/ImGui/backends/imgui_impl_sdl2.cpp'),
             ('libultraship/src/controller/controldeck/ControlDeck.cpp',
              'libultraship/src/controller/controldeck/ControlDeck.cpp'),
             ('libultraship/src/controller/controldevice/controller/mapping/factories/ButtonMappingFactory.cpp',
              'libultraship/src/controller/controldevice/controller/mapping/factories/ButtonMappingFactory.cpp'),
+            ('libultraship/src/window/gui/Gui.h', 'libultraship/src/window/gui/Gui.h'),
+            ('libultraship/src/window/gui/Gui.cpp', 'libultraship/src/window/gui/Gui.cpp'),
+            ('soh/soh/OTRGlobals.cpp', 'soh/soh/OTRGlobals.cpp'),
             ('soh/src/code/z_kanfont.c', 'soh/src/code/z_kanfont.c'),
         ]
         for relative, arcroot in trees:

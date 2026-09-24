@@ -8,6 +8,8 @@
 // SOH [Chinese] - custom CJK glyph textures (16x16 I4), shipped in soh.otr
 #include "textures/chinese_font/chinese_font.h"
 
+extern s32 ResourceMgr_CopyFontTexture(void* destination, const char* filePath, size_t size);
+
 // SOH [Chinese] - Chinese message table, populated by OTRMessage_InitChinese()
 // (introduced in a later upstream revision, backported here for the port).
 extern MessageTableEntry* sChiMessageEntryTablePtr;
@@ -167,18 +169,26 @@ const char* msgStaticTbl[] =
     gMessageArrowTex
 };
 
-/*
- * Font buffers are consumed directly by gDPLoadTextureBlock_4b.  They must
- * therefore contain the 16x16 I4 pixels, rather than an __OTR__ resource
- * name.  Most display lists resolve resource names through a segment load,
- * but the file-name keyboard and message renderer do not have that step.
- */
-static void Font_CopyTexture(void* destination, const char* resourceName) {
-    char* texture = ResourceMgr_LoadTexOrDListByName(resourceName);
+// The fixed font buffers always hold the original 16x16 I4 pixels. The
+// message renderer can additionally use these paths to draw alternate CJK
+// textures directly, preserving their high-resolution metadata.
+static const char* sChineseGlyphPaths[FONT_CHAR_MULTIPLIER];
 
-    if (texture != NULL) {
-        memcpy(destination, texture, FONT_CHAR_TEX_SIZE);
-    } else {
+static void Font_SetChineseGlyphPath(u16 codePointIndex, const char* path) {
+    if (codePointIndex % FONT_CHAR_TEX_SIZE == 0 && codePointIndex / FONT_CHAR_TEX_SIZE < FONT_CHAR_MULTIPLIER) {
+        sChineseGlyphPaths[codePointIndex / FONT_CHAR_TEX_SIZE] = path;
+    }
+}
+
+const char* Font_GetChineseGlyphPath(u16 codePointIndex) {
+    if (codePointIndex % FONT_CHAR_TEX_SIZE != 0 || codePointIndex / FONT_CHAR_TEX_SIZE >= FONT_CHAR_MULTIPLIER) {
+        return NULL;
+    }
+    return sChineseGlyphPaths[codePointIndex / FONT_CHAR_TEX_SIZE];
+}
+
+static void Font_CopyTexture(void* destination, const char* resourceName) {
+    if (!ResourceMgr_CopyFontTexture(destination, resourceName, FONT_CHAR_TEX_SIZE)) {
         memset(destination, 0, FONT_CHAR_TEX_SIZE);
     }
 }
@@ -198,6 +208,7 @@ void Font_LoadChar(Font* font, u8 character, u16 codePointIndex) {
                         //&_nes_font_staticSegmentRomStart[character * FONT_CHAR_TEX_SIZE], FONT_CHAR_TEX_SIZE,
                         //__FILE__, __LINE__);
 
+    Font_SetChineseGlyphPath(codePointIndex, NULL);
     if (character < ARRAY_COUNT(fntTbl) && codePointIndex <= sizeof(font->charTexBuf) - FONT_CHAR_TEX_SIZE) {
         Font_CopyTexture(&font->charTexBuf[codePointIndex], fntTbl[character]);
     }
@@ -219,6 +230,7 @@ void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
     if (codePointIndex > sizeof(font->charTexBuf) - FONT_CHAR_TEX_SIZE) {
         return;
     }
+    Font_SetChineseGlyphPath(codePointIndex, NULL);
 
     // iQue button/icon codes (0xAA9F–0xAAAB) — map to the NES font textures the
     // N64/American builds already use for the same icons.
@@ -248,6 +260,7 @@ void Font_LoadCharChinese(Font* font, u16 character, u16 codePointIndex) {
     s32 glyphIndex = character - 0xA08C;
     if (glyphIndex >= 0 && glyphIndex < ARRAY_COUNT(chineseFontTbl)) {
         Font_CopyTexture(&font->charTexBuf[codePointIndex], chineseFontTbl[glyphIndex]);
+        Font_SetChineseGlyphPath(codePointIndex, chineseFontTbl[glyphIndex]);
     }
 }
 // #endregion

@@ -72,17 +72,21 @@ ordered_font_fragments = (
 if any(fragment not in font_source for fragment in ordered_font_fragments):
     errors.append('Missing NTSC ordered-font fallback or null guard')
 
-# gDPLoadTextureBlock consumes pixels.  A resource path string in either font
-# buffer renders as striped blocks and can corrupt the initial message draw.
+# Font buffers must contain exact 16x16 I4 pixels. HD CJK textures are instead
+# passed by path at draw time so Fast3D sees their dimensions and raw-pixel flag.
 raw_font_fragments = (
     'static void Font_CopyTexture',
-    'ResourceMgr_LoadTexOrDListByName(resourceName)',
-    'memcpy(destination, texture, FONT_CHAR_TEX_SIZE)',
+    'ResourceMgr_CopyFontTexture(destination, resourceName, FONT_CHAR_TEX_SIZE)',
     'Font_CopyTexture(&font->charTexBuf',
     'Font_CopyTexture(fontBuf, fntTbl',
+    'Font_SetChineseGlyphPath(codePointIndex, chineseFontTbl[glyphIndex])',
 )
 if any(fragment not in font_source for fragment in raw_font_fragments):
-    errors.append('Font texture loaders must copy resolved texture pixels')
+    errors.append('Font buffers must use exact I4 pixels and retain Chinese texture paths')
+if 'LoadResource(path, true)' not in (root / 'soh/soh/OTRGlobals.cpp').read_text():
+    errors.append('Font texture copy must bypass alternate assets')
+if 'Font_GetChineseGlyphPath(charTexIdx)' not in (root / 'soh/src/code/z_message_PAL.c').read_text():
+    errors.append('Chinese message renderer must use alternate glyph paths')
 
 # The NTSC 1.2 Link's House intro starts with generic command 0x3D.  The
 # exporter already serializes these commands as 12-word payloads; the importer

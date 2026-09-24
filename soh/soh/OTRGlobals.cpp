@@ -363,6 +363,7 @@ OTRGlobals::OTRGlobals() {
     defaultFontSmaller = CreateDefaultFontWithSize(10.0f);
     defaultFontLarger = CreateDefaultFontWithSize(16.0f);
     defaultFontLargest = CreateDefaultFontWithSize(20.0f);
+    context->GetInstance()->GetWindow()->GetGui()->RebuildFontAtlas();
     ScaleImGui();
 
     // Move the camera strings from read only memory onto the heap (writable memory)
@@ -1680,6 +1681,27 @@ extern "C" char* ResourceMgr_LoadTexOrDListByName(const char* filePath) {
     else {
         return (char*)GetResourceDataByNameHandlingMQ(filePath);
     }
+}
+
+// Font buffers contain fixed 16x16 I4 pixels. Alternate assets may instead be
+// high-resolution RGBA images; their first 128 bytes are not a valid glyph.
+extern "C" int32_t ResourceMgr_CopyFontTexture(void* destination, const char* filePath, size_t size) {
+    if (destination == nullptr || filePath == nullptr || size != 16 * 16 / 2) {
+        return 0;
+    }
+
+    std::string path = filePath;
+    if (path.rfind("__OTR__", 0) == 0) {
+        path.erase(0, 7);
+    }
+    auto texture = std::dynamic_pointer_cast<LUS::Texture>(
+        Ship::Context::GetInstance()->GetResourceManager()->LoadResource(path, true));
+    if (texture == nullptr || texture->Type != LUS::TextureType::Grayscale4bpp || texture->Width != 16 ||
+        texture->Height != 16 || texture->ImageData == nullptr || texture->ImageDataSize < size) {
+        return 0;
+    }
+    memcpy(destination, texture->ImageData, size);
+    return 1;
 }
 
 extern "C" char* ResourceMgr_LoadIfDListByName(const char* filePath) {

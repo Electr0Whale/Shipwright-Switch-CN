@@ -217,6 +217,8 @@ void Message_HandleChoiceSelection(PlayState* play, u8 numChoices) {
         (numChoices == 1) ? R_TEXT_CHOICE_YPOS(msgCtx->choiceIndex + 1) : R_TEXT_CHOICE_YPOS(msgCtx->choiceIndex);
 }
 
+extern const char* Font_GetChineseGlyphPath(u16 codePointIndex);
+
 void Message_DrawTextChar(PlayState* play, void* textureImage, Gfx** p) {
     MessageContext* msgCtx = &play->msgCtx;
     Gfx* gfx = *p;
@@ -1110,7 +1112,13 @@ void Message_DrawText(PlayState* play, Gfx** gfxP) {
                     msgCtx->textDelayTimer == msgCtx->textDelay) {
                     Audio_PlaySoundGeneral(0, &D_801333D4, 4, &D_801333E0, &D_801333E0, &D_801333E8);
                 }
-                Message_DrawTextChar(play, &font->charTexBuf[charTexIdx], &gfx);
+                // Alternate Chinese glyphs can be larger than the fixed I4
+                // font buffer. Pass their resource path to Fast3D so it can
+                // load the texture together with its size and raw-pixel flag.
+                const char* glyphPath = character == 0xFE && CVarGetInteger("gAltAssets", 0)
+                                            ? Font_GetChineseGlyphPath(charTexIdx)
+                                            : NULL;
+                Message_DrawTextChar(play, glyphPath != NULL ? (void*)glyphPath : &font->charTexBuf[charTexIdx], &gfx);
                 charTexIdx += FONT_CHAR_TEX_SIZE;
 
                 // #region SOH [Chinese] - Full-width advance for CJK glyphs
